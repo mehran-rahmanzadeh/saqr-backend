@@ -1,0 +1,85 @@
+{% extends 'admin/base.html' %}
+{% load i18n %}
+{% load footer %}
+{% load static %}
+
+{% block extrahead %}{{ block.super }}
+<style>
+    :root {
+        --secondary: #262B3C;
+
+        --primary: #2A3042;
+        --primary-fg: #eee;
+        --body-fg: #eeeeee;
+        --body-bg: #222736;
+        --body-quiet-color: #e0e0e0;
+        --body-loud-color: #ffffff;
+        --breadcrumbs-link-fg: #e0e0e0;
+        --breadcrumbs-bg: var(--primary);
+        --link-fg: #17b3a3;
+        --link-hover-color: #4ac1f7;
+        --link-selected-fg: #17b3a3;
+        --hairline-color: #32394e;
+        --border-color: #32394e;
+        --error-fg: #e35f5f;
+        --darkened-bg: #2a3042;
+        --delete-button-hover-bg: #cf5a5a;
+        --delete-button-bg: #f46a6a;
+        --message-success-bg: #1e9368;
+        --message-warning-bg: #583305;
+        --message-error-bg: #570808;
+        --selected-bg: #212533;
+        --selected-row: #00363a;
+        --close-button-bg: #333333;
+        --object-tools-bg: #556ee6;
+        --object-tools-hover-bg: #485ec4;
+        --close-button-hover-bg: #666666;
+        --accent: #17b3a3;
+    }
+</style>
+<link rel="shortcut icon" href="{% static '/img/sage-logo.png'  %}" />
+{% endblock %}
+
+{% block userlinks %}
+<form action="{% url 'set_language' %}" method="post" style="display:inline">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language" onchange="this.form.submit()">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+            {{ language.name_local }} ({{ language.code }})
+        </option>
+        {% endfor %}
+    </select>
+</form>
+{{ block.super }}
+{% endblock %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block content_title %}
+
+
+<h1>
+{#<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50" style="top: 16px; position: relative; margin-bottom: 10px;" viewBox="0 0 259.291 124.062">#}
+{#    <g transform="translate(-60.908 -34.433)">#}
+{#        <path d="M161.448,71.676a13.409,13.409,0,0,0-3.941-2.888,13.651,13.651,0,0,0-5.329-1.335,13.014,13.014,0,0,0,4.511-1.42,8.949,8.949,0,0,0,2.78-2.352,8,8,0,0,0,1.408-2.961,13.56,13.56,0,0,0,.393-3.237,9.23,9.23,0,0,0-1.16-4.727,10.513,10.513,0,0,0-2.463-2.872l-9.6,7.035.032.044a5.057,5.057,0,0,1,.675,2.736,4.254,4.254,0,0,1-.552,2.077,5.626,5.626,0,0,1-1.55,1.766,8.282,8.282,0,0,1-2.39,1.23,9.6,9.6,0,0,1-3.066.466h-4.5L120.231,77.306V94.043h21.428a41.735,41.735,0,0,0,10.982-1.227,21.267,21.267,0,0,0,7.114-3.256,11.77,11.77,0,0,0,3.833-4.606,12.986,12.986,0,0,0,1.141-5.313,11.1,11.1,0,0,0-.837-4.137A12.415,12.415,0,0,0,161.448,71.676ZM147.239,83.638a6.147,6.147,0,0,1-4.581,1.544H136.2V74.1a48.409,48.409,0,0,1,6.3.33,12.969,12.969,0,0,1,3.833,1,3.931,3.931,0,0,1,1.905,1.715,5.52,5.52,0,0,1,.517,2.492A5.447,5.447,0,0,1,147.239,83.638Z" transform="translate(128.751 33.532)" fill="#feb000"></path>#}
+{#        <path d="M114.133,69.131V61.362L103.84,69.131Z" transform="translate(93.177 58.445)" fill="#feb000"></path>#}
+{#        <path d="M258.822,34.744,210.589,53.36a4.515,4.515,0,0,0-1.414,7.549l8.094,7.374L200.919,78.618h-7.168v4.534l-2.866,1.81V78.618H155.517V106.3q-1.731,1.2-3.437,2.435V78.618h-12.2V103.2L120.7,78.618h-15.44v27.116l7.089-4.835-7.089,6.448v20.227h12.085V101.54l15.9,21.907c-1.614,1.37-3.218,2.746-4.806,4.147l-42.089,30.9L231.513,59.476l3.972-2.622-16.822,12.7,6.5,5.922,22.379-15.287L226.294,76.5l6.04,5.5,13.4-9.267L232.67,82.312l10.69,9.739a4.514,4.514,0,0,0,7.384-2.111l14.048-49.758A4.514,4.514,0,0,0,258.822,34.744ZM171.489,95.871V87.688H185.8Q178.529,91.588,171.489,95.871Z" transform="translate(55.231)" fill="#feb000"></path>#}
+{#        <path d="M103.959,60.667H96.269L85.3,70.638h18.658Z" transform="translate(52.94 56.937)" fill="#feb000"></path>#}
+{#        <path d="M142.018,57.684a13.977,13.977,0,0,1,3.887.866,5.134,5.134,0,0,1,1.614,1.018l9.717-6.721c-.076-.054-.149-.111-.225-.165a17.3,17.3,0,0,0-4.438-2.216A34.594,34.594,0,0,0,147.4,49.15a47.272,47.272,0,0,0-5.329-.625q-2.658-.152-4.87-.155h-4.074l-12.9,9.736V78.434L136.2,67.389V57.44Q139.627,57.44,142.018,57.684Z" transform="translate(128.751 30.248)" fill="#feb000"></path>#}
+{#        <path d="M124.144,63.36h17.115V54.5H133.57l-25.4,19.171V84.03h35.371V74.059h-19.4Z" transform="translate(102.575 43.545)" fill="#feb000"></path>#}
+{#        <path d="M137.5,87.356v-10.7h17.113V67.795H137.5V57.44h19.4V48.37H121.528V72.335l-2.273,1.17c.01-.352.016-.71.016-1.072a27.092,27.092,0,0,0-1.909-10.611,19.522,19.522,0,0,0-5.488-7.514,23.558,23.558,0,0,0-8.756-4.467A42.643,42.643,0,0,0,91.46,48.37H73.916V97.326H82.33l-21.422,18.93,75.105-51.236.818-.514-15.3,12.713V97.326h6.924l14.628-9.971Zm-35.08-7.79a10.2,10.2,0,0,1-1.915,3.579l-5.095,2.622-.143.127a24.667,24.667,0,0,1-4.312.355H89.891V58.48H91.28a17.843,17.843,0,0,1,5.136.675,8.475,8.475,0,0,1,3.779,2.286,10.266,10.266,0,0,1,2.318,4.293,24.257,24.257,0,0,1,.786,6.7A23.765,23.765,0,0,1,102.424,79.566Z" transform="translate(0 30.248)" fill="#feb000"></path>#}
+{#        <path d="M73.551,75.32a30.7,30.7,0,0,0,6.686-1.782,24.1,24.1,0,0,0,5.653-3.151,18.313,18.313,0,0,0,4.35-4.692,22.317,22.317,0,0,0,2.78-6.42c.089-.336.171-.675.247-1.021L72.552,75.463C72.888,75.418,73.221,75.374,73.551,75.32Z" transform="translate(25.271 51.7)" fill="#feb000"></path>#}
+{#    </g>#}
+{#</svg>#}
+</h1>
+
+
+{% endblock %}
+
+{% block footer %}
+{% admin_footer %}
+{% endblock %}

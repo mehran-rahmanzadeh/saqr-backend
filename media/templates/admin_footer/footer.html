@@ -1,0 +1,10 @@
+{% load i18n %}
+{% load static %}
+<div id="footer">
+    <hr/>
+    <div class="container" style="text-align: center">
+        <p class="text-muted credit"> 
+            <img src="{% static 'img/sage-logo.png' %}" width="25px" height="25px" style="margin-right: 10px;"/>
+            {% if version %}{{ version }}{% endif %} | {% trans 'Copyright' %} {% if site_url %}<a href="{{ site_url }}" target="_blank">{{ site_name }}</a>{% endif %} | {% if period %} &copy; {{ period }}{% endif %}</p>
+    </div>
+</div>

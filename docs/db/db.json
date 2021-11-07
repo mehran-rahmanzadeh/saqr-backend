@@ -1,0 +1,483 @@
+{
+  "apps": {
+    "cms": {
+      "models": {
+        "AboutCompany": {
+          "fields": {
+            "title": {
+              "type": "character",
+              "max_length": 255
+            },
+            "description": {
+              "type": "text"
+            },
+            "first_image": {
+              "type": "image"
+            },
+            "second_image": {
+              "type": "image"
+            },
+            "video_cover": {
+              "type": "image"
+            },
+            "video": {
+              "type": "video"
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["title", "created", "modified"],
+            "search_fields": ["title", "description"]
+          },
+          "api": {
+            "methods": ["get"]
+          }
+        },
+        "AboutTracker": {
+          "fields": {
+            "title": {
+              "type": "character",
+              "max_length": 255
+            },
+            "description": {
+              "type": "text"
+            },
+            "image": {
+              "type": "image"
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["title", "created", "modified"],
+            "search_fields": ["title", "description"]
+          },
+          "api": {
+            "methods": ["get"]
+          }
+        },
+        "AboutDashboard": {
+          "fields": {
+            "title": {
+              "type": "character",
+              "max_length": 255
+            },
+            "description": {
+              "type": "text"
+            },
+            "first_image": {
+              "type": "image"
+            },
+            "second_image": {
+              "type": "image"
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["title", "created", "modified"],
+            "search_fields": ["title", "description"]
+          },
+          "api": {
+            "methods": ["get"]
+          }
+        },
+        "HowToGetCertificate": {
+          "fields": {
+            "title": {
+              "type": "character",
+              "max_length": 255
+            },
+            "description": {
+              "type": "text"
+            },
+            "image": {
+              "type": "image"
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["title", "created", "modified"],
+            "search_fields": ["title", "description"]
+          },
+          "api": {
+            "methods": ["get"]
+          }
+        },
+        "ContactUs": {
+          "fields": {
+            "title": {
+              "type": "character",
+              "max_length": 255
+            },
+            "description": {
+              "type": "text"
+            },
+            "tel": {
+              "type": "character",
+              "max_length": 13
+            },
+            "email": {
+              "type": "character",
+              "max_length": 255,
+              "validators": [
+                {
+                  "func": "EmailValidator"
+                }
+              ]
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["title", "created", "modified"],
+            "search_fields": ["title", "description"]
+          },
+          "api": {
+            "methods": [
+              "get"
+            ]
+          }
+        },
+        "Faq": {
+          "fields": {
+            "question": {
+              "type": "character",
+              "max_length": 255
+            },
+            "answer": {
+              "type": "text"
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["question", "created", "modified"],
+            "search_fields": ["question", "answer"]
+          },
+          "api": {
+            "methods": [
+              "get"
+            ]
+          }
+        },
+        "SiteInfo": {
+          "fields": {
+            "logo": {
+              "type": "image",
+              "validators": [
+                {
+                  "func": "FileExtensionValidator",
+                  "arg": "allowed_extensions=['svg', 'SVG', 'webp', 'png', 'PNG']"
+                }
+              ]
+            },
+            "tel": {
+              "type": "character",
+              "max_length": 255
+            },
+            "email": {
+              "type": "character",
+              "max_length": 255,
+              "validators": [
+                {
+                  "func": "EmailValidator"
+                }
+              ]
+            },
+            "address": {
+              "type": "character",
+              "max_length": 255
+            },
+            "instagram": {
+              "type": "character",
+              "max_length": 255
+            },
+            "facebook": {
+              "type": "character",
+              "max_length": 255
+            },
+            "twitter": {
+              "type": "character",
+              "max_length": 255
+            },
+            "linkedin": {
+              "type": "character",
+              "max_length": 255
+            },
+            "whatsapp": {
+              "type": "character",
+              "max_length": 255
+            },
+            "footer": {
+              "type": "character",
+              "max_length": 255
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["tel", "email", "created", "modified"],
+            "list_filter": ["created", "modified"],
+            "search_fields": ["tel", "email"]
+          },
+          "api": {
+            "methods": ["get"]
+          }
+        }
+      }
+    },
+    "calls": {
+      "models": {
+        "GetInTouch": {
+          "fields": {
+            "name": {
+              "type": "character",
+              "max_length": 50
+            },
+            "email": {
+              "type": "character",
+              "max_length": 100,
+              "validators": [
+                {
+                  "func": "EmailValidator"
+                }
+              ]
+            },
+            "subject": {
+              "type": "character",
+              "max_length": 100
+            },
+            "phone": {
+              "type": "character",
+              "max_length": 13,
+              "null": true,
+              "blank": true
+            },
+            "message": {
+              "type": "text"
+            },
+            "seen": {
+              "type": "bool",
+              "default": false
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["subject", "name", "email", "seen", "created", "modified"],
+            "list_filter": ["created", "modified", "seen"],
+            "search_fields": ["subject", "name", "message", "email", "phone"]
+          },
+          "api": {
+            "methods": ["post"]
+          }
+        },
+        "CertificateRequest": {
+          "fields": {
+            "email": {
+              "type": "character",
+              "max_length": 100,
+              "validators": [
+                {
+                  "func": "EmailValidator"
+                }
+              ]
+            },
+            "seen": {
+              "type": "bool",
+              "default": false
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["email", "seen", "created", "modified"],
+            "list_filter": ["created", "modified", "seen"],
+            "search_fields": ["email"]
+          },
+          "api": {
+            "methods": ["post"]
+          }
+        }
+      }
+    },
+    "blog": {
+      "models": {
+        "Tag": {
+          "fields": {
+            "title": {
+              "type": "character",
+              "max_length": 255
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["title", "created", "modified"],
+            "list_filter": ["created", "modified"],
+            "search_fields": ["title"]
+          },
+          "api": {
+            "methods": ["get"]
+          }
+        },
+        "Category": {
+          "fields": {
+            "title": {
+              "type": "character",
+              "max_length": 255
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["title", "created", "modified"],
+            "list_filter": ["created", "modified"],
+            "search_fields": ["title"]
+          },
+          "api": {
+            "methods": ["get"]
+          }
+        },
+        "Post": {
+          "fields": {
+            "kind": {
+              "type": "character",
+              "max_length": 10,
+              "choices": [
+                [
+                  "image",
+                  "Image Article"
+                ],
+                [
+                  "video",
+                  "Video Article"
+                ]
+              ]
+            },
+            "title": {
+              "type": "character",
+              "max_length": 255
+            },
+            "body": {
+              "type": "text"
+            },
+            "image": {
+              "type": "image",
+              "null": true,
+              "blank": true
+            },
+            "video_cover": {
+              "type": "image",
+              "null": true,
+              "blank": true
+            },
+            "video": {
+              "type": "video",
+              "null": true,
+              "blank": true
+            },
+            "category": {
+              "type": "fk",
+              "to": "Category",
+              "on_delete": "CASCADE"
+            },
+            "tags": {
+              "type": "m2m",
+              "to": "Tag",
+              "null": true,
+              "blank": true
+            },
+            "created": {
+              "type": "datetime",
+              "auto_now_add": true
+            },
+            "modified": {
+              "type": "datetime",
+              "auto_now": true
+            }
+          },
+          "admin": {
+            "list_display": ["title", "created", "modified"],
+            "list_filter": ["created", "modified"],
+            "search_fields": ["title", "body"]
+          },
+          "api": {
+            "methods": ["get"],
+            "filter": true,
+            "search": true
+          }
+        }
+      }
+    }
+  }
+}

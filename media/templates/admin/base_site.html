@@ -1,0 +1,19 @@
+{% extends 'admin/base_site.html' %}
+
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block extrastyle %}
+{{ block.super }}
+    {% if LANGUAGE_CODE == 'fa' %}
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/persian.css' %}" />
+    {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="icon" href="{% static 'assets/img/logos/deneb-fav-icon.svg' %}" sizes="16x16 32x32" type="image/png">
+<link rel="apple-touch-icon" href="{% static 'assets/img/logos/deneb-fav-icon.svg' %}" sizes="16x16 32x32" type="image/png">
+<link rel="mask-icon" href="{% static 'assets/img/logos/deneb-fav-icon.svg' %}" color="blue">
+{% endblock %}
