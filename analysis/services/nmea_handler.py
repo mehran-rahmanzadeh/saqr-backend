@@ -1,16 +1,15 @@
-import os
 import datetime
 
 from statistics import mean
 
-import matplotlib.pyplot as plt
 import numpy as np
+from django.conf import settings
 
 from pynmeagps import NMEAReader
 from pynmeagps.nmeamessage import NMEAMessage
 from pykalman import KalmanFilter
 
-debug = True
+debug = settings.DEBUG
 
 
 class Parser:
@@ -110,47 +109,6 @@ class Parser:
         (smoothed_state_means, smoothed_state_covariances) = kf.smooth(measurements)
 
         return smoothed_state_means[:, 0], smoothed_state_means[:, 2]
-
-    def show_data_charts(self, save=False):
-        """create charts from calculated data"""
-        fig, (ax1, ax2, ax3, ax4, ax5) = plt.subplots(5)
-        fig.suptitle('GPS process result')
-
-        ax1.scatter(self.lon_array, self.lat_array, label='location', color='orange')
-        ax1.set_ylabel('lon')
-        ax1.set_xlabel('lat')
-
-        # ax2.scatter(self.lon_array, self.lat_array, label='real', color='black')
-        kf_lon, kf_lat = self.__apply_kalman_filter(self.lon_array, self.lat_array)
-        ax2.scatter(kf_lon, kf_lat, label='KF estimated', color='black')
-        ax2.set_ylabel('lon')
-        ax2.set_xlabel('lat')
-
-        ax3.plot(self.timestamp_array, self.speed_array, label='speed', color='green')
-        ax3.set_ylabel('speed')
-        ax3.set_xlabel('timestamp')
-
-        ax4.plot(self.timestamp_array[:len(self.accel_array)], self.accel_array, label='accel', color='red')
-        ax4.set_ylabel('accel')
-        ax4.set_xlabel('timestamp')
-
-        ax5.plot(self.timestamp_array, self.alt_array, label='alt', color='blue')
-        ax5.set_ylabel('alt')
-        ax5.set_xlabel('timestamp')
-
-        ax1.legend()
-        ax2.legend()
-        ax3.legend()
-        ax4.legend()
-        ax5.legend()
-
-        if not save:
-            plt.show()
-        else:
-            suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
-            filename = "_".join(['charts', suffix]) + '.png'
-            plt.savefig(filename)
-            return os.path.abspath(filename)
 
     def process_nmea(self):
         """main process method"""

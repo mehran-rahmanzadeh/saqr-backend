@@ -51,6 +51,12 @@ After activation must install all packages:
 $ pip install -r requirements.txt
 ```
 
+## Celery
+Run celery worker in gps_process queue
+```shell
+$ celery -A kernel worker -l info -Q gps_process
+```
+
 ## Docker Container
 
 The project is dockerized for deployment.
