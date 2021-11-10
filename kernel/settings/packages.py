@@ -126,7 +126,7 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TASK_ROUTES = {
-    'users.tasks.send_otp': {'queue': 'token'}
+    'analysis.tasks.process_nmea_report_file': {'queue': 'gps_process'}
 }
 CELERY_ENABLE_UTC = True
 CELERY_TIMEZONE = 'UTC'
