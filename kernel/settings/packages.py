@@ -1,8 +1,6 @@
 import os
 from datetime import timedelta
 
-from Crypto import Random
-from Crypto.PublicKey import RSA
 from decouple import config
 from django.conf import settings
 
@@ -47,6 +45,7 @@ MIDDLEWARE.append('defender.middleware.FailedLoginMiddleware')
 INSTALLED_APPS.append('sage_session')
 
 # Applications
+INSTALLED_APPS.append('authentication')
 INSTALLED_APPS.append('analysis')
 INSTALLED_APPS.append('cms')
 INSTALLED_APPS.append('blog')
@@ -54,6 +53,7 @@ INSTALLED_APPS.append('calls')
 
 # God Of Packages
 INSTALLED_APPS.append('sage_painless')
+
 INSTALLED_APPS.append('django_seed')
 INSTALLED_APPS.append('drf_yasg')
 
@@ -95,11 +95,11 @@ SIMPLE_JWT = {
     'SIGNING_KEY': open(os.path.join(BASE_DIR, 'jwt-key')).read(),
     'VERIFYING_KEY': open(os.path.join(BASE_DIR, 'jwt-key.pub')).read(),
     'AUDIENCE': 'owner',
-    'ISSUER': 'semmics.io',
+    'ISSUER': 'saqr.io',
 
     'AUTH_HEADER_TYPES': ('Bearer',),
     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
-    'USER_ID_FIELD': 'email',
+    'USER_ID_FIELD': 'username',
     'USER_ID_CLAIM': 'identity',
 
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
@@ -126,7 +126,8 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TASK_ROUTES = {
-    'analysis.tasks.process_nmea_report_file': {'queue': 'gps_process'}
+    'analysis.tasks.process_nmea_report_file': {'queue': 'gps_process'},
+    'authentication.tasks.send_mail': {'queue': 'email'}
 }
 CELERY_ENABLE_UTC = True
 CELERY_TIMEZONE = 'UTC'
@@ -145,10 +146,10 @@ CACHE_TIMEOUT = 3600
 # ########### #
 #   UPLOAD    #
 # ########### #
-# FILE_UPLOAD_HANDLERS = [
-#     'painless.utils.handlers.upload.ChunkFileUploadHandler'
-# ]
-# UPLOAD_CHUNK_SIZE = 2500 * 2 ** 10  # 2500 KB
+FILE_UPLOAD_HANDLERS = [
+    'painless.utils.handlers.upload.ChunkFileUploadHandler'
+]
+UPLOAD_CHUNK_SIZE = 2500 * 2 ** 10  # 2500 KB
 
 # ######################### #
 #       AdminInterface      #

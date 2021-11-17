@@ -43,6 +43,8 @@ urlpatterns = [
     path('api/v1/', include('cms.api.urls')),
     path('api/v1/', include('calls.api.urls')),
     path('api/v1/', include('blog.api.urls')),
+    path('api/v1/', include('analysis.api.urls')),
+    path('api/v1/', include('authentication.api.urls')),
     path('api/doc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-swagger-ui'),
 ] + static(
     settings.STATIC_URL, document_root=settings.STATIC_ROOT
