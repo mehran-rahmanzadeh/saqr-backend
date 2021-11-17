@@ -52,9 +52,10 @@ $ pip install -r requirements.txt
 ```
 
 ## Celery
-Run celery worker in gps_process queue
+Run celery worker in gps_process and email queues
 ```shell
 $ celery -A kernel worker -l info -Q gps_process
+$ celery -A kernel worker -l info -Q email
 ```
 
 ## Docker Container
