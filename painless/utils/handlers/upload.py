@@ -15,6 +15,7 @@ class TimingUploadedFile(UploadedFile):
     A file uploaded to a temporary location (i.e. stream-to-disk).
     including `start_upload_time` field
     """
+
     def __init__(
             self, name,
             content_type,
@@ -86,6 +87,7 @@ class ChunkFileUploadHandler(FileUploadHandler):
                 os.remove(temp_location)
             except FileNotFoundError:
                 pass
+
 
 class TimingUploadHandler(FileUploadHandler):
     """
