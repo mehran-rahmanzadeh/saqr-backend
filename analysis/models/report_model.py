@@ -41,7 +41,7 @@ class Report(Sku_Mixin, TimeStampModelMixin):
         verbose_name_plural = _('Reports')
 
 
-class ReportDetail(models.Model):
+class ReportDetail(TimeStampModelMixin):
     """NMEA file report processed detail"""
     report = models.OneToOneField(
         Report,
