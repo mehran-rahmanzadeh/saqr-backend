@@ -28,6 +28,7 @@ INSTALLED_APPS.append('django_filters')
 INSTALLED_APPS.append('admin_footer')
 INSTALLED_APPS.append('admin_honeypot')
 INSTALLED_APPS.append('colorfield')
+INSTALLED_APPS.append('modeltranslation')
 
 # Log
 INSTALLED_APPS.append('django_admin_logs')
@@ -45,6 +46,7 @@ MIDDLEWARE.append('defender.middleware.FailedLoginMiddleware')
 INSTALLED_APPS.append('sage_session')
 
 # Applications
+INSTALLED_APPS.append('users')
 INSTALLED_APPS.append('authentication')
 INSTALLED_APPS.append('analysis')
 INSTALLED_APPS.append('cms')
@@ -170,7 +172,7 @@ ADMIN_FOOTER_DATA = {
 # LOGIN_REDIRECT_URL = '/portal'
 # LOGIN_URL = '/auth/login'
 # LOGOUT_REDIRECT_URL = '/'
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
 
 # ############### #
 # LOCATION FIELD  #
