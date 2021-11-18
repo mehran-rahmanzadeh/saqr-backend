@@ -23,6 +23,14 @@ class TagAdmin(admin.ModelAdmin):
 
     search_fields = ['title']
 
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title_en', 'title_ar'
+            )
+        }),
+    )
+
     def has_add_permission(self, *args, **kwargs):
         return True
 
@@ -45,6 +53,14 @@ class CategoryAdmin(admin.ModelAdmin):
 
     search_fields = ['title']
 
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title_en', 'title_ar'
+            )
+        }),
+    )
+
     def has_add_permission(self, *args, **kwargs):
         return True
 
@@ -66,6 +82,15 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ['created', 'modified']
 
     search_fields = ['title', 'body']
+
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title_en', 'title_ar',
+                'body_en', 'body_ar'
+            )
+        }),
+    )
 
     def has_add_permission(self, *args, **kwargs):
         return True

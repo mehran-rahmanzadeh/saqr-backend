@@ -29,6 +29,17 @@ class AboutCompanyAdmin(admin.ModelAdmin):
 
     search_fields = ['title', 'description']
 
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title_en', 'title_ar',
+                'description_en', 'description_ar',
+                'first_image', 'second_image', 'video_cover',
+                'video'
+            )
+        }),
+    )
+
     def has_add_permission(self, *args, **kwargs):
         return True
 
@@ -48,6 +59,16 @@ class AboutTrackerAdmin(admin.ModelAdmin):
     list_display = ['title', 'created', 'modified']
 
     search_fields = ['title', 'description']
+
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title_en', 'title_ar',
+                'description_en', 'description_ar',
+                'image'
+            )
+        }),
+    )
 
     def has_add_permission(self, *args, **kwargs):
         return True
@@ -69,6 +90,16 @@ class AboutDashboardAdmin(admin.ModelAdmin):
 
     search_fields = ['title', 'description']
 
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title_en', 'title_ar',
+                'description_en', 'description_ar',
+                'first_image', 'second_image'
+            )
+        }),
+    )
+
     def has_add_permission(self, *args, **kwargs):
         return True
 
@@ -88,6 +119,16 @@ class HowToGetCertificateAdmin(admin.ModelAdmin):
     list_display = ['title', 'created', 'modified']
 
     search_fields = ['title', 'description']
+
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title_en', 'title_ar',
+                'description_en', 'description_ar',
+                'image'
+            )
+        }),
+    )
 
     def has_add_permission(self, *args, **kwargs):
         return True
@@ -109,6 +150,16 @@ class ContactUsAdmin(admin.ModelAdmin):
 
     search_fields = ['title', 'description']
 
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title_en', 'title_ar',
+                'description_en', 'description_ar',
+                'tel', 'email'
+            )
+        }),
+    )
+
     def has_add_permission(self, *args, **kwargs):
         return True
 
@@ -128,6 +179,15 @@ class FaqAdmin(admin.ModelAdmin):
     list_display = ['question', 'created', 'modified']
 
     search_fields = ['question', 'answer']
+
+    fieldsets = (
+        (None, {
+            'fields': (
+                'question_en', 'question_ar',
+                'answer_en', 'answer_ar'
+            )
+        }),
+    )
 
     def has_add_permission(self, *args, **kwargs):
         return True
@@ -150,6 +210,17 @@ class SiteInfoAdmin(admin.ModelAdmin):
     list_filter = ['created', 'modified']
 
     search_fields = ['tel', 'email']
+
+    fieldsets = (
+        (None, {
+            'fields': (
+                'logo', 'tel', 'email',
+                'address_en', 'address_ar',
+                'instagram', 'facebook', 'twitter', 'linkedin', 'whatsapp',
+                'footer_en', 'footer_ar'
+            )
+        }),
+    )
 
     def has_add_permission(self, *args, **kwargs):
         return True
