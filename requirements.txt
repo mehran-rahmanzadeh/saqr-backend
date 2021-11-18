@@ -75,3 +75,7 @@ text-unidecode==1.3
 urllib3==1.26.3
 vine==1.3.0
 django-mapbox-location-field
+
+django-modeltranslation==0.17.3
+pynmeagps==1.0.5
+pykalman==0.9.5
