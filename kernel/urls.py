@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 
 from rest_framework.permissions import AllowAny
 from drf_yasg.views import get_schema_view
@@ -34,7 +35,7 @@ schema_view = get_schema_view(
     permission_classes=(AllowAny,),
 )
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('sos7243/postgres-metrics/', include('postgres_metrics.urls')),
     path('sos7243/docs/', include('django.contrib.admindocs.urls')),
@@ -46,7 +47,7 @@ urlpatterns = [
     path('api/v1/', include('analysis.api.urls')),
     path('api/v1/', include('authentication.api.urls')),
     path('api/doc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-swagger-ui'),
-] + static(
+) + static(
     settings.STATIC_URL, document_root=settings.STATIC_ROOT
     ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
