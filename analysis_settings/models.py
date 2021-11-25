@@ -1,0 +1,62 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+
+from painless.utils.models.mixins import TimeStampModelMixin
+
+
+class Parameters(TimeStampModelMixin):
+    """Parameters Model"""
+    speed_ratio = models.PositiveSmallIntegerField(
+        _('Speed Ratio'),
+        help_text=_('0 - 10'),
+        default=1,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(10)
+        ]
+    )
+
+    accel_ratio = models.PositiveSmallIntegerField(
+        _('Acceleration Ratio'),
+        help_text=_('0 - 10'),
+        default=1,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(10)
+        ]
+    )
+
+    alt_ratio = models.PositiveSmallIntegerField(
+        _('Altitude Ratio'),
+        help_text=_('0 - 10'),
+        default=1,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(10)
+        ]
+    )
+
+    weight_ratio = models.PositiveSmallIntegerField(
+        _('Weight Ratio'),
+        help_text=_('0 - 10'),
+        default=1,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(10)
+        ]
+    )
+
+    age_ratio = models.PositiveSmallIntegerField(
+        _('Age Ratio'),
+        help_text=_('0 - 10'),
+        default=1,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(10)
+        ]
+    )
+
+    class Meta:
+        verbose_name = _('Parameters')
+        verbose_name_plural = _('Parameters')
