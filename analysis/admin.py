@@ -27,7 +27,8 @@ class ReportAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
     def get_queryset(self, request):
-        return super().get_queryset(request).filter(submitted_by=request.user)
+        return super().get_queryset(request).filter(
+            submitted_by=request.user) if not request.user.is_superuser else super().get_queryset(request)
 
 
 @admin.register(ReportDetail)
@@ -55,7 +56,8 @@ class ReportDetailAdmin(admin.ModelAdmin):
         return False
 
     def get_queryset(self, request):
-        return super().get_queryset(request).filter(report__submitted_by=request.user)
+        return super().get_queryset(request).filter(
+            report__submitted_by=request.user) if not request.user.is_superuser else super().get_queryset(request)
 
 
 @admin.register(Saqr)
@@ -83,4 +85,5 @@ class SaqrAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
     def get_queryset(self, request):
-        return super().get_queryset(request).filter(submitted_by=request.user)
+        return super().get_queryset(request).filter(
+            submitted_by=request.user) if not request.user.is_superuser else super().get_queryset(request)
