@@ -205,3 +205,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 #   Django Defender    #
 # #################### #
 DEFENDER_REDIS_URL = config('REDIS_HOST')
+
+# ######### #
+#   SAQR    #
+# ######### #
+LIMIT_PUBLIC_REPORT_COUNT = 10
