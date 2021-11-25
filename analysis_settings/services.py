@@ -5,7 +5,7 @@ from analysis_settings.models import Parameters
 
 class ParametersHandler:
     """Analysis Parameters Handler"""
-    analysis_cache_key = 'analysis_settings'
+    analysis_cache_key = Parameters.CACHE_KEY
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

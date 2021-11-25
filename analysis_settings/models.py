@@ -7,7 +7,9 @@ from painless.utils.models.mixins import TimeStampModelMixin
 
 class Parameters(TimeStampModelMixin):
     """Parameters Model"""
-    speed_ratio = models.PositiveSmallIntegerField(
+    CACHE_KEY = 'analysis_settings'
+
+    speed_ratio = models.FloatField(
         _('Speed Ratio'),
         help_text=_('0 - 10'),
         default=1,
@@ -17,7 +19,7 @@ class Parameters(TimeStampModelMixin):
         ]
     )
 
-    accel_ratio = models.PositiveSmallIntegerField(
+    accel_ratio = models.FloatField(
         _('Acceleration Ratio'),
         help_text=_('0 - 10'),
         default=1,
@@ -27,7 +29,7 @@ class Parameters(TimeStampModelMixin):
         ]
     )
 
-    alt_ratio = models.PositiveSmallIntegerField(
+    alt_ratio = models.FloatField(
         _('Altitude Ratio'),
         help_text=_('0 - 10'),
         default=1,
@@ -37,7 +39,7 @@ class Parameters(TimeStampModelMixin):
         ]
     )
 
-    weight_ratio = models.PositiveSmallIntegerField(
+    weight_ratio = models.FloatField(
         _('Weight Ratio'),
         help_text=_('0 - 10'),
         default=1,
@@ -47,7 +49,7 @@ class Parameters(TimeStampModelMixin):
         ]
     )
 
-    age_ratio = models.PositiveSmallIntegerField(
+    age_ratio = models.FloatField(
         _('Age Ratio'),
         help_text=_('0 - 10'),
         default=1,
