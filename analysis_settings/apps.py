@@ -5,3 +5,6 @@ class AnalysisSettingsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'analysis_settings'
     verbose_name = 'analysis settings'
+
+    def ready(self):
+        import analysis_settings.signals
