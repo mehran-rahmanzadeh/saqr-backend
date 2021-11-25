@@ -26,6 +26,9 @@ class ReportAdmin(admin.ModelAdmin):
         obj.submitted_by = request.user
         super().save_model(request, obj, form, change)
 
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(submitted_by=request.user)
+
 
 @admin.register(ReportDetail)
 class ReportDetailAdmin(admin.ModelAdmin):
@@ -51,6 +54,9 @@ class ReportDetailAdmin(admin.ModelAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(report__submitted_by=request.user)
+
 
 @admin.register(Saqr)
 class SaqrAdmin(admin.ModelAdmin):
@@ -75,3 +81,6 @@ class SaqrAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         obj.submitted_by = request.user
         super().save_model(request, obj, form, change)
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(submitted_by=request.user)
