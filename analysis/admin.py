@@ -20,10 +20,10 @@ class ReportAdmin(admin.ModelAdmin):
     inlines = [
         ReportDetailStackedAdminInline
     ]
-    list_display = ['sku', 'created', 'modified', 'created_by']
+    list_display = ['sku', 'created', 'modified']
 
     def save_model(self, request, obj, form, change):
-        obj.created_by = request.user
+        obj.submitted_by = request.user
         super().save_model(request, obj, form, change)
 
 
@@ -71,3 +71,7 @@ class SaqrAdmin(admin.ModelAdmin):
     search_fields = [
         'title',
     ]
+
+    def save_model(self, request, obj, form, change):
+        obj.submitted_by = request.user
+        super().save_model(request, obj, form, change)

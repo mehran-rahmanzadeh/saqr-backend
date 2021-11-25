@@ -19,7 +19,7 @@ class Report(Sku_Mixin, TimeStampModelMixin):
         on_delete=models.CASCADE
     )
 
-    created_by = models.ForeignKey(
+    submitted_by = models.ForeignKey(
         get_user_model(),
         related_name='reports',
         null=True,

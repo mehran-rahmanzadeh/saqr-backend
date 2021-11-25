@@ -43,6 +43,15 @@ class Saqr(Sku_Mixin, TimeStampModelMixin, TitleSlugLinkModelMixin):
         default=False
     )
 
+    submitted_by = models.ForeignKey(
+        get_user_model(),
+        related_name='submitted_saqrs',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        editable=False
+    )
+
     def __str__(self):
         return f'SAQR {self.title} owned by {self.owner}'
 
