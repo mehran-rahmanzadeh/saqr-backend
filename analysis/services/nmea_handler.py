@@ -9,6 +9,8 @@ from pynmeagps import NMEAReader
 from pynmeagps.nmeamessage import NMEAMessage
 from pykalman import KalmanFilter
 
+from analysis_settings.services import ParametersHandler
+
 debug = settings.DEBUG
 
 
@@ -109,6 +111,14 @@ class Parser:
         (smoothed_state_means, smoothed_state_covariances) = kf.smooth(measurements)
 
         return smoothed_state_means[:, 0], smoothed_state_means[:, 2]
+
+    def calculate_flight_score(self):
+        """calculate report score"""
+        parameters = ParametersHandler.get_from_cache()
+        speed_score = self.avg_speed * parameters.speed_ratio
+        accel_score = self.avg_accel * parameters.accel_ratio
+        alt_score = self.avg_alt * parameters.alt_ratio
+        return sum([speed_score, accel_score, alt_score])
 
     def process_nmea(self):
         """main process method"""

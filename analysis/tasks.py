@@ -9,6 +9,7 @@ def process_nmea_report_file(report_instance):
     """process on NMEA report file and store in DB"""
     print(f'report id : {report_instance}')
     instance = Report.objects.get(id=report_instance)
+    saqr = instance.saqr
 
     parser = Parser(instance.nmea_file.path)
     parser.process_nmea()  # do process
@@ -16,6 +17,7 @@ def process_nmea_report_file(report_instance):
     # submit result in db
     report_detail = ReportDetail.objects.get_or_create(report=instance)[0]
 
+    # fetch process result
     report_detail.max_speed = parser.max_speed
     report_detail.avg_speed = parser.avg_speed
     report_detail.max_accel = parser.max_accel
@@ -25,6 +27,8 @@ def process_nmea_report_file(report_instance):
     report_detail.min_alt = parser.min_alt
     report_detail.signal_status = parser.signal_status
     report_detail.avg_gps_count = parser.avg_gps_count
+
+    # fetch array data
     report_detail.lon_array = parser.lon_array
     report_detail.alt_array = parser.alt_array
     report_detail.sep_array = parser.sep_array
@@ -39,5 +43,8 @@ def process_nmea_report_file(report_instance):
     report_detail.sv_array = parser.sv_array
     report_detail.status_array = parser.status_array
     report_detail.quality_array = parser.quality_array
+
+    # set score
+    report_detail.score = parser.calculate_flight_score() + saqr.calculate_fundamental_score()
 
     report_detail.save()

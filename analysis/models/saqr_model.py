@@ -5,6 +5,7 @@ from django.db import models
 from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
+from analysis_settings.services import ParametersHandler
 from painless.utils.models.mixins import (
     Sku_Mixin,
     TimeStampModelMixin,
@@ -61,3 +62,10 @@ class Saqr(Sku_Mixin, TimeStampModelMixin, TitleSlugLinkModelMixin):
         if not self.slug:
             self.slug = slugify(self.title, allow_unicode=True)
         super(Saqr, self).save(*args, **kwargs)
+
+    def calculate_fundamental_score(self):
+        """calculate score based on age, weight and ..."""
+        parameters = ParametersHandler.get_from_cache()
+        weight_score = self.weight * parameters.weight_ratio if self.weight else 0
+        age_score = self.age * parameters.age_ratio if self.age else 0
+        return sum([weight_score, age_score])
