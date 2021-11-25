@@ -18,6 +18,10 @@ class User(AbstractUser):
         _('Is Verified'),
         default=False
     )
+    is_operator = models.BooleanField(
+        _('Is Operator'),
+        default=False
+    )
 
     class Meta:
         verbose_name = _('User')
