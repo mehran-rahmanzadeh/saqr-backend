@@ -26,6 +26,12 @@ class Saqr(Sku_Mixin, TimeStampModelMixin, TitleSlugLinkModelMixin):
         blank=True
     )
 
+    image = models.ImageField(
+        _('Image'),
+        null=True,
+        blank=True
+    )
+
     owner = models.ForeignKey(
         get_user_model(),
         related_name='saqrs',
