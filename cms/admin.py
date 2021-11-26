@@ -6,6 +6,8 @@ from django.contrib import admin
 
 from cms.models.aboutcompany import AboutCompany
 
+from cms.models.abouttest import AboutTest
+
 from cms.models.abouttracker import AboutTracker
 
 from cms.models.aboutdashboard import AboutDashboard
@@ -96,6 +98,35 @@ class AboutDashboardAdmin(admin.ModelAdmin):
                 'title_en', 'title_ar',
                 'description_en', 'description_ar',
                 'first_image', 'second_image'
+            )
+        }),
+    )
+
+    def has_add_permission(self, *args, **kwargs):
+        return True
+
+    def has_change_permission(self, *args, **kwargs):
+        return True
+
+    def has_delete_permission(self, *args, **kwargs):
+        return True
+
+
+@admin.register(AboutTest)
+class AboutTestAdmin(admin.ModelAdmin):
+    """
+    AboutTest Admin
+    Auto generated
+    """
+    list_display = ['title', 'created', 'modified']
+
+    search_fields = ['title', 'description']
+
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title_en', 'title_ar',
+                'description_en', 'description_ar',
             )
         }),
     )

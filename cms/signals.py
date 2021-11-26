@@ -5,8 +5,9 @@ Automatically generated with ❤️ by django-sage-painless
 
 from django.db.models import signals
 
-
 from cms.models.aboutcompany import AboutCompany
+
+from cms.models.abouttest import AboutTest
 
 from cms.models.abouttracker import AboutTracker
 
@@ -53,10 +54,10 @@ def howtogetcertificate_clear_cache(sender, **kwargs):
 
 signals.post_save.connect(
     howtogetcertificate_clear_cache,
-     sender=HowToGetCertificate)
+    sender=HowToGetCertificate)
 signals.pre_delete.connect(
     howtogetcertificate_clear_cache,
-     sender=HowToGetCertificate)
+    sender=HowToGetCertificate)
 
 
 def contactus_clear_cache(sender, **kwargs):
@@ -81,3 +82,11 @@ def siteinfo_clear_cache(sender, **kwargs):
 
 signals.post_save.connect(siteinfo_clear_cache, sender=SiteInfo)
 signals.pre_delete.connect(siteinfo_clear_cache, sender=SiteInfo)
+
+
+def abouttest_clear_cache(sender, **kwargs):
+    clear_cache_for_model(sender.CACHE_KEY)
+
+
+signals.post_save.connect(aboutcompany_clear_cache, sender=AboutTest)
+signals.pre_delete.connect(aboutcompany_clear_cache, sender=AboutTest)

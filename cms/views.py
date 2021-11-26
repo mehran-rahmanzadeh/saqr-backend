@@ -4,6 +4,7 @@ from blog.models.post import Post
 from calls.forms import GetInTouchForm
 from cms.models.aboutcompany import AboutCompany
 from cms.models.aboutdashboard import AboutDashboard
+from cms.models.abouttest import AboutTest
 from cms.models.abouttracker import AboutTracker
 from cms.models.contactus import ContactUs
 from cms.models.faq import Faq
@@ -20,6 +21,7 @@ class IndexView(TemplateView):
         context['about_company'] = AboutCompany.get_all_from_cache()[0] if AboutCompany.get_all_from_cache() else None
         context['about_tracker'] = AboutTracker.get_all_from_cache()[0] if AboutTracker.get_all_from_cache() else None
         context['about_dashboard'] = AboutDashboard.get_all_from_cache()[0] if AboutDashboard.get_all_from_cache() else None
+        context['about_test'] = AboutTest.get_all_from_cache()[0] if AboutTest.get_all_from_cache() else None
         context['get_certified'] = HowToGetCertificate.get_all_from_cache()[0] if HowToGetCertificate.get_all_from_cache() else None
         posts = Post.objects.filter(show_in_index=True).order_by('?')[:4]
         context['right_up_blog_post'] = posts[0]

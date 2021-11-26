@@ -2,6 +2,7 @@ from modeltranslation.translator import register, TranslationOptions
 
 from cms.models.aboutcompany import AboutCompany
 from cms.models.aboutdashboard import AboutDashboard
+from cms.models.abouttest import AboutTest
 from cms.models.abouttracker import AboutTracker
 from cms.models.contactus import ContactUs
 from cms.models.faq import Faq
@@ -19,6 +20,14 @@ class AboutCompanyTranslationOptions(TranslationOptions):
 
 @register(AboutDashboard)
 class AboutDashboardTranslationOptions(TranslationOptions):
+    fields = (
+        'title',
+        'description'
+    )
+
+
+@register(AboutTest)
+class AboutTestTranslationOptions(TranslationOptions):
     fields = (
         'title',
         'description'
