@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
 from analysis.models.report_model import Report, ReportDetail
 from analysis.models.saqr_model import Saqr
@@ -13,6 +14,29 @@ class ReportDetailStackedAdminInline(admin.StackedInline):
         'avg_alt', 'signal_status', 'avg_gps_count',
         'score'
     ]
+    can_delete = False
+
+
+class SaqrOwnerTabularInline(admin.TabularInline):
+    model = Saqr
+    extra = 0
+    fk_name = 'owner'
+
+
+class ReportSubmittedTabularInline(admin.TabularInline):
+    model = Report
+    extra = 0
+    fk_name = 'submitted_by'
+    verbose_name = _('Submitted Report')
+    verbose_name_plural = _('Submitted Reports')
+
+
+class SaqrReportTabularInline(admin.TabularInline):
+    model = Report
+    extra = 0
+    fk_name = 'saqr'
+    verbose_name = _('SAQR Report')
+    verbose_name_plural = _('SAQR Reports')
 
 
 @admin.register(Report)
@@ -21,6 +45,9 @@ class ReportAdmin(admin.ModelAdmin):
         ReportDetailStackedAdminInline
     ]
     list_display = ['sku', 'created', 'modified']
+    list_filter = [
+        'show_in_public_page'
+    ]
 
     def save_model(self, request, obj, form, change):
         obj.submitted_by = request.user
@@ -66,18 +93,23 @@ class SaqrAdmin(admin.ModelAdmin):
         'title',
         'age',
         'weight',
-        'owner',
+        'is_verified',
         'created',
         'modified'
     ]
 
     list_filter = [
+        'is_verified',
         'created',
         'modified'
     ]
 
     search_fields = [
         'title',
+    ]
+
+    inlines = [
+        SaqrReportTabularInline
     ]
 
     def save_model(self, request, obj, form, change):
