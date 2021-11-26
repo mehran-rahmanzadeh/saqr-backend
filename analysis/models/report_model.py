@@ -28,6 +28,11 @@ class Report(Sku_Mixin, TimeStampModelMixin):
         editable=False
     )
 
+    show_in_public_page = models.BooleanField(
+        _('Is it allowed to show in public page'),
+        default=True
+    )
+
     def __str__(self):
         return f'Report for file {self.saqr}'
 

@@ -23,7 +23,7 @@ class TotalReportViewset(GenericViewSet, ListModelMixin):
     """Total Report Viewset"""
     serializer_class = MinimizedReportSerializer
     permission_classes = (AllowAny,)
-    queryset = Report.objects.select_related('saqr', 'report_detail')
+    queryset = Report.objects.filter(show_in_public_page=True).select_related('saqr', 'report_detail')
     filter_backends = [OrderingFilter]
     ordering_fields = (
         'report_detail__max_speed',
