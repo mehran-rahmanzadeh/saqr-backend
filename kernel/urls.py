@@ -36,10 +36,13 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = i18n_patterns(
+    # admin
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('sos7243/postgres-metrics/', include('postgres_metrics.urls')),
     path('sos7243/docs/', include('django.contrib.admindocs.urls')),
     path('sos7243/', admin.site.urls, name='admin'),
+
+    # API
     path('i18n/', include('django.conf.urls.i18n')),
     path('api/v1/', include('cms.api.urls')),
     path('api/v1/', include('calls.api.urls')),
@@ -47,6 +50,10 @@ urlpatterns = i18n_patterns(
     path('api/v1/', include('analysis.api.urls')),
     path('api/v1/', include('authentication.api.urls')),
     path('api/doc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-swagger-ui'),
+
+    # mvt pages
+    path('', include('cms.urls')),
+    path('', include('calls.urls')),
 ) + static(
     settings.STATIC_URL, document_root=settings.STATIC_ROOT
     ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
