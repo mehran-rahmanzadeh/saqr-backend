@@ -1,0 +1,800 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #2a2a2a;
+    direction: rtl;
+}
+
+body:last-child{
+  padding-bottom: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+h3{
+	font-family: 'OleoScript';
+	color: #fff;
+	text-align: right;
+  font-size: 25px !important;
+
+}
+h5{
+	font-family: 'OleoScript';
+	color: #fff;
+	text-align: right;
+  margin-bottom: 5px;
+}
+p{
+	font-family: 'AvenirNextRounded';
+	font-size: 18px;
+    text-align: justify;
+	color: #FFF !important;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+  }
+  
+  .progress-container {
+    width: 100%;
+    height: 8px;
+    background: #930033
+    ;
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background: #d20045;
+    width: 0%;
+  }
+  
+  .content {
+    padding: 100px 0;
+    margin: 50px auto 0 auto;
+    width: 80%;
+  }
+  .progress-container > svg {
+    position: absolute;
+    left: 50%;
+    margin-left: -33px;
+    top: 8px;
+  }
+  
+  nav{
+    height: 68px;
+    background-color: #2e2e2e;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 50px;
+    display: flex;
+    align-content:center;
+    justify-content: space-between;
+  }
+  nav>div{
+    display: flex;
+    align-content: center;
+  }
+  .fa-th-large{
+    color: #ffF;
+  }
+
+  .sotial-media-div{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ffF;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+    margin-top: 6px;
+
+  }
+  .sotial-media-div>i{
+    color: #ffF;
+  }
+
+  .topmenuicon{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 23px;
+  }
+
+  .bottom-menu{
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    background-color: #930033;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottom-menu>i{
+    color: #d20045;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 23px;
+
+  }
+
+  .bottom-menu>span{
+    font-family: 'AvenirNextRounded';
+    color: #FFF;
+    font-weight: bold;
+  }
+  .intro-image-background{
+    width: 100%;
+    height: 280px;
+  }
+
+  .main-sec{
+    position: relative;
+  }
+  .main-sec>.shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.4;
+    width: 100%;
+    height: 280px;
+  }
+  .main-sec >svg{
+    position: absolute;
+    top: 5px;
+    z-index: 11;
+    left: 0;
+    width: 100%;
+
+  }
+
+  tspan{
+    font-family: doha;
+  }
+
+
+  .main-sec-data{
+    position: absolute;
+    top: 85px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .main-sec-data>h2{
+    font-family: doha;
+    color: #ffF;
+    margin-bottom: 5px;
+  }
+
+  .main-sec-intro{
+    padding: 20px 7%;
+  }
+
+
+
+.material-textbox {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+	font-size: 16px;
+
+}
+  
+  .material-textbox > input {
+	border: 1px solid #FFF;
+	padding: 10px;
+	border-radius: 4px;
+	transition: 0.2s ease;
+	background-color: #2a2a2a;
+	color: #FFF;
+	height: 18px;
+	width: 270px;
+	font-size: 16px;
+
+
+  }
+
+  .material-textbox > textarea {
+	border: 1px solid #FFF;
+	padding: 10px;
+	border-radius: 4px;
+	transition: 0.2s ease;
+	background-color: #2a2a2a;
+	color: #FFF;
+	height: 18px;
+	width: 270px;
+	font-size: 16px;
+
+
+  }
+  
+  .material-textbox > label {
+	position: absolute;
+	margin: 10px;
+	background-color: #2a2a2a;
+	left: 0;
+	transition: 0.2s ease;
+	font-size: 16px;
+  }
+  
+  .material-textbox > input:focus {
+	outline: none;
+  }
+
+  .material-textbox > textarea:focus {
+	outline: none;
+  }
+  
+  .material-textbox > input:focus + label,
+  .material-textbox > input:valid + label {
+	margin-top: -9px;
+	margin-left: 5px;
+	color: blue;
+	font-size: 16px;
+  }
+
+  .material-textbox > label {
+	position: absolute;
+	margin: 10px;
+	background-color: #2a2a2a;
+	left: 0;
+	transition: 0.2s ease;
+	font-size: 16px;
+  }
+  textarea {
+	resize: none;
+  }
+  .material-textbox > textarea:focus {
+	outline: none;
+  }
+  
+  .material-textbox > textarea:focus + label,
+  .material-textbox > textarea:valid + label {
+	margin-top: -9px;
+	margin-left: 5px;
+	color: blue;
+	font-size: 16px;
+  }
+
+  textarea{
+    font-family: 'AvenirNextRounded' !important;
+
+  }
+
+
+  .btn {
+	flex: 1 1 auto;
+	padding: 12px 22px;
+	text-align: center;
+	transition: 0.5s;
+	width: 150px;
+	background-size: 200% auto;
+	color: white;
+	font-family: 'AvenirNextRounded' !important;
+	border-radius: 6px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+   }
+   .btn-3 {
+	background-image: linear-gradient(to right, #8a1838 0%, #e72861 40%, #e72861 100%);
+  }
+  
+  .btn:hover {
+	background-position: right center; /* change the direction of the change here */
+  }
+  .btn-3 >svg{
+	  margin-left: 10px;
+	  margin-right: 10px;
+  }
+
+  .inutclass{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .inutclass>div{
+    margin-bottom: 10px;
+  }
+
+  .falcon-image{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+
+  }
+
+  .class-image{
+    width: 300px;
+    height: 391px;
+  }
+
+
+
+
+.hawk-image-description-1-div{
+  position: absolute;
+  right: 156px;
+  top: 24px;
+  z-index: 100;
+  
+  }
+  
+  .sec-section-image{
+	position: absolute;
+	height: 80%;
+	bottom: 0;
+	z-index: 1;
+	right: 4%;
+	
+  }
+  
+  .hawk-image-description-1-text{
+    position: absolute;
+    color: #FFF;
+    left: 28px;
+    top: 8px;
+    font-family: 'AvenirNextRounded';
+    font-weight: bold;
+    font-size: 13px;	
+  }
+  
+  .hawk-image-description-2-text{
+    position: absolute;
+    color: #FFF;
+    left: 8px;
+    top: 26px;
+    font-family: 'AvenirNextRounded';
+    font-weight: bold;
+    font-size: 13px;
+
+	
+  }
+  .hawk-image-description-3-text{
+    position: absolute;
+    color: #FFF;
+    left: 23px;
+    top: 32px;
+    font-family: 'AvenirNextRounded';
+    font-weight: bold;
+    font-size: 13px;
+
+	
+  }
+  span{
+	  font-family: "AvenirNextRounded";
+  }
+  .hawk-image-description-2-div{
+    position: absolute;
+    right: 138px;
+    top: 126px;
+    z-index: 100;
+  }
+  
+  .hawk-image-description-3-div{
+    position: absolute;
+    right: 189px;
+    top: 210px;
+    font-family: 'AvenirNextRounded';
+    font-weight: bold;
+    z-index: 100;
+  
+  }
+  
+  
+  
+  .pulse {
+	display: block;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background: #FFF;
+	cursor: pointer;
+	box-shadow: 0 0 0 #FFF;
+	animation: pulse1 1s infinite;
+	animation-delay: 3s;
+  }
+  
+  @-webkit-keyframes pulse1 {
+	0% {
+	  -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.459);
+	}
+	
+	100% {
+		-webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+	}
+  }
+  @keyframes pulse1 {
+	0% {
+	  -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.459);
+	  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.459);
+	}
+	100% {
+		-moz-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.075);
+		box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+	}
+  }
+
+
+  .pulse1{
+    right: 0px;
+    top: 43px;
+    z-index: 200;
+    }
+    
+    .pulse2{
+    right: 0px;
+    top: 25px;
+    z-index: 200;
+    }
+    
+    .pulse3{
+    right: 0px;
+    top: -9px;
+    z-index: 200;
+    
+    }
+  
+.intro3-image>img{
+  width: 100%;
+  border-radius: 6px;
+}
+
+.twin-image-div-v{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.twin-image-div-v>div{
+  width: 50%;
+  padding: 5px;
+}
+
+.twin-image-div-v>div>img{
+  border-radius: 8px;
+  width: 100%;
+
+}
+
+.about-tracker{
+  padding: 20px;
+}
+
+.about-tracker>img{
+  width: 100%;
+}
+
+.about-tracker>p{
+  font-size: 14px;
+}
+.dashboard-sec{
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.dashboard-sec> .image{
+  position: relative;
+}
+
+.image-1-dashboard{
+    position: absolute;
+    height: 139px;
+    width: 192px;
+    left: 111px;
+    top: 181px;
+    border-radius: 11px;
+}
+.image-2-dashboard{
+  position: absolute;
+  height: 139px;
+  width: 192px;
+  left: 0px;
+  top: 20px;
+  border-radius: 11px;
+
+}
+.blogList{
+  padding: 20px;
+}
+.post{
+  position: relative;
+  margin-bottom: 30px;
+}
+.post >.shadow{
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+  background-color: #2a2a2a48;
+}
+.post >img{
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+}
+
+.post >h3{
+  margin-top: 5px;
+  margin-bottom:5px;
+  font-size: 22px !important;
+}
+
+.contactus{
+  padding: 20px;
+}
+
+
+.contactus3line{
+  display: flex;
+  padding-left: 12%;
+  padding-right: 12%;
+  
+}
+
+.contactusitems{
+  display: flex;
+  padding-left: 12%;
+  padding-right: 12%;
+  align-items: center;
+}
+.contactusitems >p{
+  margin-right: 8px;
+}
+
+.sotial-media-footer{
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.sotial-media-nav{
+	width: 30px;
+	height: 30px;
+	border: 1px #fff solid;
+	border-radius: 3px;
+	margin: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition-property: all;
+	transition-duration: 400ms;
+	cursor: pointer;
+}
+.sotial-media-nav > i{
+	color: #FFF;
+}
+.width40sotial{
+		width: 40px !important;
+		height: 40px !important;
+		font-size: 20px !important;
+	}
+
+  form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+.accordion-head{
+	text-align: left;
+	font-family: "AvenirNextRounded";
+	width: 100%;
+	height: 58px;
+	border: 1px solid #FFF;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 40px 0px 0px 40px;
+	cursor: pointer;
+	margin-top: 15px;
+
+}
+.accordion-head >h6{
+	margin-left: 10px;
+  margin-right: 10px;
+	font-size: 14px;
+  color: #FFF;
+  text-align: initial;
+}
+.accordion-head > i{
+  color: #FFF;
+  margin-left: 10px;
+}
+.accordion-head--active{
+	background-image: linear-gradient(to right, #e72861 0%, #8a1838 40%, #8a1838 100%);
+	border: 1px solid transparent;
+
+}
+
+.arrowiconaccordion{
+	font-size: 21px;
+	margin-right: 25px;
+	transition: all 400ms;
+}
+.accordion-detail{
+	width: 90%;
+	padding: 10px;
+}
+
+.accordion-detail>p{
+	font-size: 12px;
+}
+.fa-chevron-down{
+	font-size: 14px;
+}
+
+.footer-text{
+	font-family: "doha";
+	font-size: 228px !important;
+  margin: unset;
+  text-align: center;
+	color: rgba(255, 255, 255, 0.349) !important;
+}
+
+.flex-center-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  background-color: #2e2e2e;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 32px 8px 32px;
+  text-decoration: none;
+  font-size: 20;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-family: AvenirNextRounded;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+.transform180{
+  transform: rotate(180deg);
+  }
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  font-size: 36px;
+  margin-left: 5px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.breadcom{
+	display: flex;
+	align-items: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.breadcom >i{
+	font-size: 12px;
+	margin-top: 2px;
+}
+
+.breadcom > *{
+	padding-right: 5px;
+	padding-left: 5px;
+
+	color: #FFF;
+	font-family: 'AvenirNextRounded';
+}
+
+a{
+	text-decoration: underline;
+	text-decoration-color: unset;
+	text-decoration-line: unset;
+}
+
+
+.pagination {
+	display: inline-block;
+  }
+  
+  .pagination a {
+	color: #fff;
+	float: left;
+    padding: 6px 10px;
+	text-decoration: none;
+	font-family: 'AvenirNextRounded';
+	border-radius: 3px;
+	border: 1px solid #ffffff96;
+	margin-left: 3px;
+	margin-right: 3px;
+	font-size: 13px;
+  }
+  
+  .pagination a.active {
+	background-color: #e72861;
+	color: #FFF;
+	border: 1px solid transparent !important;
+
+  }
+  
+  .pagination a:hover:not(.active) {
+	background-color: rgba(255, 255, 255, 0.185);
+	border-radius: 5px;
+
+  }
+  .bottom-pagination{
+	  display: flex;
+	  align-content: center;
+	  justify-content: center;
+  }
+
+  .bottom-pagination-a >a{
+	  font-size: 15px !important;
+	  padding: 8px 13px !important;
+  }
+
+  .video-svg{
+    position: absolute;
+  left: 50%;
+  margin-left: -44px;
+  top: 56px;
+  }
+  
