@@ -67,6 +67,10 @@ class Post(models.Model, ModelCacheMixin):
              blank=True,
              
     )
+
+    show_in_index = models.BooleanField(
+        default=True
+    )
     
     created = models.DateTimeField(
              auto_now_add=True,

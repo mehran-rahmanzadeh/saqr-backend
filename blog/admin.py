@@ -86,6 +86,9 @@ class PostAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             'fields': (
+                'kind', 'image', 'video_cover',
+                'video', 'category', 'tags',
+                'show_in_index',
                 'title_en', 'title_ar',
                 'body_en', 'body_ar'
             )
