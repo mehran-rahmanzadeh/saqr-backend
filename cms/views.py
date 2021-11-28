@@ -41,6 +41,7 @@ class IndexView(TemplateView):
         context['left_up_blog_post'] = posts[2]
         context['left_down_blog_post'] = posts[3]
         context['center_blog_post'] = Post.objects.last()
+        context['responsive_posts'] = Post.objects.order_by('-created')[:4]
         context['contact_us'] = ContactUs.get_all_from_cache()[0] if ContactUs.get_all_from_cache() else None
         context['faqs'] = Faq.get_all_from_cache()
 
