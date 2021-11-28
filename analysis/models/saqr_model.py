@@ -13,6 +13,21 @@ from painless.utils.models.mixins import (
 )
 
 
+class SaqrImage(TimeStampModelMixin):
+    """SAQR Image model"""
+    image = models.ImageField(
+        _('Image'),
+        upload_to='saqr-images/'
+    )
+
+    def __str__(self):
+        return self.image.url
+
+    class Meta:
+        verbose_name = _('Saqr Image')
+        verbose_name_plural = _('Saqr Images')
+
+
 class Saqr(Sku_Mixin, TimeStampModelMixin, TitleSlugLinkModelMixin):
     """SAQR model"""
     weight = models.PositiveIntegerField(
@@ -27,10 +42,17 @@ class Saqr(Sku_Mixin, TimeStampModelMixin, TitleSlugLinkModelMixin):
         blank=True
     )
 
-    image = models.ImageField(
-        _('Image'),
+    images = models.ManyToManyField(
+        SaqrImage,
+        blank=True,
+        related_name='saqrs'
+    )
+
+    passport_image = models.ImageField(
+        _('Passport Image'),
         null=True,
-        blank=True
+        blank=True,
+        upload_to='saqr-passports/'
     )
 
     owner = models.ForeignKey(
