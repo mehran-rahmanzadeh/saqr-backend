@@ -5,7 +5,7 @@ from statistics import mean
 import numpy as np
 from django.conf import settings
 
-from pynmeagps import NMEAReader
+from pynmeagps import NMEAReader, NMEAParseError
 from pynmeagps.nmeamessage import NMEAMessage
 from pykalman import KalmanFilter
 
@@ -134,7 +134,12 @@ class Parser:
             if not gps_row:
                 continue
 
-            parsed_data = NMEAReader.parse(bytes(gps_row))
+            try:
+                parsed_data = NMEAReader.parse(bytes(gps_row))
+            except NMEAParseError as e:
+                if debug:
+                    print(f'[ERROR]: {e}')
+                parsed_data = None
 
             if parsed_data:
 
