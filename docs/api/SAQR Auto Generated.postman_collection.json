@@ -1,0 +1,2509 @@
+{
+	"info": {
+		"_postman_id": "b76450ff-930a-47a2-acce-82003bd93ae1",
+		"name": "SAQR Auto Generated",
+		"description": "Auto Generated API Docs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "aboutcompany",
+			"item": [
+				{
+					"name": "aboutcompany list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/aboutcompany/?limit=<integer>&offset=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"aboutcompany",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "<integer>",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "<integer>",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "AboutCompany Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/aboutcompany/?limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"aboutcompany",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": 16600417,\n \"results\": [\n  {\n   \"title\": \"in sed amet irure\",\n   \"description\": \"fugiat nostrud\",\n   \"id\": -27207859,\n   \"first_image\": \"https://uQHqIKTcxoFRspbGZr.aqnBiocNLf,MqA-hvZ8XSY.kKOheZI7uK8Wvz40R9,J2vBB\",\n   \"second_image\": \"http://fipiPbnzqWYFocIicgWdrysbgjsA.ktfiVt.wffyj,cHA5AeOK13m9okKQdB5c6Y88EkcLgjHmJ6j,YqpKD\",\n   \"video_cover\": \"http://bhUQUxfogYluIkWPAd.itkusw+mmQl5lKSVXcWwCIAyYgUB.aUlt3V7mLnhkhtB6kmyrhs8AvQcvYgK\",\n   \"video\": \"https://KMnkNMtbJK.ysysDgg0-W-lstCBlWothCISHw5v9ayX6Kl\",\n   \"created\": \"1975-10-22T06:53:36.994Z\",\n   \"modified\": \"1954-03-10T12:48:30.885Z\"\n  },\n  {\n   \"title\": \"dolor\",\n   \"description\": \"aute ipsum Ut\",\n   \"id\": 23355729,\n   \"first_image\": \"https://HIiiXwuWqfamQbYkAVQivmjlEGJNRja.zeliPSb0IdmgAYg3ENGcmCHmKonDfcDGUFF\",\n   \"second_image\": \"http://kTBciAGEOUXwmNLSmzoYmZQZY.cgbhLPI\",\n   \"video_cover\": \"https://xjVZpkQjweiZAtYziilxESD.yurb06NaRgT7fSPlRKAvZ\",\n   \"video\": \"http://oTbbrMWxulYDtTXX.zbclrmdU17vPbJroSsP..xfbTsABeGiUf0pw9DQNuGGjgefmMX8JxhY6JfEnLTQT.De\",\n   \"created\": \"1949-08-01T04:25:27.990Z\",\n   \"modified\": \"1953-10-21T11:43:16.019Z\"\n  }\n ],\n \"next\": \"https://sOilgzwSjisQdmatfx.pgnYqdjKIgNRvAIAiPmz4jK4b3LAdO3A-EFCVS-f3x2Qz5B\",\n \"previous\": \"https://sfYcGavnhAlYtRfsqNMNBX.lqetAMvADKQ-kayAwfmM+3Ag.CkO+L9t3YzjtlKNc+X.rHay\"\n}"
+						}
+					]
+				},
+				{
+					"name": "aboutcompany read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/aboutcompany/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"aboutcompany",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "AboutCompany Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/aboutcompany/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"aboutcompany",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"title\": \"anim commodo\",\n \"description\": \"nisi amet dolore reprehenderit do\",\n \"id\": 60677587,\n \"first_image\": \"http://gmryUksnLZUMOdwgH.myhmOXHfUUFI5D-C7CEEcTqCeV\",\n \"second_image\": \"http://UzdKDlWAouLwbpLEJTt.xaUY1IThFXJyis30F5V2oJ3YGg2lNbrEqNY3v0XBKn\",\n \"video_cover\": \"https://zrpYbchrTAWYDMFOzRnRDkUpiq.yzhEGpwmQCR5gPoxSbqIjlwM3eBGuBJ2JrdJZ4LhhPXuWAOEYRTyE08cO7ETCPP\",\n \"video\": \"http://XxlElcfRrxK.ppVQ3mEhi0DCxYEPKR,YF7bMNIBdF.KQ+VIPi,\",\n \"created\": \"1982-09-16T22:09:21.243Z\",\n \"modified\": \"1979-09-19T05:38:06.255Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "aboutdashboard",
+			"item": [
+				{
+					"name": "aboutdashboard list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/aboutdashboard/?limit=<integer>&offset=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"aboutdashboard",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "<integer>",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "<integer>",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "AboutDashboard Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/aboutdashboard/?limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"aboutdashboard",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -74253858,\n \"results\": [\n  {\n   \"title\": \"magna ullamco\",\n   \"description\": \"culpa dolore labore fugiat do\",\n   \"id\": -35280065,\n   \"first_image\": \"https://TjMcXvGIdobwjVCbWFnIRXwkeyyEmR.zinjdfnuvImiSK,\",\n   \"second_image\": \"https://fUOxXGhs.rtiREz0eFwIGJOxgwVNe,9\",\n   \"created\": \"2003-03-12T11:57:50.814Z\",\n   \"modified\": \"1978-03-26T15:53:48.285Z\"\n  },\n  {\n   \"title\": \"exercitation sunt\",\n   \"description\": \"labore nostrud\",\n   \"id\": -22908740,\n   \"first_image\": \"http://Z.wusikkqgwT3Zox7\",\n   \"second_image\": \"https://juhkIDbi.ifmlVThB6KkqfDqoFbniGAhZRn3997hNJJwTI0GHioaAktF0\",\n   \"created\": \"1952-02-25T13:03:56.929Z\",\n   \"modified\": \"1997-02-23T06:56:37.129Z\"\n  }\n ],\n \"next\": \"https://loDRrewYRVp.hbblD6Yncf1gAB-cyPLtiVWEnwR+Xin8pWZ0uQQJwzDHN,CL..Mzw.Zm-bs\",\n \"previous\": \"https://auqZbSoRhVxWuBahUKRigyWLGvTE.lwguQn8OH6NOihj+mOl71lxvO4SXdZj,fSBDgmKCG67lsyLZzZ4S\"\n}"
+						}
+					]
+				},
+				{
+					"name": "aboutdashboard read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/aboutdashboard/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"aboutdashboard",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "AboutDashboard Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/aboutdashboard/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"aboutdashboard",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"title\": \"dolore irure esse culpa\",\n \"description\": \"do\",\n \"id\": -77715065,\n \"first_image\": \"https://aA.hoi6g-qkEGiwHEYR12,IrKWwBOubfapFv,M\",\n \"second_image\": \"http://LNFDqevQAsEqUpZkeGqK.zdwrrRtZdM0PAPZ7GwwyjJ\",\n \"created\": \"2012-08-29T02:56:54.199Z\",\n \"modified\": \"2013-11-11T11:08:25.087Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "abouttracker",
+			"item": [
+				{
+					"name": "abouttracker list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/abouttracker/?limit=<integer>&offset=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"abouttracker",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "<integer>",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "<integer>",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "AboutTracker Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/abouttracker/?limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"abouttracker",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -309424,\n \"results\": [\n  {\n   \"title\": \"culpa laborum laboris aliqua non\",\n   \"description\": \"aliqua\",\n   \"id\": 12174556,\n   \"image\": \"https://TZwrWesbeKFsTlmzuTtoQgzJ.nxeOisaaQPzN3-i7w6oTJSFp9Wz88Tuy6\",\n   \"created\": \"1988-10-02T17:34:51.937Z\",\n   \"modified\": \"2012-12-15T01:54:55.617Z\"\n  },\n  {\n   \"title\": \"nisi amet do dolore\",\n   \"description\": \"deserunt\",\n   \"id\": 51585205,\n   \"image\": \"https://ThQAvvdyHmyGwGujnPdLyS.igwP9T1OQVzIu9\",\n   \"created\": \"1953-04-28T14:33:49.132Z\",\n   \"modified\": \"1994-07-06T10:16:27.664Z\"\n  }\n ],\n \"next\": \"https://VfiFAJ.bxeskg2Hrm-+85KXiO-\",\n \"previous\": \"https://DINemnFRhyuerE.fcamIXokfxXz-+uSJbj+TexkD-Rqy2ojIO\"\n}"
+						}
+					]
+				},
+				{
+					"name": "abouttracker read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/abouttracker/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"abouttracker",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "AboutTracker Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/abouttracker/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"abouttracker",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"title\": \"laborum cupidatat exercitation labore do\",\n \"description\": \"est amet mol\",\n \"id\": -5094041,\n \"image\": \"https://tKlcBLllmmotYfFCsnZxm.spJ0DbDdG478eM+xspXtwQGj4Kv3xJjelAsdhWtmnbivcGNG9tsvEC\",\n \"created\": \"1959-03-05T17:39:14.942Z\",\n \"modified\": \"1955-12-25T01:22:16.382Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "category list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/category/?limit=10&offset=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "Category Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/category/?limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -99802744,\n \"results\": [\n  {\n   \"title\": \"enim qui nostrud\",\n   \"id\": -91412534,\n   \"created\": \"1969-08-28T02:25:44.797Z\",\n   \"modified\": \"1943-10-02T22:06:59.929Z\"\n  },\n  {\n   \"title\": \"Lorem enim voluptate\",\n   \"id\": -1325205,\n   \"created\": \"1983-08-29T11:09:07.399Z\",\n   \"modified\": \"1968-05-23T09:27:42.415Z\"\n  }\n ],\n \"next\": \"https://GzqPmsiRkAojnprRfeZCvgPp.baujcl2YCoiJ9p5yOdd0ypMCD5LtH\",\n \"previous\": \"https://jQGHJUgKZjqMXAQGtAQAjXk.wzvgx1Viy0SpIXBUPzhTUNEoHLM7mLNgPh60GT+lJSisdECS14ZVdutw\"\n}"
+						}
+					]
+				},
+				{
+					"name": "category read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/category/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Category Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/category/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"title\": \"cupidatat sed\",\n \"id\": -76735006,\n \"created\": \"1974-08-20T08:45:55.962Z\",\n \"modified\": \"1986-10-02T20:42:05.042Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "contactus",
+			"item": [
+				{
+					"name": "contactus list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/contactus/?limit=<integer>&offset=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contactus",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "<integer>",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "<integer>",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "ContactUs Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/contactus/?limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contactus",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": 87013741,\n \"results\": [\n  {\n   \"title\": \"amet Lorem Excepteur\",\n   \"description\": \"elit dolor n\",\n   \"tel\": \"am\",\n   \"email\": \"aliqua laborum\",\n   \"id\": 50189464,\n   \"created\": \"2019-11-01T00:45:24.875Z\",\n   \"modified\": \"1990-12-25T22:14:21.102Z\"\n  },\n  {\n   \"title\": \"esse laborum\",\n   \"description\": \"sunt\",\n   \"tel\": \"Ut ipsum \",\n   \"email\": \"cillum dolor\",\n   \"id\": 38497400,\n   \"created\": \"1978-04-01T14:09:35.179Z\",\n   \"modified\": \"1969-01-04T16:10:41.824Z\"\n  }\n ],\n \"next\": \"http://vKGugSliiqsM.upU7bv+H+WGwvz5Zz8R49l1d+P\",\n \"previous\": \"http://JDtG.gyx0bv+cTKtPhmR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "contactus read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/contactus/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contactus",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "ContactUs Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/contactus/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contactus",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"title\": \"est cillum mollit ex aliquip\",\n \"description\": \"incididunt eiusmod officia amet\",\n \"tel\": \"nisi\",\n \"email\": \"eiusmod Duis irure\",\n \"id\": -35613749,\n \"created\": \"1997-01-28T19:36:39.828Z\",\n \"modified\": \"2020-10-17T20:03:06.548Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "faq",
+			"item": [
+				{
+					"name": "faq list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/faq/?limit=<integer>&offset=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"faq",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "<integer>",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "<integer>",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "Faq Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/faq/?limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"faq",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -50014152,\n \"results\": [\n  {\n   \"question\": \"sint aute in\",\n   \"answer\": \"nulla ut\",\n   \"id\": 80308682,\n   \"created\": \"1948-04-22T12:50:06.770Z\",\n   \"modified\": \"2020-12-03T23:53:39.077Z\"\n  },\n  {\n   \"question\": \"et enim labore\",\n   \"answer\": \"minim consequat est\",\n   \"id\": -92814658,\n   \"created\": \"2018-06-24T04:44:59.579Z\",\n   \"modified\": \"2011-09-26T19:41:29.946Z\"\n  }\n ],\n \"next\": \"http://vvUOZdyeEnxH.wybyyZL9XXFdT3KlfNW5q\",\n \"previous\": \"https://zMTbtoYAXdlyWTZJcqraYmHShQ.jeororhGSbDVn9NRt1+tO\"\n}"
+						}
+					]
+				},
+				{
+					"name": "faq read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/faq/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"faq",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Faq Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/faq/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"faq",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"question\": \"ut irure ullamco\",\n \"answer\": \"deserunt dolore amet labore\",\n \"id\": -52172992,\n \"created\": \"1965-09-05T06:43:28.522Z\",\n \"modified\": \"1951-04-16T00:14:56.813Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "howtogetcertificate",
+			"item": [
+				{
+					"name": "howtogetcertificate list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/howtogetcertificate/?limit=<integer>&offset=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"howtogetcertificate",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "<integer>",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "<integer>",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "HowToGetCertificate Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/howtogetcertificate/?limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"howtogetcertificate",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -309424,\n \"results\": [\n  {\n   \"title\": \"culpa laborum laboris aliqua non\",\n   \"description\": \"aliqua\",\n   \"id\": 12174556,\n   \"image\": \"https://TZwrWesbeKFsTlmzuTtoQgzJ.nxeOisaaQPzN3-i7w6oTJSFp9Wz88Tuy6\",\n   \"created\": \"1988-10-02T17:34:51.937Z\",\n   \"modified\": \"2012-12-15T01:54:55.617Z\"\n  },\n  {\n   \"title\": \"nisi amet do dolore\",\n   \"description\": \"deserunt\",\n   \"id\": 51585205,\n   \"image\": \"https://ThQAvvdyHmyGwGujnPdLyS.igwP9T1OQVzIu9\",\n   \"created\": \"1953-04-28T14:33:49.132Z\",\n   \"modified\": \"1994-07-06T10:16:27.664Z\"\n  }\n ],\n \"next\": \"https://VfiFAJ.bxeskg2Hrm-+85KXiO-\",\n \"previous\": \"https://DINemnFRhyuerE.fcamIXokfxXz-+uSJbj+TexkD-Rqy2ojIO\"\n}"
+						}
+					]
+				},
+				{
+					"name": "howtogetcertificate read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/howtogetcertificate/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"howtogetcertificate",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "HowToGetCertificate Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/howtogetcertificate/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"howtogetcertificate",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"title\": \"laborum cupidatat exercitation labore do\",\n \"description\": \"est amet mol\",\n \"id\": -5094041,\n \"image\": \"https://tKlcBLllmmotYfFCsnZxm.spJ0DbDdG478eM+xspXtwQGj4Kv3xJjelAsdhWtmnbivcGNG9tsvEC\",\n \"created\": \"1959-03-05T17:39:14.942Z\",\n \"modified\": \"1955-12-25T01:22:16.382Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "post list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/post/?kind=<string>&title=<string>&body=<string>&category__id=<number>&tags__id=<number>&created=<string>&modified=<string>&search=<string>&limit=<integer>&offset=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"post",
+								""
+							],
+							"query": [
+								{
+									"key": "kind",
+									"value": "<string>"
+								},
+								{
+									"key": "title",
+									"value": "<string>"
+								},
+								{
+									"key": "body",
+									"value": "<string>"
+								},
+								{
+									"key": "category__id",
+									"value": "<number>"
+								},
+								{
+									"key": "tags__id",
+									"value": "<number>"
+								},
+								{
+									"key": "created",
+									"value": "<string>"
+								},
+								{
+									"key": "modified",
+									"value": "<string>"
+								},
+								{
+									"key": "search",
+									"value": "<string>",
+									"description": "A search term."
+								},
+								{
+									"key": "limit",
+									"value": "<integer>",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "<integer>",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "Post Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/post/?kind=<string>&title=<string>&body=<string>&category__id=<number>&tags__id=<number>&created=<string>&modified=<string>&search=<string>&limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"post",
+										""
+									],
+									"query": [
+										{
+											"key": "kind",
+											"value": "<string>"
+										},
+										{
+											"key": "title",
+											"value": "<string>"
+										},
+										{
+											"key": "body",
+											"value": "<string>"
+										},
+										{
+											"key": "category__id",
+											"value": "<number>"
+										},
+										{
+											"key": "tags__id",
+											"value": "<number>"
+										},
+										{
+											"key": "created",
+											"value": "<string>"
+										},
+										{
+											"key": "modified",
+											"value": "<string>"
+										},
+										{
+											"key": "search",
+											"value": "<string>"
+										},
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -33188212,\n \"results\": [\n  {\n   \"kind\": \"image\",\n   \"title\": \"ad\",\n   \"body\": \"sint in veniam ipsum\",\n   \"category\": 32954661,\n   \"id\": -62153399,\n   \"image\": \"http://GoyMfYynLu.hqthaDYWgy+,gDLx56tipqHTDwLT8\",\n   \"video_cover\": \"http://ynPDVRrjzZpXpVNWbRLW.bjNuhbTLNddllxDE4-nELdoYOF1T2BFyR6.FCUdzF\",\n   \"video\": \"http://hAcYjnsbKRAMrVSpkFIYeGie.uovfjBdQrpKcW\",\n   \"tags\": [\n    50258145,\n    -12705188\n   ],\n   \"created\": \"2005-12-09T09:51:40.942Z\",\n   \"modified\": \"1981-07-03T13:47:00.791Z\"\n  },\n  {\n   \"kind\": \"video\",\n   \"title\": \"eiusmod pariatur ea\",\n   \"body\": \"elit incididunt\",\n   \"category\": 41447462,\n   \"id\": 66330825,\n   \"image\": \"http://DFvjvKbIcEhsPrwkz.zhuo1x0jwIBo6BbYIb4iirzTZGoogxCDcb-5NuRochn,2YjCGuA7hq0nsa-UPOvgKTv\",\n   \"video_cover\": \"https://HKlocmufMPxdavG.jaPOYOjEdfaRkV1Pxy2y\",\n   \"video\": \"https://BHJMtEbMJo.fipeWQGHyPv8y+obgpd0euYoGdIApjHARun9UrD,3uKUywGS3Oyc6WIyAS2lU1,yYbSOzbO.-rnv\",\n   \"tags\": [\n    -60386456,\n    72976505\n   ],\n   \"created\": \"1983-01-04T02:06:17.296Z\",\n   \"modified\": \"1982-10-13T08:44:06.956Z\"\n  }\n ],\n \"next\": \"http://DPnJtKioclOavJwWPLKWwhGSigzV.xbtoA2Xs\",\n \"previous\": \"https://HtFTmEgvzzroRLwnaIHKCOhciu.jerqDUhU,E8dinZFATmXeRDZPlpLiu1kBJBS3F4V-Xed0VYBS.JPzNzpjG\"\n}"
+						}
+					]
+				},
+				{
+					"name": "post read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/post/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"post",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Post Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/post/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"post",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"kind\": \"image\",\n \"title\": \"qui nisi consectetur veniam ut\",\n \"body\": \"cupidatat ut do Duis\",\n \"category\": -73420356,\n \"id\": -33509575,\n \"image\": \"http://deGjf.qxzkdTo.vVAhML\",\n \"video_cover\": \"http://LvqvaNlYgAnWqTqQ.uyhgOZYVtwYoRfYnUrITRdnyatcFy8VACELrpX8qCEc9H+A3,h8\",\n \"video\": \"https://yKcr.zgMm5TlPuadsPn+I9ROtjp,JfsLoYvMFFRa4O\",\n \"tags\": [\n  -50176866,\n  53561262\n ],\n \"created\": \"1953-12-01T16:54:29.000Z\",\n \"modified\": \"1982-07-30T04:46:16.500Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "siteinfo",
+			"item": [
+				{
+					"name": "siteinfo list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/siteinfo/?limit=<integer>&offset=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"siteinfo",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "<integer>",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "<integer>",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "SiteInfo Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/siteinfo/?limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"siteinfo",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -31130170,\n \"results\": [\n  {\n   \"tel\": \"do velit officia\",\n   \"email\": \"nisi Lorem dolore cupidatat eu\",\n   \"address\": \"Lorem dolor id\",\n   \"instagram\": \"in non quis reprehenderit\",\n   \"facebook\": \"labore irure\",\n   \"twitter\": \"voluptate minim amet in\",\n   \"linkedin\": \"in eu\",\n   \"whatsapp\": \"ea in ipsum\",\n   \"footer\": \"quis\",\n   \"id\": 80159041,\n   \"logo\": \"http://WWnayIEfdbgvIHaqgQDIJzOCieHtD.kjZ+BFd8rmFiYNpUKfw3cYwNJ2YsFgh8S8pWAkGLBhB75saTX.VHbOmAenwjl0NnSun.pY\",\n   \"created\": \"2007-06-08T20:23:49.710Z\",\n   \"modified\": \"1949-03-16T01:26:48.790Z\"\n  },\n  {\n   \"tel\": \"et elit eu mollit\",\n   \"email\": \"ipsum\",\n   \"address\": \"n\",\n   \"instagram\": \"aliquip tempor magna\",\n   \"facebook\": \"reprehenderit aliqua mollit\",\n   \"twitter\": \"laboris aliqua qui veniam\",\n   \"linkedin\": \"dolor nostrud\",\n   \"whatsapp\": \"consequat minim\",\n   \"footer\": \"in reprehenderit\",\n   \"id\": 99463464,\n   \"logo\": \"http://NbTOTTjkuXHpSEDTGGgnSiFfEUAqVQUc.stpcZ7YoJ9zBR4Fe7+Vu7pQjpt5vxj4XoUEXtAjpU+eVNXtf9dfmNaeEc59QA+qD1DxyArxJv3SVp5knv8\",\n   \"created\": \"1981-04-21T01:09:48.232Z\",\n   \"modified\": \"1995-01-13T05:32:22.992Z\"\n  }\n ],\n \"next\": \"http://fuiFUtAO.udsxb8qoX2NnDylKv0XyUnk+dm3rPBli6cQ-xFILg0Ssx8h9gJE\",\n \"previous\": \"http://XIJUqAKFmaGyf.mch34Z0mWI.eLRxQ+l3cV2aSEwRS7KhJ1EQ+4l3fU\"\n}"
+						}
+					]
+				},
+				{
+					"name": "siteinfo read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/siteinfo/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"siteinfo",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "SiteInfo Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/siteinfo/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"siteinfo",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"tel\": \"sunt culpa\",\n \"email\": \"aliqua enim\",\n \"address\": \"dolore consequat sed quis\",\n \"instagram\": \"est in elit aliqua\",\n \"facebook\": \"Excepteur ipsum reprehenderit nisi\",\n \"twitter\": \"minim veniam dolore culpa\",\n \"linkedin\": \"elit ex\",\n \"whatsapp\": \"qui dolor pariatur sint laborum\",\n \"footer\": \"non irure cupidatat\",\n \"id\": 36013902,\n \"logo\": \"http://iaekfPZuHEZv.imhnEafu.ojAoxo,hob4TscRpDU5SOnuEkUXkSxvBBEt,LxfxeprX3vuEW9qBvVe\",\n \"created\": \"1962-08-31T01:07:55.834Z\",\n \"modified\": \"1944-11-02T16:52:40.033Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "tag",
+			"item": [
+				{
+					"name": "tag list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tag/?limit=10&offset=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						},
+						"description": "Tag Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tag/?limit=<integer>&offset=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"key": "offset",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -99802744,\n \"results\": [\n  {\n   \"title\": \"enim qui nostrud\",\n   \"id\": -91412534,\n   \"created\": \"1969-08-28T02:25:44.797Z\",\n   \"modified\": \"1943-10-02T22:06:59.929Z\"\n  },\n  {\n   \"title\": \"Lorem enim voluptate\",\n   \"id\": -1325205,\n   \"created\": \"1983-08-29T11:09:07.399Z\",\n   \"modified\": \"1968-05-23T09:27:42.415Z\"\n  }\n ],\n \"next\": \"https://GzqPmsiRkAojnprRfeZCvgPp.baujcl2YCoiJ9p5yOdd0ypMCD5LtH\",\n \"previous\": \"https://jQGHJUgKZjqMXAQGtAQAjXk.wzvgx1Viy0SpIXBUPzhTUNEoHLM7mLNgPh60GT+lJSisdECS14ZVdutw\"\n}"
+						}
+					]
+				},
+				{
+					"name": "tag read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tag/:id/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Tag Viewset\nAuto generated"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tag/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"title\": \"cupidatat sed\",\n \"id\": -76735006,\n \"created\": \"1974-08-20T08:45:55.962Z\",\n \"modified\": \"1986-10-02T20:42:05.042Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "JWT",
+							"item": [
+								{
+									"name": "Create - json web token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();;",
+													"",
+													"pm.environment.set(\"ACCESS_TOKEN\", jsonData.access);",
+													"pm.environment.set(\"REFRESH_TOKEN\", jsonData.refresh);",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"",
+													"pm.test(\"Successful POST request\", function () {",
+													"    pm.expect(pm.response.code).to.be.eql(200);",
+													"});",
+													"",
+													"pm.test(\"Content-Type is present\", function () {",
+													"    pm.response.to.have.header(\"Content-Type\");",
+													"});",
+													"",
+													"pm.test(\"Response Structure\", function () {",
+													"    console.log(jsonData);",
+													"    pm.expect(jsonData.access).to.exist;",
+													"    pm.expect(jsonData.refresh).to.exist;",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"{{USERNAME}}\",\n    \"password\": \"{{PASSWORD}}\"\n}"
+										},
+										"url": {
+											"raw": "{{DOMAIN}}/en/api/v1/token/create/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"en",
+												"api",
+												"v1",
+												"token",
+												"create",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Refresh - json web token",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"refresh\": \"{{REFRESH_TOKEN}}\"\n}"
+										},
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/token/refresh/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"token",
+												"refresh",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Register",
+							"item": [
+								{
+									"name": "register user",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"{{USERNAME}}\",\n    \"password\": \"{{PASSWORD}}\",\n    \"first_name\": \"{{$randomFirstName}}\",\n    \"last_name\": \"{{$randomLastName}}\",\n    \"email\": \"{{$randomEmail}}\"\n}"
+										},
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/register/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"register",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Login",
+							"item": [
+								{
+									"name": "login user",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"{{USERNAME}}\",\n    \"password\": \"{{PASSWORD}}\"\n}"
+										},
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/login/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"login",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Change Password",
+							"item": [
+								{
+									"name": "change user password",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"{{PASSWORD}}\",\n    \"new_password\": \"{{$randomPassword}}\"\n}"
+										},
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/change-password/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"change-password",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Reset Password",
+							"item": [
+								{
+									"name": "send reset password email",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"{{EMAIL}}\"\n}"
+										},
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/reset-password/send/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"reset-password",
+												"send",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "verify reset password token",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"{{EMAIL}}\",\n    \"token\": \"{{TOKEN}}\",\n    \"new_password\": \"{{$randomPassword}}\"\n}"
+										},
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/reset-password/verify/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"reset-password",
+												"verify",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "SAQR",
+					"item": [
+						{
+							"name": "get user saqrs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DOMAIN}}/api/v1/saqrs/",
+									"host": [
+										"{{DOMAIN}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"saqrs",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get saqr detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DOMAIN}}/api/v1/saqrs/{{saqr_sku}}/",
+									"host": [
+										"{{DOMAIN}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"saqrs",
+										"{{saqr_sku}}",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Report",
+					"item": [
+						{
+							"name": "get saqr all reports",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DOMAIN}}/api/v1/saqrs/{{saqr_sku}}/reports/",
+									"host": [
+										"{{DOMAIN}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"saqrs",
+										"{{saqr_sku}}",
+										"reports",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get report detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DOMAIN}}/api/v1/reports/{{report_sku}}/",
+									"host": [
+										"{{DOMAIN}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"reports",
+										"{{report_sku}}",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Total",
+					"item": [
+						{
+							"name": "order reports by parameters",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DOMAIN}}/api/v1/total-reports/?ordering=-report_detail__avg_alt",
+									"host": [
+										"{{DOMAIN}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"total-reports",
+										""
+									],
+									"query": [
+										{
+											"key": "ordering",
+											"value": "-report_detail__avg_alt"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "get user profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DOMAIN}}/api/v1/profile/",
+									"host": [
+										"{{DOMAIN}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"profile",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update user profile",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"Mehran\",\n    \"last_name\": \"Rahmanzadeh\",\n    \"email\": \"mrhnz13@gmail.com\",\n    \"phone_number\": \"09059528767\",\n    \"birth_date\": null,\n    \"address\": \"East Azerbayjan\"\n}"
+								},
+								"url": {
+									"raw": "{{DOMAIN}}/en/api/v1/profile/edit/",
+									"host": [
+										"{{DOMAIN}}"
+									],
+									"path": [
+										"en",
+										"api",
+										"v1",
+										"profile",
+										"edit",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user notifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DOMAIN}}/api/v1/profile/notifications/",
+									"host": [
+										"{{DOMAIN}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"profile",
+										"notifications",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "set notification as read",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sku\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{DOMAIN}}/en/api/v1/profile/read_notification/",
+									"host": [
+										"{{DOMAIN}}"
+									],
+									"path": [
+										"en",
+										"api",
+										"v1",
+										"profile",
+										"read_notification",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customer Club",
+					"item": [
+						{
+							"name": "category",
+							"item": [
+								{
+									"name": "category list",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/customer-club/category/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customer-club",
+												"category",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get parent categories",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/customer-club/category/parents/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customer-club",
+												"category",
+												"parents",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get children categories",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/customer-club/category/?parent__sku={{category_sku}}",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customer-club",
+												"category",
+												""
+											],
+											"query": [
+												{
+													"key": "parent__sku",
+													"value": "{{category_sku}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "category detail",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/customer-club/category/{{category_sku}}/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customer-club",
+												"category",
+												"{{category_sku}}",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "question",
+							"item": [
+								{
+									"name": "question list",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/customer-club/question/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customer-club",
+												"question",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get category questions",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/customer-club/question/?category__sku={{category_sku}}",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customer-club",
+												"question",
+												""
+											],
+											"query": [
+												{
+													"key": "category__sku",
+													"value": "{{category_sku}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "question detail",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/customer-club/question/{{question_sku}}/",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customer-club",
+												"question",
+												"{{question_sku}}",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "search question",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOMAIN}}/api/v1/customer-club/question/?search=test",
+											"host": [
+												"{{DOMAIN}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customer-club",
+												"question",
+												""
+											],
+											"query": [
+												{
+													"key": "search",
+													"value": "test"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "certificaterequest create",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mrhnz13@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/certificaterequest/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"certificaterequest",
+						""
+					]
+				},
+				"description": "CertificateRequest Viewset\nAuto generated"
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"<string>\",\n    \"seen\": \"<boolean>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/certificaterequest/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"certificaterequest",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"email\": \"<string>\",\n \"id\": 30582497,\n \"seen\": \"<boolean>\",\n \"created\": \"1991-09-06T16:52:50.387Z\",\n \"modified\": \"2004-07-24T05:52:42.268Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getintouch create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Mehran Rahmanzadeh\",\n    \"email\": \"mrhnz13@gmail.com\",\n    \"subject\": \"Test request\",\n    \"message\": \"Hello this is a test\",\n    \"phone\": \"09059528767\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/getintouch/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"getintouch",
+						""
+					]
+				},
+				"description": "GetInTouch Viewset\nAuto generated"
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"subject\": \"<string>\",\n    \"message\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"seen\": \"<boolean>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/getintouch/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"getintouch",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"name\": \"<string>\",\n \"email\": \"<string>\",\n \"subject\": \"<string>\",\n \"message\": \"<string>\",\n \"id\": 95254244,\n \"phone\": \"<string>\",\n \"seen\": \"<boolean>\",\n \"created\": \"1980-06-04T18:43:39.180Z\",\n \"modified\": \"2015-10-05T23:51:36.111Z\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{ACCESS_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000/api/v1"
+		}
+	]
+}
