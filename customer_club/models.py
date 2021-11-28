@@ -53,6 +53,13 @@ class Category(Sku_Mixin, TimeStampModelMixin):
 
 
 class Question(Sku_Mixin, TimeStampModelMixin):
+    category = models.ForeignKey(
+        Category,
+        verbose_name=_('Category'),
+        on_delete=models.CASCADE,
+        related_name='questions'
+    )
+
     question = models.CharField(
         _('Question'),
         max_length=255

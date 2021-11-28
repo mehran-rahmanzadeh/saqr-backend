@@ -25,12 +25,14 @@ class QuestionModelAdmin(admin.ModelAdmin):
     list_display = ['question', 'created', 'modified']
     list_filter = ['created', 'modified']
     search_fields = ['question', 'answer']
+    raw_id_fields = ['category']
 
     fieldsets = (
         (None, {
             'fields': (
                 'question_en', 'question_ar',
-                'answer_en', 'answer_ar'
+                'answer_en', 'answer_ar',
+                'category'
             )
         }),
     )
