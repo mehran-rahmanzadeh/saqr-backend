@@ -50,6 +50,7 @@ urlpatterns = i18n_patterns(
     path('api/v1/', include('analysis.api.urls')),
     path('api/v1/', include('authentication.api.urls')),
     path('api/v1/', include('users.api.urls')),
+    path('api/v1/', include('customer_club.api.urls')),
     path('api/doc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-swagger-ui'),
 
     # mvt pages

@@ -56,6 +56,7 @@ INSTALLED_APPS.append('analysis_settings')
 INSTALLED_APPS.append('cms')
 INSTALLED_APPS.append('blog')
 INSTALLED_APPS.append('calls')
+INSTALLED_APPS.append('customer_club')
 
 # God Of Packages
 INSTALLED_APPS.append('sage_painless')
