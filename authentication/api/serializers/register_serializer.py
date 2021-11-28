@@ -13,4 +13,7 @@ class RegisterSerializer(ModelSerializer):
             'first_name',
             'last_name',
             'email',
+            'phone_number',
+            'address',
+            'birth_date'
         )
