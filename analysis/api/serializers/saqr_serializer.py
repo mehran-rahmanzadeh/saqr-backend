@@ -1,11 +1,22 @@
 from django.contrib.auth import get_user_model
+from rest_framework.fields import SerializerMethodField
 from rest_framework.serializers import ModelSerializer
 
-from analysis.models.saqr_model import Saqr
+from analysis.models.saqr_model import Saqr, SaqrImage
+
+
+class SaqrImageSerializer(ModelSerializer):
+    """SAQR Image Serializer Class"""
+    class Meta:
+        model = SaqrImage
+        fields = (
+            'image',
+        )
 
 
 class SaqrSerializer(ModelSerializer):
     """SAQR Serializer Class"""
+    images = SaqrImageSerializer(many=True)
 
     class Meta:
         model = Saqr
@@ -13,7 +24,8 @@ class SaqrSerializer(ModelSerializer):
             'sku',
             'weight',
             'age',
-            'image',
+            'images',
+            'passport_image',
             'is_verified',
             'created',
             'modified'
@@ -35,6 +47,7 @@ class SaqrOwnerSerializer(ModelSerializer):
 class MinimizedSaqrSerializer(ModelSerializer):
     """Minimized SAQR Serializer"""
     owner = SaqrOwnerSerializer()
+    image = SerializerMethodField()
 
     class Meta:
         model = Saqr
@@ -42,5 +55,8 @@ class MinimizedSaqrSerializer(ModelSerializer):
             'weight',
             'age',
             'owner',
-            'image',
+            'image'
         )
+
+    def get_image(self, obj):
+        return SaqrImageSerializer(obj.images.first()).data
