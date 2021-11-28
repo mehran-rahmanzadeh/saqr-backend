@@ -69,6 +69,7 @@ class HowToGetCertificateTranslationOptions(TranslationOptions):
 @register(SiteInfo)
 class SiteInfoTranslationOptions(TranslationOptions):
     fields = (
+        'title',
         'address',
         'footer'
     )

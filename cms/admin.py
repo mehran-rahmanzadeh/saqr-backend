@@ -245,6 +245,7 @@ class SiteInfoAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             'fields': (
+                'title_en', 'title_ar',
                 'logo', 'tel', 'email',
                 'address_en', 'address_ar',
                 'instagram', 'facebook', 'twitter', 'linkedin', 'whatsapp',
