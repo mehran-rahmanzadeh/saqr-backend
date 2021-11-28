@@ -74,28 +74,28 @@
   h3{
       font-family: 'OleoScript';
       color: #fff;
-      text-align: initial;
+      text-align: right !important;
   }
   h5{
       font-family: 'OleoScript';
       color: #fff;
-      text-align: initial;
+      text-align: right !important;
   }
   h4{
       font-family: 'OleoScript';
       color: #fff;
-      text-align: initial;
+      text-align: right !important;
   }	
   
   h2{
       font-family: 'OleoScript';
       color: #fff;
-      text-align: initial;
+      text-align: right !important;
   }
   p{
       font-family: 'AvenirNextRounded';
       font-size: 18px;
-      text-align: justify;
+      text-align: right !important;
       color: #FFF !important;
       
   }
@@ -682,17 +682,17 @@
   
       .dashboard-image-pos1{
           top: 10px;
-          left: 190px;
+          right: 190px;
       }
       .dashboard-image-pos2{
           top: 249px;
-          left: -60px;
+          right: -60px;
       }
   
       .background-text{
           position: absolute;
           bottom: -150px;
-          left: -60px;
+          right: -60px;
           font-size: 130px !important;
           font-family: "OleoScript";
           z-index: -200;
@@ -725,7 +725,7 @@
           height: 72%;
           background-color: rgb(205, 205, 205);
           width: 2px;
-          margin-right: 5px;
+          margin-left: 5px;
           margin-top: -8px;
         }
       
@@ -733,7 +733,7 @@
           height: 70%;
           background-color: rgb(205, 205, 205);
           width: 2px;
-          margin-right: 5px;
+          margin-left: 5px;
           margin-bottom: -8px;
         }
       
@@ -744,7 +744,7 @@
       }
       .blogposttitle{
           margin: 0;
-          text-align: left;
+          text-align: right;
           font-family: "OleoScript";
           font-size: 16px;
           margin-top: 10px;
@@ -753,7 +753,7 @@
   
       .blogposttitle-main{
           margin: 0;
-          text-align: left;
+          text-align: right;
           font-family: "OleoScript";
           font-size: 19px;
           margin-top: 10px;
@@ -763,7 +763,7 @@
   
       .morepost{
           margin: 0;
-          text-align: left;
+          text-align: right;
           font-family: "OleoScript";
           font-size: 25px;
           margin-bottom: 10px;
@@ -834,7 +834,7 @@
           font-size: 16px;
       }
       .contactusitems >svg{
-          margin-right: 20px;
+          margin-left: 20px;
       }
   
       .width40sotial{
@@ -851,7 +851,7 @@
       font-family: "AvenirNextRounded" !important;
   }
   .accordion-head{
-      text-align: left;
+      text-align: right;
       font-family: "AvenirNextRounded";
       width: 90%;
       height: 58px;
@@ -859,13 +859,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-radius: 0px 40px 40px 0px;
+      border-radius: 40px 0px 0px 40px;
       cursor: pointer;
       margin-top: 15px;
   
   }
   .accordion-head >h6{
-      margin-left: 10px;
+      margin-right: 10px;
       font-size: 14px;
   }
   .accordion-head--active{
@@ -873,17 +873,26 @@
       border: 1px solid transparent;
   
   }
+  ::-moz-selection { /* Code for Firefox */
+	background-color: #8a1538 ;
+  }
   
+  ::selection {
+	background-color: #8a1538 ;
+  }
+
   .arrowiconaccordion{
       font-size: 21px;
-      margin-right: 25px;
+      margin-left: 25px;
       transition: all 400ms;
   }
   .accordion-detail{
       width: 90%;
       padding: 10px;
   }
-  
+  .margin-right5{
+    margin-right: 5px !important;
+  }
   .accordion-detail>p{
       font-size: 12px;
   }
@@ -946,7 +955,7 @@
   }
   
   .Sotialmedia-diva{
-      padding-right: 30px;
+      padding-left: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1152,3 +1161,29 @@
 	margin-left: -33px;
 	top: 9px;
 }
+
+
+    .tracker-svg {
+        position: absolute;
+        top: -55px;
+        left: 55px;
+        transform: scaleX(-1);
+    }
+
+    .blogpostimage-shadow{
+		position: absolute;
+		height: 90%;
+		width: 100%;
+		top: 0px;
+		border-radius: 5px;
+		background-color: #2a2a2a7a;
+	}
+
+    .video-svg{
+        position: absolute;
+        top: 45%;
+        z-index: 15;
+        left: 50%;
+        margin-top: -44px;
+        margin-left: -44px;
+        }

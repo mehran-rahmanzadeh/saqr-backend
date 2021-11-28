@@ -1,10 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load static %}
 
-</body>
-</html>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426'></script>
+<script src='https://assets.codepen.io/16327/ScrollTrigger.min.js'></script>
+<script src='https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b.js'></script>
+<script src="{% static 'Script/script-rtl.js' %}"></script>
+<script src="{% static 'Script/animate.js' %}"></script>
+
+<script
+  src="https://kit.fontawesome.com/7a21f8c96b.js"
+  crossorigin="anonymous"
+></script>
+<script src="{% static 'Script/accordion_script.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{% static 'Script/ScrollSetting.js' %}"></script>
+<script src="{% static 'Script/Sotialmedia_hover.js' %}"></script>
+<script src="{% static 'Script/animate.js' %}"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static 'Script/animatedModal.min.js' %}"></script>
+<script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
+<script src="{% static 'Script/scrollto.js' %}"></script>
+ <script>
+   $("#demo01").click(function (e) {
+    $("#animatedModal").removeClass('d-none');
+    $("#animatedModal").addClass('zoomIn modalopenclass');
+   });
+   $("#btn-close-modal").click(function (e) {
+    $('#animatedModal').removeClass('zoomIn modalopenclass');
+    $("#animatedModal").addClass('d-none');
+
+   });
+</script>
+<script src="{% static 'Script/res/scrollAnimate.js' %}"></script>
+<script>
+const player = new Plyr('#player');
+</script>
+
+<script>
+  window.onscroll = function() {myFunction()};
+ function myFunction() {
+     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+     var scrolled = (winScroll / height) * 100;
+     document.getElementById("myBar").style.width = scrolled + "%";
+ }
+</script>
