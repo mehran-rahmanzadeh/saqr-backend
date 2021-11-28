@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from analysis.models.report_model import Report, ReportDetail
-from analysis.models.saqr_model import Saqr
+from analysis.models.saqr_model import Saqr, SaqrImage
 
 
 class ReportDetailStackedAdminInline(admin.StackedInline):
@@ -87,6 +87,11 @@ class ReportDetailAdmin(admin.ModelAdmin):
             report__submitted_by=request.user) if not request.user.is_superuser else super().get_queryset(request)
 
 
+@admin.register(SaqrImage)
+class SaqrImageAdmin(admin.ModelAdmin):
+    list_display = ['id', 'image']
+
+
 @admin.register(Saqr)
 class SaqrAdmin(admin.ModelAdmin):
     list_display = [
@@ -103,6 +108,8 @@ class SaqrAdmin(admin.ModelAdmin):
         'created',
         'modified'
     ]
+
+    filter_horizontal = ['images']
 
     search_fields = [
         'title',
