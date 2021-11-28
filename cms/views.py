@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
+from django.utils.translation import get_language
 
 from blog.models.post import Post
-from calls.forms import GetInTouchForm
 from cms.models.aboutcompany import AboutCompany
 from cms.models.aboutdashboard import AboutDashboard
 from cms.models.abouttest import AboutTest
@@ -13,7 +13,19 @@ from cms.models.siteinfo import SiteInfo
 
 
 class IndexView(TemplateView):
-    template_name = 'index.html'
+
+    def get_template_names(self):
+        if self.request.user_agent.is_mobile:
+            if get_language() == 'en':
+                template = 'responsive/index.html'
+            else:
+                template = 'responsive/index-rtl.html'
+        else:
+            if get_language() == 'en':
+                template = 'index.html'
+            else:
+                template = 'index-rtl.html'
+        return template
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
