@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n_utils %}
 
 {% block head %}
   <meta charset="UTF-8">
@@ -70,11 +71,11 @@
          <div class="lang-menu-list">
 
           <div class="manu-items">
-            <span>English</span>
+            <a href="{% translate_url 'en' %}"><span>English</span></a>
           </div>
 
           <div class="manu-items">
-            <span>Arabic</span>
+            <a href="{% translate_url 'ar' %}"><span>Arabic</span></a>
           </div>
 
 

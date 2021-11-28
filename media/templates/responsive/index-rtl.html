@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n_utils %}
 {% include 'shared/responsive/_base.html' %}
 
 <body>
@@ -34,8 +35,8 @@
       <a onclick="closeNav()" href="#quote">الکوت</a>
       <a onclick="closeNav()" href="#footnote">الفوت نوت</a>
       <hr/>
-      <a href="#footnote">English</a>
-      <a href="#footnote">Arabic</a>
+      <a href="{% translate_url 'en' %}">English</a>
+      <a href="{% translate_url 'ar' %}">Arabic</a>
 
 
 
