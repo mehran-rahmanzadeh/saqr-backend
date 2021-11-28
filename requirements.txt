@@ -21,6 +21,7 @@ django-appconf==1.0.4
 django-apptemplates==1.5
 django-sage-painless
 django-celery-beat==2.2.0
+django-user-agents==0.4.0
 django-colorfield==0.3.2
 django-cryptography==1.0
 django-cors-headers==3.7.0
