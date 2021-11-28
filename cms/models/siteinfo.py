@@ -22,6 +22,12 @@ class SiteInfo(models.Model, ModelCacheMixin):
 
     CACHE_KEY = 'siteinfo'  # auto generated CACHE_KEY
 
+    title = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True
+    )
+
     logo = models.ImageField(
 
         validators=[
