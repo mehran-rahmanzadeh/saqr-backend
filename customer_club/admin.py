@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from customer_club.models import Category, Question
+from customer_club.models import Category, Question, Notification
 
 
 @admin.register(Category)
@@ -36,3 +36,11 @@ class QuestionModelAdmin(admin.ModelAdmin):
             )
         }),
     )
+
+
+@admin.register(Notification)
+class NotificationModelAdmin(admin.ModelAdmin):
+    list_display = ['subject', 'created', 'modified']
+    list_filter = ['created', 'modified']
+    search_fields = ['subject', 'body']
+    filter_horizontal = ['users']
