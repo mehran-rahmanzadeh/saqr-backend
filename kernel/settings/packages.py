@@ -30,6 +30,9 @@ INSTALLED_APPS.append('admin_honeypot')
 INSTALLED_APPS.append('colorfield')
 INSTALLED_APPS.append('modeltranslation')
 
+INSTALLED_APPS.append('django_user_agents')
+MIDDLEWARE.append('django_user_agents.middleware.UserAgentMiddleware')
+
 # Log
 INSTALLED_APPS.append('django_admin_logs')
 INSTALLED_APPS.append('simple_history')
@@ -211,3 +214,8 @@ DEFENDER_REDIS_URL = config('REDIS_HOST')
 #   SAQR    #
 # ######### #
 LIMIT_PUBLIC_REPORT_COUNT = 10
+
+# ################ #
+#   User Agents    #
+# ################ #
+USER_AGENTS_CACHE = 'default'
