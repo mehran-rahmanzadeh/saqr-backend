@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../Style/responsive-style-rtl.css"/>
-    <link rel="stylesheet" href="../Style/font.css">
+{% load static %}
+{% load i18n_utils %}
+{% include 'shared/responsive/_base.html' %}
 
-</head>
 <body>
-
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     
@@ -35,14 +27,8 @@
     </div>
 
     <div>
-
-      <a href="#footnote">English</a>
-      <a href="#footnote">Arabic</a>
-
-
-
-      
-
+      <a href="{% translate_url 'en' %}">English</a>
+      <a href="{% translate_url 'ar' %}">Arabic</a>
     </div>
   </div>
 
@@ -60,106 +46,56 @@
         </div>
 
         <div>
-
-          
-          
           <i onclick="openNav()" class="fas fa-th-large topmenuicon"></i>
-
         </div>
       </nav>
 
-      
-
-   
-
       <div class="blogList">
         <h3>
-          Blog
+          البلاگ
         </h3>
 
         <div>
             <div class="breadcom">
-                <a href="">Home</a>
+                <a href="{% url 'index' %}">الهوم</a>
                 <i class="fas fa-chevron-right transform180"></i>
-                <a href="">Post List</a>
-                
+                <a href="{% url 'blog-list' %}">لبپست لیست</a>
               </div>
         </div>
 
-          <div class="post">
-              <img src="file:///home/mahdi/Downloads/horizontal-snapping-sections-simplescrolltrigger/dist/img/articl-01-img.jpg" alt=""/>
-              <h3>
-                Lorem ipsum dolor sit amet
-                consectetur adipiscing elit
-              </h3>
-          </div>
-
-          <div class="post">
-            <div class="shadow"></div>
-            <svg class="video-svg" xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88"><g transform="translate(-916 -421)"><g transform="translate(926.001 431.021)"><path d="M12.252,33.755l15.52-11.639a1.409,1.409,0,0,0,0-2.255L12.252,8.222A1.407,1.407,0,0,0,10,9.35V32.628A1.407,1.407,0,0,0,12.252,33.755Z" transform="translate(17.702 13.183)" fill="#e7e7e7"/></g><g transform="translate(916 421)" fill="none" stroke="#e7e7e7" stroke-width="0.5"><circle cx="44" cy="44" r="44" stroke="none"/><circle cx="44" cy="44" r="43.75" fill="none"/></g><g transform="translate(921 426)" fill="none" stroke="#e7e7e7" stroke-width="1"><circle cx="39" cy="39" r="39" stroke="none"/><circle cx="39" cy="39" r="38.5" fill="none"/></g></g></svg>  
-
-            <img src="file:///home/mahdi/Downloads/horizontal-snapping-sections-simplescrolltrigger/dist/img/articl-01-img.jpg" alt=""/>
-            <h3>
-              Lorem ipsum dolor sit amet
-              consectetur adipiscing elit
-            </h3>
-        </div>
-
-            <div class="post">
-              <img src="file:///home/mahdi/Downloads/horizontal-snapping-sections-simplescrolltrigger/dist/img/articl-01-img.jpg" alt=""/>
-              <h3>
-                Lorem ipsum dolor sit amet
-                consectetur adipiscing elit
-              </h3>
-          </div>
-
-          <div class="post">
-            <img src="file:///home/mahdi/Downloads/horizontal-snapping-sections-simplescrolltrigger/dist/img/articl-01-img.jpg" alt=""/>
-            <h3>
-              Lorem ipsum dolor sit amet
-              consectetur adipiscing elit
-            </h3>
-        </div>
-
-        <div class="post">
-          <img src="file:///home/mahdi/Downloads/horizontal-snapping-sections-simplescrolltrigger/dist/img/articl-01-img.jpg" alt=""/>
-          <h3>
-            Lorem ipsum dolor sit amet
-            consectetur adipiscing elit
-          </h3>
-      </div>
-
-      <div class="post">
-        <img src="file:///home/mahdi/Downloads/horizontal-snapping-sections-simplescrolltrigger/dist/img/articl-01-img.jpg" alt=""/>
-        <h3>
-          Lorem ipsum dolor sit amet
-          consectetur adipiscing elit
-        </h3>
-    </div>
+          {% for post in posts %}
+              <div class="post">
+                {% if post.kind == 'video' %}
+                <svg class="video-svg" xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88"><g transform="translate(-916 -421)"><g transform="translate(926.001 431.021)"><path d="M12.252,33.755l15.52-11.639a1.409,1.409,0,0,0,0-2.255L12.252,8.222A1.407,1.407,0,0,0,10,9.35V32.628A1.407,1.407,0,0,0,12.252,33.755Z" transform="translate(17.702 13.183)" fill="#e7e7e7"/></g><g transform="translate(916 421)" fill="none" stroke="#e7e7e7" stroke-width="0.5"><circle cx="44" cy="44" r="44" stroke="none"/><circle cx="44" cy="44" r="43.75" fill="none"/></g><g transform="translate(921 426)" fill="none" stroke="#e7e7e7" stroke-width="1"><circle cx="39" cy="39" r="39" stroke="none"/><circle cx="39" cy="39" r="38.5" fill="none"/></g></g></svg>
+                {% endif %}
+                  <img src="{% if post.kind == 'video' %}{{ post.video_cover.url }}{% else %}{{ post.image.url }}{% endif %}" alt=""/>
+                  <h3>
+                    {{ post.title }}
+                  </h3>
+              </div>
+          {% endfor %}
       </div>
 
       <div style="display: flex;align-items: center;justify-content: center;">
         <div class="pagination">
-          <a  href="#"><i class="fas fa-chevron-left"></i></a>
-          <a href="#">1</a>
-          <a href="#" class="active">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
-          <a href="#"><i class="fas fa-chevron-right"></i></a>
+          <a  href="{{ request.path }}{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}{{ url_params }}"><i class="fas fa-chevron-left"></i></a>
+                    {% for page in page_obj.paginator.page_range %}
+                        {% if page > page_obj.number|add:"-3" and page < page_obj.number|add:'3' %}
+                            <a
+                               href="{{ request.path }}?page={{ page }}{{ url_params }}" {% if page == page_obj.number %}class="active" {% endif %}>{{ page }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                  <a href="{{ request.path }}{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}{{ url_params }}"><i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
-
-      
-
       
       <div style="width: 100%;">
         <h1 class="footer-text">Saqr</h1>
   
         <div style="display: flex;justify-content: center;align-items: center;margin-bottom: 15px;">
-          <img style="width: 47px;height: 47px;margin-right: 10px;" src="../img/sage-logo-02.svg" alt="">
-          <p style="margin: 0;font-size: 14px;">S.A.G.E Team | 2021</p>
+          <img style="width: 47px;height: 47px;margin-right: 10px;" src="{% static 'img/sage-logo-02.svg' %}" alt="">
+          <p style="margin: 0;font-size: 14px;">{{ site_info.footer }}</p>
         </div>
         <div>
           <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
@@ -172,27 +108,9 @@
 
       <div class="bottom-menu">
         <i class="fas fa-sign-in-alt"></i>
-        <span>Login</span>
+        <span>اللاگین</span>
       </div>
 
-      <script>
-        function openNav() {
-          document.getElementById("mySidebar").style.width = "250px";
-          document.getElementById("main").style.marginLeft = "250px";
-        }
-        
-        function closeNav() {
-          document.getElementById("mySidebar").style.width = "0";
-          document.getElementById("main").style.marginLeft= "0";
-        }
-        </script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <script src="../Script/res/scrollAnimate.js"></script>
-     <script src="../Script/Sotialmedia_hover.js"></script>
-     <script
-          src="https://kit.fontawesome.com/7a21f8c96b.js"
-          crossorigin="anonymous"
-        ></script>
+{% include 'shared/responsive/_scripts.html' %}
 
 </body>
-</html>
