@@ -1,5 +1,5 @@
 from django.utils.translation import get_language
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from blog.models.post import Post
 from blog.models.tag import Tag
@@ -35,6 +35,30 @@ class BlogListView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(BlogListView, self).get_context_data(*args, **kwargs)
+        context['site_info'] = SiteInfo.get_all_from_cache()[0] if SiteInfo.get_all_from_cache() else None
+        context['tags'] = Tag.get_all_from_cache()
+        context['more_visited'] = Post.objects.order_by('?')[:4]
+        return context
+
+
+class BlogDetailView(DetailView):
+    model = Post
+
+    def get_template_names(self):
+        if self.request.user_agent.is_mobile:
+            if get_language() == 'en':
+                template = 'responsive/post-detail.html'
+            else:
+                template = 'responsive/post-detail-rtl.html'
+        else:
+            if get_language() == 'en':
+                template = 'post-detail.html'
+            else:
+                template = 'post-detail-rtl.html'
+        return template
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogDetailView, self).get_context_data(**kwargs)
         context['site_info'] = SiteInfo.get_all_from_cache()[0] if SiteInfo.get_all_from_cache() else None
         context['tags'] = Tag.get_all_from_cache()
         context['more_visited'] = Post.objects.order_by('?')[:4]
