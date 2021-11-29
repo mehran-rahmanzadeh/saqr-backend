@@ -30,6 +30,9 @@ INSTALLED_APPS.append('admin_honeypot')
 INSTALLED_APPS.append('colorfield')
 INSTALLED_APPS.append('modeltranslation')
 
+INSTALLED_APPS.append('debug_toolbar')
+MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+
 INSTALLED_APPS.append('django_user_agents')
 MIDDLEWARE.append('django_user_agents.middleware.UserAgentMiddleware')
 
@@ -220,3 +223,20 @@ LIMIT_PUBLIC_REPORT_COUNT = 10
 #   User Agents    #
 # ################ #
 USER_AGENTS_CACHE = 'default'
+
+# ################## #
+#   Debug Toolbar    #
+# ################## #
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+
+def custom_show_toolbar(request):
+    return True
+
+
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
+    'INSERT_BEFORE': '</body>'
+}
