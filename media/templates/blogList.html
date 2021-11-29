@@ -1,112 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Style/font.css">
-    <link rel="stylesheet" href="Style/style.css">
+{% load static %}
+{% load url_utils %}
+{% query_params request.GET as url_params %}
+{% include 'shared/_base.html' %}
 
-</head>
 <body>
-    <nav class="topmenu animate__animated animate__fadeInDown">
-        <div class="line">
-          <svg xmlns="http://www.w3.org/2000/svg" width="66.72" height="33.653" viewBox="0 0 87.72 44.653"><g transform="translate(0 0)"><g transform="translate(0)"><g transform="translate(21.03)"><path d="M931.375,594.694a17.622,17.622,0,0,0-6.163,1.113l-.509.19a41.445,41.445,0,0,0-13.17,8.29c-11.047,10.1-21.083,6.405-21.183,6.369a1.081,1.081,0,0,0-.15-.048,7.265,7.265,0,0,1-5.258-8.781,5.511,5.511,0,0,1,6.6-4.066,4.062,4.062,0,0,1,2.582,2.085,3.749,3.749,0,0,1-.078,4.172,3.052,3.052,0,0,1-3.126,1.079,1.273,1.273,0,1,0-.614,2.471,5.6,5.6,0,0,0,5.742-1.976,6.259,6.259,0,0,0,.332-6.926,6.64,6.64,0,0,0-4.245-3.381,8.062,8.062,0,0,0-9.668,5.937,9.814,9.814,0,0,0,7.046,11.838c1.119.4,11.937,3.895,23.729-6.889a39.428,39.428,0,0,1,12.313-7.776l.543-.2a15.213,15.213,0,0,1,14.364,2.06,13.99,13.99,0,0,1,5.841,12.2c-.021.376-.057.754-.1,1.135a12.044,12.044,0,0,1-5.3,8.458c-4.271,2.931-8.812,3.333-12.457,1.1a9.842,9.842,0,0,1-4.606-9.652,7.316,7.316,0,0,1,3.106-5.008c2.6-1.818,5.346-2.1,7.542-.767a5.837,5.837,0,0,1,2.753,5.745,4.374,4.374,0,0,1-1.679,2.93,4.266,4.266,0,0,1-3.2.863,1.273,1.273,0,1,0-.332,2.525,6.818,6.818,0,0,0,5.085-1.371,6.9,6.9,0,0,0,2.652-4.622,8.386,8.386,0,0,0-3.961-8.249c-3.054-1.848-6.912-1.527-10.32.86a9.852,9.852,0,0,0-4.172,6.768,12.393,12.393,0,0,0,5.8,12.15c4.473,2.736,10.166,2.3,15.227-1.176a14.561,14.561,0,0,0,6.389-10.241c.054-.44.095-.877.119-1.311a16.5,16.5,0,0,0-6.874-14.391A17.845,17.845,0,0,0,931.375,594.694Z" transform="translate(-882.184 -594.694)" fill="#8a1538"/></g><path d="M884.818,594.694a17.849,17.849,0,0,0-10.6,3.508,16.494,16.494,0,0,0-6.872,14.391q.036.651.119,1.31a14.562,14.562,0,0,0,6.389,10.242c5.06,3.472,10.753,3.911,15.227,1.176a12.393,12.393,0,0,0,5.8-12.15,9.861,9.861,0,0,0-4.172-6.768c-3.408-2.387-7.267-2.708-10.321-.86a8.388,8.388,0,0,0-3.96,8.249,6.9,6.9,0,0,0,2.651,4.622,6.822,6.822,0,0,0,5.086,1.371,1.273,1.273,0,1,0-.331-2.525,4.271,4.271,0,0,1-3.2-.863,4.379,4.379,0,0,1-1.679-2.93,5.837,5.837,0,0,1,2.753-5.745c2.2-1.33,4.947-1.05,7.543.767a7.315,7.315,0,0,1,3.107,5.008,9.844,9.844,0,0,1-4.606,9.652c-3.647,2.231-8.189,1.828-12.459-1.1a12.041,12.041,0,0,1-5.3-8.459q-.072-.569-.1-1.133a13.99,13.99,0,0,1,5.841-12.2,15.209,15.209,0,0,1,14.363-2.06l.511.19a39.442,39.442,0,0,1,12.353,7.8c11.787,10.777,22.6,7.285,23.724,6.882a9.815,9.815,0,0,0,7.047-11.838,8.067,8.067,0,0,0-9.668-5.937,6.64,6.64,0,0,0-4.247,3.381,6.265,6.265,0,0,0,.332,6.926,5.6,5.6,0,0,0,5.743,1.976,1.273,1.273,0,1,0-.615-2.471,3.054,3.054,0,0,1-3.126-1.079,3.747,3.747,0,0,1-.076-4.172,4.062,4.062,0,0,1,2.582-2.085,5.5,5.5,0,0,1,6.6,4.066,7.264,7.264,0,0,1-5.257,8.781,1.065,1.065,0,0,0-.15.048c-.407.153-10.2,3.675-21.177-6.363a41.481,41.481,0,0,0-13.21-8.308l-.477-.177A17.621,17.621,0,0,0,884.818,594.694Z" transform="translate(-867.319 -594.694)" fill="#8a1538"/></g><g transform="translate(39.473 21.312)"><path d="M899.609,586.037a1.271,1.271,0,0,0-1.181.8c-.164.406-3.977,10.038-3.065,17.428.434,3.532,2.446,5.113,4.247,5.113s3.813-1.58,4.247-5.113c.911-7.39-2.9-17.022-3.066-17.428A1.271,1.271,0,0,0,899.609,586.037Zm0,20.8c-.679,0-1.488-.99-1.72-2.879v0c-.515-4.176.706-9.344,1.72-12.7,1.013,3.354,2.234,8.526,1.72,12.7C901.1,605.843,900.286,606.834,899.609,606.834Zm-2.983-2.723h0Z" transform="translate(-895.222 -586.037)" fill="#8a1538"/></g><g transform="translate(28.32 22.456)"><g transform="translate(21.994)"><path d="M904.158,595.262a1.274,1.274,0,0,0-1.243,1.545c.113.518,1.183,5.124,3.978,7.014h0a3.177,3.177,0,0,0,4.112-.365,3.25,3.25,0,0,0,.4-4.152c-1.876-2.818-6.452-3.9-6.969-4.012A1.278,1.278,0,0,0,904.158,595.262Zm3.448,7.5.713-1.054a7.28,7.28,0,0,1-2.2-3.2,7.211,7.211,0,0,1,3.16,2.2.69.69,0,0,1-.071.935.652.652,0,0,1-.893.062Z" transform="translate(-902.885 -595.262)" fill="#8a1538"/></g><path d="M895.15,595.263a1.3,1.3,0,0,0-.274.03c-.515.115-5.093,1.194-6.969,4.012a3.252,3.252,0,0,0,.4,4.152,3.179,3.179,0,0,0,4.112.365h0c2.8-1.89,3.866-6.5,3.979-7.014a1.276,1.276,0,0,0-1.245-1.545Zm-4.586,6.6a.667.667,0,0,1-.465-.209.69.69,0,0,1-.071-.935,7.18,7.18,0,0,1,3.157-2.205,7.285,7.285,0,0,1-2.194,3.2A.773.773,0,0,1,890.563,601.859Z" transform="translate(-887.338 -595.263)" fill="#8a1538"/></g></g></svg>
-        </div>
-        <div class="main-menu">
-          <div class="first-section-menu">
-            <div>
-              <svg style="margin-Top:10px;margin-right:10px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60.659" height="60.513" viewBox="0 0 60.659 60.513"><defs><filter id="a" x="1.369" y="0" width="59.29" height="60.513" filterUnits="userSpaceOnUse"><feOffset dy="3" input="SourceAlpha"/><feGaussianBlur stdDeviation="1.5" result="b"/><feFlood/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter><filter id="c" x="1.717" y="8.229" width="31.038" height="19.622" filterUnits="userSpaceOnUse"><feOffset dy="3" input="SourceAlpha"/><feGaussianBlur stdDeviation="1.5" result="d"/><feFlood/><feComposite operator="in" in2="d"/><feComposite in="SourceGraphic"/></filter><filter id="e" x="0" y="20.682" width="44.736" height="39.817" filterUnits="userSpaceOnUse"><feOffset dy="3" input="SourceAlpha"/><feGaussianBlur stdDeviation="1.5" result="f"/><feFlood/><feComposite operator="in" in2="f"/><feComposite in="SourceGraphic"/></filter></defs><g transform="translate(-30.562 -202.12)"><g transform="matrix(1, 0, 0, 1, 30.56, 202.12)" filter="url(#a)"><path d="M64.584,203.62a25.842,25.842,0,0,0-24.462,17.512,8.5,8.5,0,0,0,2.816.863,22.89,22.89,0,1,1,35.8,25.439h0a22.776,22.776,0,0,1-4.453,2.754s0,0-.005,0a6.286,6.286,0,0,1-.82.054,6.481,6.481,0,0,1-4.077-11.46,11.022,11.022,0,0,0-3.861,13.532h0a10.928,10.928,0,0,0,1.8,2.819,25.829,25.829,0,0,0-2.738-51.513Z" transform="translate(-34.25 -202.12)" fill="#fff"/></g><g transform="matrix(1, 0, 0, 1, 30.56, 202.12)" filter="url(#c)"><path d="M63.445,241.992a27.476,27.476,0,0,0-5.241.966c-3.55.981-12.223,2.985-16.8.524a30,30,0,0,1,5.3-9.443C49.222,241.92,63.445,241.992,63.445,241.992Z" transform="translate(-35.19 -224.31)" fill="#fff"/></g><g transform="matrix(1, 0, 0, 1, 30.56, 202.12)" filter="url(#e)"><path d="M67.708,286.743a4.3,4.3,0,0,0-3.56.317s-3.7,1.731-3.885-1.307a1.1,1.1,0,0,0-.893-.858s.411-1.3,2.356-.538l1.477.611a7.329,7.329,0,0,1,1.6.882,1,1,0,0,0,.476.235,9.972,9.972,0,0,1,2.77.53,7.7,7.7,0,0,0-5.725-5.922,19.968,19.968,0,0,0-6.974-.549,23.551,23.551,0,0,0-4.494.828c-2.635.73-8.56,2.113-12.648,1.107a6.331,6.331,0,0,1-2.77-1.358c-.051.3-.1.606-.141.912-.038.26-.068.519-.095.779l-.024.235c-.016.157-.03.311-.041.471,0,.035-.005.073-.008.111l-.024.365c-.008.127-.014.254-.019.381-.008.176-.016.354-.019.536-.005.208-.008.419-.008.63a25.8,25.8,0,0,0,.582,5.465c.024.124.051.246.081.368.046.208.1.417.151.622s.1.387.154.579.106.363.162.544c.038.124.076.246.116.368s.073.227.111.338c.068.2.138.4.211.6.065.179.133.357.2.533.027.07.054.141.084.208q.085.219.179.43c.076.181.152.36.235.536a1.2,1.2,0,0,0,.054.122c.07.16.146.319.222.476s.146.3.225.455c.057.111.114.222.173.333.046.092.095.187.146.279.081.154.168.308.254.46.07.122.138.241.208.36.049.084.1.168.152.252q.142.248.3.487c.1.154.2.306.3.454s.211.317.317.471a.29.29,0,0,0,.049.065c.1.149.211.3.319.446a.1.1,0,0,0,.027.038c.092.124.184.249.279.371a1.963,1.963,0,0,0,.133.173c.108.138.216.276.327.411q.191.239.39.471c.133.157.265.311.4.463s.26.287.392.43a.079.079,0,0,0,.032.035c.133.143.271.287.409.427a25.723,25.723,0,0,0,16.349,7.678,10.8,10.8,0,0,1-1.447-2.392h0c-.114-.26-.219-.522-.314-.793a22.808,22.808,0,0,1-11.766-5.85c21.965-16.21,23.868-8.33,24.033-6.9,0,.07.014.136.016.209a8.159,8.159,0,0,0,1.12-1.972C71.414,290.687,70.416,287.473,67.708,286.743Z" transform="translate(-30.56 -257.89)" fill="#fff"/></g></g></svg>
-            </div>
-      
-            <svg xmlns="http://www.w3.org/2000/svg" width="12.217" height="13.424" viewBox="0 0 12.217 13.424"><path d="M359.65,309.121l1.923-2.945,1.924,2.945a1.6,1.6,0,0,1-.187,1.98l-1.737,1.787-1.737-1.787A1.6,1.6,0,0,1,359.65,309.121Z" transform="translate(-351.54 -306.176)" fill="#cdcdcd"/><path d="M363.5,315.788l-1.924,2.945-1.923-2.945a1.6,1.6,0,0,1,.186-1.98l1.737-1.788,1.737,1.788A1.6,1.6,0,0,1,363.5,315.788Z" transform="translate(-351.54 -305.31)" fill="#cdcdcd"/><path d="M364.388,309.326a1.953,1.953,0,0,1,2.615-.185l4.323,3.369L367,315.878a1.953,1.953,0,0,1-2.615-.184l-3.1-3.185Z" transform="translate(-361.292 -305.798)" fill="#cdcdcd"/></svg>
-            <hr style="width: 10%;"/>
-            <div class="auth-dropdown">
-              <svg id="login-text-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M19,3H6A3,3,0,0,0,3,6V8A1,1,0,0,0,4,9H4A1,1,0,0,0,5,8V6A1,1,0,0,1,6,5H18a1,1,0,0,1,1,1V18a1,1,0,0,1-1,1H6a1,1,0,0,1-1-1V16a1,1,0,0,0-1-1H4a1,1,0,0,0-1,1v2a3,3,0,0,0,3,3H18a3,3,0,0,0,3-3V5a2,2,0,0,0-2-2M10.788,16.288l.005,0a1,1,0,0,0,1.414,0l3.586-3.586a1,1,0,0,0,0-1.414L12.2,7.7a1,1,0,0,0-1.412,0h0a1,1,0,0,0,0,1.417L11.9,10.227a.452.452,0,0,1-.319.773H4a1,1,0,0,0-1,1H3a1,1,0,0,0,1,1h7.575a.452.452,0,0,1,.319.773l-1.1,1.1A1,1,0,0,0,10.788,16.288Z" transform="translate(-3 -3)" fill="#c41d4f"/></svg>
-               <span id="login-text-btn">Login</span>
-      
-               <i class="fas fa-sort-up loginmenudownicon "></i>
-               <i class="fas fa-chevron-down"></i>
-               <div class="login-menu-list">
-                 
-                <div class="manu-items">
-                  <i class="fas fa-sign-in-alt"></i>
-                  <span>Login</span>
-                </div>
-      
-                <div class="manu-items">
-                  <i class="fas fa-user-plus"></i>
-                  <span>Sign up</span>
-                </div>
-      
-      
-              </div>
-            </div>
-      
-      
-            <hr style="width: 10%;"/>
-            <div class="lang-dropdown">
-              <svg id="lang-text-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21.599" height="20" viewBox="0 0 21.599 20"><defs><linearGradient id="a" y1="0.147" x2="1" y2="0.935" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#c41d4f"/><stop offset="1" stop-color="#8a1538"/></linearGradient></defs><path d="M10.33,12.56l.03-.03A17.528,17.528,0,0,0,14,6.216.308.308,0,0,1,14.3,6h1.8a.9.9,0,0,0,.9-.9V4.9a.9.9,0,0,0-.9-.9H10.9a.9.9,0,0,1-.9-.9V2.9A.9.9,0,0,0,9.1,2H8.9a.9.9,0,0,0-.9.9v.2a.9.9,0,0,1-.9.9H1.9a.9.9,0,0,0-.9.9v.2a.9.9,0,0,0,.9.9h9.807a.324.324,0,0,1,.3.433,15.728,15.728,0,0,1-2.283,4.046.914.914,0,0,1-1.449.013A15.58,15.58,0,0,1,6.94,8.468.892.892,0,0,0,6.159,8h0a.908.908,0,0,0-.792,1.349,17.683,17.683,0,0,0,1.759,2.577.9.9,0,0,1-.05,1.22l-3.85,3.8a.9.9,0,0,0,0,1.279l.141.141a.9.9,0,0,0,1.274,0l3.726-3.726a.9.9,0,0,1,1.274,0l1.481,1.481A.9.9,0,0,0,12.6,15.8l.067-.18a.9.9,0,0,0-.211-.956ZM17.846,10h-.722a.9.9,0,0,0-.843.585l-3.824,10.2A.9.9,0,0,0,13.3,22h.075a.9.9,0,0,0,.844-.586l.682-1.828A.9.9,0,0,1,15.745,19h3.5a.9.9,0,0,1,.844.583l.69,1.834a.9.9,0,0,0,.844.583H21.7a.9.9,0,0,0,.843-1.219l-3.851-10.2A.9.9,0,0,0,17.846,10Zm-1.688,6.257.826-2.207a.551.551,0,0,1,1.032,0l.826,2.207a.551.551,0,0,1-.516.744H16.674A.551.551,0,0,1,16.158,16.256Z" transform="translate(-1 -2)" fill="#c41d4f"/></svg>					
-               <span id="lang-text-btn">En</span>
-               <i class="fas fa-sort-up langmenudownicon "></i>
-               <i class="fas fa-chevron-down a"></i>
-               <div class="lang-menu-list">
-                 
-                <div class="manu-items">
-                  <span>English</span>
-                </div>
-      
-                <div class="manu-items">
-                  <span>Arabic</span>
-                </div>
-      
-      
-              </div>
-            </div>
-      
-            <hr style="width: 45%;"/>
-            <svg style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="12.217" height="13.424" viewBox="0 0 12.217 13.424"><path d="M359.65,309.121l1.923-2.945,1.924,2.945a1.6,1.6,0,0,1-.187,1.98l-1.737,1.787-1.737-1.787A1.6,1.6,0,0,1,359.65,309.121Z" transform="translate(-351.54 -306.176)" fill="#cdcdcd"/><path d="M363.5,315.788l-1.924,2.945-1.923-2.945a1.6,1.6,0,0,1,.186-1.98l1.737-1.788,1.737,1.788A1.6,1.6,0,0,1,363.5,315.788Z" transform="translate(-351.54 -305.31)" fill="#cdcdcd"/><path d="M364.388,309.326a1.953,1.953,0,0,1,2.615-.185l4.323,3.369L367,315.878a1.953,1.953,0,0,1-2.615-.184l-3.1-3.185Z" transform="translate(-361.292 -305.798)" fill="#cdcdcd"/></svg>
-      
-          </div>
-      
-      
-          <div class="nav-logo">
-            <h1>Saqr</h1>
-          </div>
-      
-          <div class="first-section-menu">
-            
-            <svg xmlns="http://www.w3.org/2000/svg" width="12.217" height="13.424" viewBox="0 0 12.217 13.424"><path d="M359.65,309.121l1.923-2.945,1.924,2.945a1.6,1.6,0,0,1-.187,1.98l-1.737,1.787-1.737-1.787A1.6,1.6,0,0,1,359.65,309.121Z" transform="translate(-351.54 -306.176)" fill="#cdcdcd"/><path d="M363.5,315.788l-1.924,2.945-1.923-2.945a1.6,1.6,0,0,1,.186-1.98l1.737-1.788,1.737,1.788A1.6,1.6,0,0,1,363.5,315.788Z" transform="translate(-351.54 -305.31)" fill="#cdcdcd"/><path d="M364.388,309.326a1.953,1.953,0,0,1,2.615-.185l4.323,3.369L367,315.878a1.953,1.953,0,0,1-2.615-.184l-3.1-3.185Z" transform="translate(-361.292 -305.798)" fill="#cdcdcd"/></svg>
-            <hr style="width: 65%;"/>
-            <div class="sotial-media-div">
-              <div class="sotial-media-nav">
-                <i class="fab fa-facebook-f"></i>
-              </div>
-              <div class="sotial-media-nav">
-                <i class="fab fa-twitter"></i>
-              </div>
-              <div class="sotial-media-nav">
-                <i class="fab fa-whatsapp"></i>
-              </div>
-              <div class="sotial-media-nav">
-                <i class="fab fa-instagram"></i>
-              </div>
-            </div>
-            
-            <hr style="width: 5%;"/>
-            <svg style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="12.217" height="13.424" viewBox="0 0 12.217 13.424"><path d="M359.65,309.121l1.923-2.945,1.924,2.945a1.6,1.6,0,0,1-.187,1.98l-1.737,1.787-1.737-1.787A1.6,1.6,0,0,1,359.65,309.121Z" transform="translate(-351.54 -306.176)" fill="#cdcdcd"/><path d="M363.5,315.788l-1.924,2.945-1.923-2.945a1.6,1.6,0,0,1,.186-1.98l1.737-1.788,1.737,1.788A1.6,1.6,0,0,1,363.5,315.788Z" transform="translate(-351.54 -305.31)" fill="#cdcdcd"/><path d="M364.388,309.326a1.953,1.953,0,0,1,2.615-.185l4.323,3.369L367,315.878a1.953,1.953,0,0,1-2.615-.184l-3.1-3.185Z" transform="translate(-361.292 -305.798)" fill="#cdcdcd"/></svg>
-          
-          </div>
-      
-      
-          <div>
-      
-          </div>
-      
-        </div>
-        
-      </nav>
       <div class="blog-container"> 
         <div class="blog-3line">
                 
@@ -127,110 +24,55 @@
             <div class="postlist-tophead">
 
               <div class="breadcom">
-                <a href="">Home</a>
+                <a href="{% url 'index' %}">Home</a>
                 <i class="fas fa-chevron-right"></i>
-                <a href="">Post List</a>
+                <a href="{% url 'blog-list' %}">Post List</a>
                 
               </div>
 
               <div>
                 <div class="pagination">
-                  <a  href="#"><i class="fas fa-chevron-left"></i></a>
-                  <a href="#">1</a>
-                  <a href="#" class="active">2</a>
-                  <a href="#">3</a>
-                  <a href="#">4</a>
-                  <a href="#">5</a>
-                  <a href="#">6</a>
-                  <a href="#"><i class="fas fa-chevron-right"></i></a>
+                  <a  href="{{ request.path }}{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}{{ url_params }}"><i class="fas fa-chevron-left"></i></a>
+                    {% for page in page_obj.paginator.page_range %}
+                        {% if page > page_obj.number|add:"-3" and page < page_obj.number|add:'3' %}
+                            <a
+                               href="{{ request.path }}?page={{ page }}{{ url_params }}" {% if page == page_obj.number %}class="active" {% endif %}>{{ page }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                  <a href="{{ request.path }}{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}{{ url_params }}"><i class="fas fa-chevron-right"></i></a>
                 </div>
               </div>
 
             </div>
             <div class="post-list-main-div">
 
-
+                {% for post in posts %}
                 <div class="post-div-mainpostlist">
-                    <img src="img/articl-01-img.jpg" alt="">
-                    <h6 class="blogposttitle-main">Lorem ipsum dolor sit amet, consectetur</h6>
+                    <img src="{% if post.kind == 'video' %}{{ post.video_cover.url }}{% else %}{{ post.image.url }}{% endif %}" alt="">
+                    <h6 class="blogposttitle-main">{{ post.title }}</h6>
                     <div class="flex-center-center">
-                        <a class="btn btn-3 btn-small">
+                        <a class="btn btn-3 btn-small">  {# TODO: Add post detail url #}
                             <svg xmlns="http://www.w3.org/2000/svg" width="21.022" height="20.631" viewBox="0 0 21.022 20.631"><path d="M13.562,3.963A1.6,1.6,0,0,0,14.71,5.479a7.349,7.349,0,0,1,5.159,7.013,7,7,0,0,1-.174,1.554,1.594,1.594,0,0,0,.731,1.748h0a1.574,1.574,0,0,0,2.33-.97,10.275,10.275,0,0,0,.267-2.331A10.522,10.522,0,0,0,15.594,2.441a1.583,1.583,0,0,0-2.032,1.522Zm-1.4,15.879a7.426,7.426,0,0,1-6.993-6.808A7.346,7.346,0,0,1,10.31,5.48a1.6,1.6,0,0,0,1.15-1.517h0A1.586,1.586,0,0,0,9.42,2.442a10.51,10.51,0,1,0,10.171,17.8,1.576,1.576,0,0,0-.269-2.514h0a1.6,1.6,0,0,0-1.891.232A7.274,7.274,0,0,1,12.166,19.843Z" transform="translate(-2 -2.372)" fill="#e7e7e7" /></svg>	
                             Read More
                           </a>
                     </div>
                 </div>
-
-                <div class="post-div-mainpostlist">
-                  <img src="img/articl-01-img.jpg" alt="">
-                  <div class="shadow"></div>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88"><g transform="translate(-916 -421)"><g transform="translate(926.001 431.021)"><path d="M12.252,33.755l15.52-11.639a1.409,1.409,0,0,0,0-2.255L12.252,8.222A1.407,1.407,0,0,0,10,9.35V32.628A1.407,1.407,0,0,0,12.252,33.755Z" transform="translate(17.702 13.183)" fill="#e7e7e7"/></g><g transform="translate(916 421)" fill="none" stroke="#e7e7e7" stroke-width="0.5"><circle cx="44" cy="44" r="44" stroke="none"/><circle cx="44" cy="44" r="43.75" fill="none"/></g><g transform="translate(921 426)" fill="none" stroke="#e7e7e7" stroke-width="1"><circle cx="39" cy="39" r="39" stroke="none"/><circle cx="39" cy="39" r="38.5" fill="none"/></g></g></svg>  
-
-                  <h6 class="blogposttitle-main">Lorem ipsum dolor sit amet, consectetur</h6>
-                  <div class="flex-center-center">
-                      <a class="btn btn-3 btn-small">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="21.022" height="20.631" viewBox="0 0 21.022 20.631"><path d="M13.562,3.963A1.6,1.6,0,0,0,14.71,5.479a7.349,7.349,0,0,1,5.159,7.013,7,7,0,0,1-.174,1.554,1.594,1.594,0,0,0,.731,1.748h0a1.574,1.574,0,0,0,2.33-.97,10.275,10.275,0,0,0,.267-2.331A10.522,10.522,0,0,0,15.594,2.441a1.583,1.583,0,0,0-2.032,1.522Zm-1.4,15.879a7.426,7.426,0,0,1-6.993-6.808A7.346,7.346,0,0,1,10.31,5.48a1.6,1.6,0,0,0,1.15-1.517h0A1.586,1.586,0,0,0,9.42,2.442a10.51,10.51,0,1,0,10.171,17.8,1.576,1.576,0,0,0-.269-2.514h0a1.6,1.6,0,0,0-1.891.232A7.274,7.274,0,0,1,12.166,19.843Z" transform="translate(-2 -2.372)" fill="#e7e7e7" /></svg>	
-                          Read More
-                        </a>
-                  </div>
-              </div>
-
-                <div class="post-div-mainpostlist">
-                    <img src="img/articl-01-img.jpg" alt="">
-                    <h6 class="blogposttitle-main">Lorem ipsum dolor sit amet, consectetur</h6>
-                    <div class="flex-center-center">
-                        <a class="btn btn-3 btn-small">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="21.022" height="20.631" viewBox="0 0 21.022 20.631"><path d="M13.562,3.963A1.6,1.6,0,0,0,14.71,5.479a7.349,7.349,0,0,1,5.159,7.013,7,7,0,0,1-.174,1.554,1.594,1.594,0,0,0,.731,1.748h0a1.574,1.574,0,0,0,2.33-.97,10.275,10.275,0,0,0,.267-2.331A10.522,10.522,0,0,0,15.594,2.441a1.583,1.583,0,0,0-2.032,1.522Zm-1.4,15.879a7.426,7.426,0,0,1-6.993-6.808A7.346,7.346,0,0,1,10.31,5.48a1.6,1.6,0,0,0,1.15-1.517h0A1.586,1.586,0,0,0,9.42,2.442a10.51,10.51,0,1,0,10.171,17.8,1.576,1.576,0,0,0-.269-2.514h0a1.6,1.6,0,0,0-1.891.232A7.274,7.274,0,0,1,12.166,19.843Z" transform="translate(-2 -2.372)" fill="#e7e7e7" /></svg>	
-                            Read More
-                        </a>
-                    </div>
-                </div>
-
-                <div class="post-div-mainpostlist">
-                    <img src="img/articl-01-img.jpg" alt="">
-                    <h6 class="blogposttitle-main">Lorem ipsum dolor sit amet, consectetur</h6>
-                    <div class="flex-center-center">
-                        <a class="btn btn-3 btn-small">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="21.022" height="20.631" viewBox="0 0 21.022 20.631"><path d="M13.562,3.963A1.6,1.6,0,0,0,14.71,5.479a7.349,7.349,0,0,1,5.159,7.013,7,7,0,0,1-.174,1.554,1.594,1.594,0,0,0,.731,1.748h0a1.574,1.574,0,0,0,2.33-.97,10.275,10.275,0,0,0,.267-2.331A10.522,10.522,0,0,0,15.594,2.441a1.583,1.583,0,0,0-2.032,1.522Zm-1.4,15.879a7.426,7.426,0,0,1-6.993-6.808A7.346,7.346,0,0,1,10.31,5.48a1.6,1.6,0,0,0,1.15-1.517h0A1.586,1.586,0,0,0,9.42,2.442a10.51,10.51,0,1,0,10.171,17.8,1.576,1.576,0,0,0-.269-2.514h0a1.6,1.6,0,0,0-1.891.232A7.274,7.274,0,0,1,12.166,19.843Z" transform="translate(-2 -2.372)" fill="#e7e7e7" /></svg>	
-                            Read More
-                          </a>
-                    </div>
-                </div>
-
-                <div class="post-div-mainpostlist">
-                    <img src="img/articl-01-img.jpg" alt="">
-                    <h6 class="blogposttitle-main">Lorem ipsum dolor sit amet, consectetur</h6>
-                    <div class="flex-center-center">
-                        <a class="btn btn-3 btn-small">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="21.022" height="20.631" viewBox="0 0 21.022 20.631"><path d="M13.562,3.963A1.6,1.6,0,0,0,14.71,5.479a7.349,7.349,0,0,1,5.159,7.013,7,7,0,0,1-.174,1.554,1.594,1.594,0,0,0,.731,1.748h0a1.574,1.574,0,0,0,2.33-.97,10.275,10.275,0,0,0,.267-2.331A10.522,10.522,0,0,0,15.594,2.441a1.583,1.583,0,0,0-2.032,1.522Zm-1.4,15.879a7.426,7.426,0,0,1-6.993-6.808A7.346,7.346,0,0,1,10.31,5.48a1.6,1.6,0,0,0,1.15-1.517h0A1.586,1.586,0,0,0,9.42,2.442a10.51,10.51,0,1,0,10.171,17.8,1.576,1.576,0,0,0-.269-2.514h0a1.6,1.6,0,0,0-1.891.232A7.274,7.274,0,0,1,12.166,19.843Z" transform="translate(-2 -2.372)" fill="#e7e7e7" /></svg>	
-                            Read More
-                          </a>
-                    </div>
-                </div>
-
-                <div class="post-div-mainpostlist">
-                    <img src="img/articl-01-img.jpg" alt="">
-                    <h6 class="blogposttitle-main">Lorem ipsum dolor sit amet, consectetur</h6>
-                    <div class="flex-center-center">
-                        <a class="btn btn-3 btn-small">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="21.022" height="20.631" viewBox="0 0 21.022 20.631"><path d="M13.562,3.963A1.6,1.6,0,0,0,14.71,5.479a7.349,7.349,0,0,1,5.159,7.013,7,7,0,0,1-.174,1.554,1.594,1.594,0,0,0,.731,1.748h0a1.574,1.574,0,0,0,2.33-.97,10.275,10.275,0,0,0,.267-2.331A10.522,10.522,0,0,0,15.594,2.441a1.583,1.583,0,0,0-2.032,1.522Zm-1.4,15.879a7.426,7.426,0,0,1-6.993-6.808A7.346,7.346,0,0,1,10.31,5.48a1.6,1.6,0,0,0,1.15-1.517h0A1.586,1.586,0,0,0,9.42,2.442a10.51,10.51,0,1,0,10.171,17.8,1.576,1.576,0,0,0-.269-2.514h0a1.6,1.6,0,0,0-1.891.232A7.274,7.274,0,0,1,12.166,19.843Z" transform="translate(-2 -2.372)" fill="#e7e7e7" /></svg>	
-                            Read More
-                          </a>
-                    </div>
-                </div>
+                {% endfor %}
 
 
             </div>
             <div class="bottom-pagination">
               <div class="pagination bottom-pagination-a">
-                <a  href="#"><i class="fas fa-chevron-left"></i></a>
-                <a href="#">1</a>
-                <a href="#" class="active">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#"><i class="fas fa-chevron-right"></i></a>
+                <a  href="{{ request.path }}{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}{{ url_params }}"><i class="fas fa-chevron-left"></i></a>
+                    {% for page in page_obj.paginator.page_range %}
+                        {% if page > page_obj.number|add:"-3" and page < page_obj.number|add:'3' %}
+                            <a
+                               href="{{ request.path }}?page={{ page }}{{ url_params }}" {% if page == page_obj.number %}class="active" {% endif %}>{{ page }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                  <a href="{{ request.path }}{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}{{ url_params }}"><i class="fas fa-chevron-right"></i></a>
               </div>
             </div>
         </div>
@@ -250,7 +92,7 @@
           
         </div> 
         <div style="width: 30%;padding: 20px;">
-          <div class="material-textbox">
+          <div class="material-textbox"> {# TODO: add form to search #}
             <input class="search-box-textbox" placeholder="Enter your id" type="text" required />
             <label></label>  
             <i class="fas fa-search"></i>
@@ -259,83 +101,28 @@
             <h2 style="margin-bottom: 8px;">Tags</h2>
             <hr/>
             <div class="tag-list-tags">
+                {% for tag in tags %}
                 <div>
-                  mahdi
+                    <a style="color: white;" href="{{ request.path }}?page={{ page_obj.number }}&tags__id={{ tag.id }}">{{ tag.title }}</a>
                 </div>
-
-                <div>
-                  mahdi
-                </div>
-
-                <div>
-                  mahdi
-                </div>
-
-                <div>
-                  mahdi
-                </div>
-
-                <div>
-                  mahdi
-                </div>
-
-                <div>
-                  mahdi
-                </div>
+                {% endfor %}
             </div>
           </div>
           <div>
             <h2 style="margin-bottom: 8px;">More visited</h2>
             <hr/>
-
             <div style="margin-top: 13px;">
-              <a href="">
+            {% for visited in more_visited %}
+              <a href="">  {# TODO: Add blog detail url #}
                 <div class="more-visited-post">
-                  <img src="img/articl-01-img.jpg" alt="">
-                  <h4>Lorem ipsum dolor sit amet, consectetur</h4>
+                  <img src="{% if visited.kind == 'video' %}{{ visited.video_cover.url }}{% else %}{{ visited.image.url }}{% endif %}" alt="">
+                  <h4>{{ visited.title }}</h4>
                 </div>
               </a>
-
-              <a href="">
-                <div class="more-visited-post">
-                  <img src="img/articl-01-img.jpg" alt="">
-                  <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-                </div>
-              </a>
-
-              <a href="">
-                <div class="more-visited-post">
-                  <img src="img/articl-01-img.jpg" alt="">
-                  <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-                </div>
-              </a>
-
-              <a href="">
-                <div class="more-visited-post">
-                  <img src="img/articl-01-img.jpg" alt="">
-                  <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-                </div>
-              </a>
+            {% endfor %}
             </div>
-
           </div>
         </div>
       </div>
-
-
-
-    
-
-
-
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="./Script/animate.js"></script>
-      <script
-        src="https://kit.fontawesome.com/7a21f8c96b.js"
-        crossorigin="anonymous"
-        ></script>
-      <script src="./Script/Sotialmedia_hover.js"></script>
-
+{% include 'shared/_scripts.html' %}
 </body>
-</html>
