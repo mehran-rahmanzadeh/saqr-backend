@@ -35,13 +35,13 @@ class IndexView(TemplateView):
         context['about_dashboard'] = AboutDashboard.get_all_from_cache()[0] if AboutDashboard.get_all_from_cache() else None
         context['about_test'] = AboutTest.get_all_from_cache()[0] if AboutTest.get_all_from_cache() else None
         context['get_certified'] = HowToGetCertificate.get_all_from_cache()[0] if HowToGetCertificate.get_all_from_cache() else None
-        posts = Post.objects.filter(show_in_index=True).order_by('?')[:4]
-        context['right_up_blog_post'] = posts[0]
-        context['right_down_blog_post'] = posts[1]
+        posts = Post.objects.filter(show_in_index=True).order_by('-created')[:5]
+        context['right_up_blog_post'] = posts[4]
+        context['right_down_blog_post'] = posts[3]
         context['left_up_blog_post'] = posts[2]
-        context['left_down_blog_post'] = posts[3]
-        context['center_blog_post'] = Post.objects.last()
-        context['responsive_posts'] = Post.objects.order_by('-created')[:4]
+        context['left_down_blog_post'] = posts[1]
+        context['center_blog_post'] = posts[0]
+        context['responsive_posts'] = posts[:4]
         context['contact_us'] = ContactUs.get_all_from_cache()[0] if ContactUs.get_all_from_cache() else None
         context['faqs'] = Faq.get_all_from_cache()
 
