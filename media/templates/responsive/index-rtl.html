@@ -234,8 +234,8 @@
             {% for post in responsive_posts %}
           <div class="post">
               <div class="shadow"></div>
-              <svg class="video-svg" xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88"><g transform="translate(-916 -421)"><g transform="translate(926.001 431.021)"><path d="M12.252,33.755l15.52-11.639a1.409,1.409,0,0,0,0-2.255L12.252,8.222A1.407,1.407,0,0,0,10,9.35V32.628A1.407,1.407,0,0,0,12.252,33.755Z" transform="translate(17.702 13.183)" fill="#e7e7e7"/></g><g transform="translate(916 421)" fill="none" stroke="#e7e7e7" stroke-width="0.5"><circle cx="44" cy="44" r="44" stroke="none"/><circle cx="44" cy="44" r="43.75" fill="none"/></g><g transform="translate(921 426)" fill="none" stroke="#e7e7e7" stroke-width="1"><circle cx="39" cy="39" r="39" stroke="none"/><circle cx="39" cy="39" r="38.5" fill="none"/></g></g></svg>  
-
+              <a href="{% url 'blog-detail' slug=post.slug %}"><svg class="video-svg" xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88"><g transform="translate(-916 -421)"><g transform="translate(926.001 431.021)"><path d="M12.252,33.755l15.52-11.639a1.409,1.409,0,0,0,0-2.255L12.252,8.222A1.407,1.407,0,0,0,10,9.35V32.628A1.407,1.407,0,0,0,12.252,33.755Z" transform="translate(17.702 13.183)" fill="#e7e7e7"/></g><g transform="translate(916 421)" fill="none" stroke="#e7e7e7" stroke-width="0.5"><circle cx="44" cy="44" r="44" stroke="none"/><circle cx="44" cy="44" r="43.75" fill="none"/></g><g transform="translate(921 426)" fill="none" stroke="#e7e7e7" stroke-width="1"><circle cx="39" cy="39" r="39" stroke="none"/><circle cx="39" cy="39" r="38.5" fill="none"/></g></g></svg>
+              </a>
               <img src="{% if post.kind == 'video' %}{{ post.video_cover.url }}{% else %}{{ post.image.url }}{% endif %}" alt=""/>
               <h3>
                 {{ post.title }}
@@ -244,7 +244,7 @@
           {% endfor %}
 
       <div style="margin-top: 10px;display: flex;justify-content: center;">
-        <a style="max-width: 158px;" class="btn btn-3 ">
+        <a style="max-width: 158px;" class="btn btn-3 " href="{% url 'blog-list' %}">
           <svg xmlns="http://www.w3.org/2000/svg" width="21.022" height="20.631" viewBox="0 0 21.022 20.631"><path d="M13.562,3.963A1.6,1.6,0,0,0,14.71,5.479a7.349,7.349,0,0,1,5.159,7.013,7,7,0,0,1-.174,1.554,1.594,1.594,0,0,0,.731,1.748h0a1.574,1.574,0,0,0,2.33-.97,10.275,10.275,0,0,0,.267-2.331A10.522,10.522,0,0,0,15.594,2.441a1.583,1.583,0,0,0-2.032,1.522Zm-1.4,15.879a7.426,7.426,0,0,1-6.993-6.808A7.346,7.346,0,0,1,10.31,5.48a1.6,1.6,0,0,0,1.15-1.517h0A1.586,1.586,0,0,0,9.42,2.442a10.51,10.51,0,1,0,10.171,17.8,1.576,1.576,0,0,0-.269-2.514h0a1.6,1.6,0,0,0-1.891.232A7.274,7.274,0,0,1,12.166,19.843Z" transform="translate(-2 -2.372)" fill="#e7e7e7" /></svg>	
           الدیدن بیشتر
         </a>
