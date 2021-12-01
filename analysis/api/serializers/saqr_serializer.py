@@ -26,6 +26,8 @@ class SaqrSerializer(ModelSerializer):
             'age',
             'images',
             'passport_image',
+            'profile_image',
+            'cover',
             'is_verified',
             'created',
             'modified'

@@ -111,6 +111,8 @@ class SaqrAdmin(admin.ModelAdmin):
 
     filter_horizontal = ['images']
 
+    raw_id_fields = ['owner']
+
     search_fields = [
         'title',
     ]
