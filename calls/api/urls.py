@@ -13,7 +13,7 @@ from calls.api.views import (
 
 router = DefaultRouter()
 
-router.register(r'getintouch', GetInTouchViewset, basename='getintouch')
+# router.register(r'getintouch', GetInTouchViewset, basename='getintouch')
 
 router.register(
     r'certificaterequest',

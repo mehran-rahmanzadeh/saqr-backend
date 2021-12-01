@@ -7,6 +7,9 @@ from django.utils.translation import ugettext_lazy as _
 
 # validator support
 from importlib import import_module
+
+from painless.utils.regex.patterns import INTERNATIONAL_PHONE_NUMBER_PATTERN
+
 validators = import_module('django.core.validators')
 
 
@@ -22,20 +25,17 @@ class CertificateRequest(models.Model, ModelCacheMixin):
     
     CACHE_KEY = 'certificaterequest'  # auto generated CACHE_KEY
     
-    email = models.CharField(
-             max_length=100,
-             
+    phone_number = models.CharField(
+             max_length=13,
              validators=[
-                
-                getattr(validators, 'EmailValidator')(None),
-                
+                getattr(validators, 'RegexValidator')(INTERNATIONAL_PHONE_NUMBER_PATTERN),
              ]
-             
     )
+
+    description = models.TextField(null=True, blank=True)
     
     seen = models.BooleanField(
              default=False,
-             
     )
     
     created = models.DateTimeField(

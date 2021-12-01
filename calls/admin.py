@@ -37,11 +37,11 @@ class CertificateRequestAdmin(admin.ModelAdmin):
     CertificateRequest Admin
     Auto generated
     """
-    list_display = ['email', 'seen', 'created', 'modified']
+    list_display = ['phone_number', 'description', 'seen', 'created', 'modified']
 
     list_filter = ['created', 'modified', 'seen']
 
-    search_fields = ['email']
+    search_fields = ['phone_number', 'description']
 
     def has_add_permission(self, *args, **kwargs):
         return True

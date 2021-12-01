@@ -38,10 +38,6 @@ class CertificateRequestSerializer(ModelSerializer):
     class Meta:
         model = CertificateRequest
         fields = [
-            'id',
-            'email',
-            'seen',
-            'created',
-            'modified',
-        
+            'phone_number',
+            'description',
         ]
