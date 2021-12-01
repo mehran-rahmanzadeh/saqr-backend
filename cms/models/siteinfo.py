@@ -116,7 +116,7 @@ class SiteInfo(models.Model, ModelCacheMixin):
 
     @property
     def get_whatsapp_url(self):
-        return f'https://www.whatsapp.com/{self.whatsapp}/'
+        return f'https://wa.me/message/{self.whatsapp}/'
 
     @property
     def get_twitter_url(self):
