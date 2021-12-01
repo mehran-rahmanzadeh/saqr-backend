@@ -16,28 +16,14 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleware',
-    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    # 'django.contrib.sessions.middleware.SessionMiddleware',
     'sage_session.middlewares.UserSessionMiddleware',
     'sage_session.middlewares.UserSessionPrivacyMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    # 'painless.utils.middlewares.cache_per_user_middleware.UpdateUserCacheMiddleware',
-    # 'painless.utils.middlewares.cache_per_user_middleware.FetchFromUserCacheMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    # 'silk.middleware.SilkyMiddleware',  # silk profiler
-    # 'htmlmin.middleware.HtmlMinifyMiddleware',
-    # 'htmlmin.middleware.MarkRequestMiddleware',
-
-    # "django_prometheus.middleware.PrometheusBeforeMiddleware",
-    # "django_prometheus.middleware.PrometheusAfterMiddleware",
-
-    # 'request.middleware.RequestMiddleware',
-
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.admindocs.middleware.XViewMiddleware',
