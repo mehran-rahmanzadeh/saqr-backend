@@ -55,6 +55,20 @@ class Saqr(Sku_Mixin, TimeStampModelMixin, TitleSlugLinkModelMixin):
         upload_to='saqr-passports/'
     )
 
+    profile_image = models.ImageField(
+        _('Profile Image'),
+        upload_to='saqr-profile-images/',
+        null=True,
+        blank=True
+    )
+
+    cover = models.ImageField(
+        _('Cover Image'),
+        upload_to='saqr-profile-covers/',
+        null=True,
+        blank=True
+    )
+
     owner = models.ForeignKey(
         get_user_model(),
         related_name='saqrs',
