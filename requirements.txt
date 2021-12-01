@@ -4,6 +4,7 @@ authy==2.2.6
 autopep8==1.5.7
 billiard==3.6.3.0
 celery==4.4.6
+cryptography
 certifi==2020.12.5
 cffi==1.14.5
 chardet==4.0.0
