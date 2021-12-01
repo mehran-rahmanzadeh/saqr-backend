@@ -34,7 +34,7 @@ class Tag(models.Model, ModelCacheMixin):
     )
     
     def __str__(self):
-        return f"Tag {self.pk}" 
+        return f"Tag {self.title}"
 
     class Meta:
         verbose_name = _("Tag")  # auto generated verbose_name

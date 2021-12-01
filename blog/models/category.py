@@ -34,7 +34,7 @@ class Category(models.Model, ModelCacheMixin):
     )
     
     def __str__(self):
-        return f"Category {self.pk}" 
+        return f"Category {self.title}"
 
     class Meta:
         verbose_name = _("Category")  # auto generated verbose_name

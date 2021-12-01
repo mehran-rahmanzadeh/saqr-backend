@@ -92,7 +92,7 @@ class Post(Sku_Mixin, ModelCacheMixin):
     )
     
     def __str__(self):
-        return f"Post {self.pk}" 
+        return f"Post {self.title}"
     
     def save(self, *args, **kwargs):
         if not self.sku:
