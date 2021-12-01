@@ -22,19 +22,6 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
 from rest_framework.permissions import AllowAny
-from drf_yasg.views import get_schema_view
-from drf_yasg import openapi
-
-schema_view = get_schema_view(
-    openapi.Info(
-        title="Rest API Doc",
-        default_version='v1',
-        description="Auto Generated API Docs",
-        license=openapi.License(name="S.A.G.E License"),
-    ),
-    public=True,
-    permission_classes=(AllowAny,),
-)
 
 urlpatterns = i18n_patterns(
     # admin

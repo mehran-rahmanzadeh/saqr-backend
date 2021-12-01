@@ -18,23 +18,24 @@ html {
 
 
 h3{
-	font-family: 'OleoScript';
+	font-family: 'doha';
 	color: #fff;
 	text-align: right;
   font-size: 25px !important;
 
 }
 h5{
-	font-family: 'OleoScript';
+	font-family: 'doha';
 	color: #fff;
 	text-align: right;
   margin-bottom: 5px;
 }
 p{
-	font-family: 'AvenirNextRounded';
+  font-family: 'Markazi Text', serif;
 	font-size: 18px;
     text-align: justify;
 	color: #FFF !important;
+  line-height: 25px;
 }
 
 .header {
@@ -131,7 +132,7 @@ p{
   }
 
   .bottom-menu>span{
-    font-family: 'AvenirNextRounded';
+    font-family: 'Markazi Text', serif;
     color: #FFF;
     font-weight: bold;
   }
@@ -202,8 +203,8 @@ p{
 	transition: 0.2s ease;
 	background-color: #2a2a2a;
 	color: #FFF;
-	height: 18px;
-	width: 270px;
+	height: 45px;
+	width: 100%;
 	font-size: 16px;
 
 
@@ -272,7 +273,7 @@ p{
   }
 
   textarea{
-    font-family: 'AvenirNextRounded' !important;
+    font-family: 'Markazi Text', serif !important;
 
   }
 
@@ -285,7 +286,7 @@ p{
 	width: 150px;
 	background-size: 200% auto;
 	color: white;
-	font-family: 'AvenirNextRounded' !important;
+  font-family: 'Markazi Text', serif !important;
 	border-radius: 6px;
 	cursor: pointer;
 	display: flex;
@@ -353,7 +354,7 @@ p{
     color: #FFF;
     left: 28px;
     top: 8px;
-    font-family: 'AvenirNextRounded';
+    font-family: 'Markazi Text', serif;
     font-weight: bold;
     font-size: 13px;	
   }
@@ -363,7 +364,7 @@ p{
     color: #FFF;
     left: 8px;
     top: 26px;
-    font-family: 'AvenirNextRounded';
+    font-family: 'Markazi Text', serif;
     font-weight: bold;
     font-size: 13px;
 
@@ -374,14 +375,14 @@ p{
     color: #FFF;
     left: 23px;
     top: 32px;
-    font-family: 'AvenirNextRounded';
+    font-family: 'Markazi Text', serif;
     font-weight: bold;
     font-size: 13px;
 
 	
   }
   span{
-	  font-family: "AvenirNextRounded";
+    font-family: 'Markazi Text', serif;
   }
   .hawk-image-description-2-div{
     position: absolute;
@@ -394,7 +395,7 @@ p{
     position: absolute;
     right: 189px;
     top: 210px;
-    font-family: 'AvenirNextRounded';
+    font-family: 'Markazi Text', serif;
     font-weight: bold;
     z-index: 100;
   
@@ -603,7 +604,7 @@ p{
 
 .accordion-head{
 	text-align: left;
-	font-family: "AvenirNextRounded";
+  font-family: 'Markazi Text', serif;
 	width: 100%;
 	height: 58px;
 	border: 1px solid #FFF;
@@ -683,7 +684,7 @@ p{
   color: #818181;
   display: block;
   transition: 0.3s;
-  font-family: AvenirNextRounded;
+  font-family: 'Markazi Text', serif;
 }
 
 .sidebar a:hover {
@@ -741,7 +742,7 @@ p{
 	padding-left: 5px;
 
 	color: #FFF;
-	font-family: 'AvenirNextRounded';
+  font-family: 'Markazi Text', serif;
 }
 
 a{
@@ -760,7 +761,7 @@ a{
 	float: left;
     padding: 6px 10px;
 	text-decoration: none;
-	font-family: 'AvenirNextRounded';
+  font-family: 'Markazi Text', serif;
 	border-radius: 3px;
 	border: 1px solid #ffffff96;
 	margin-left: 3px;

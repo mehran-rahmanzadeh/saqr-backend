@@ -69,15 +69,22 @@
          <i class="fas fa-sort-up langmenudownicon "></i>
          <i class="fas fa-chevron-down a"></i>
          <div class="lang-menu-list">
-
-          <div class="manu-items">
-            <a href="{% translate_url 'en' %}"><span>English</span></a>
-          </div>
-
-          <div class="manu-items">
-            <a href="{% translate_url 'ar' %}"><span>Arabic</span></a>
-          </div>
-
+          <a onclick="document.location.replace('/en/')" href="/en/">
+            <div class="manu-items" style="display: flex;align-items: center;">
+              <span>
+                <img style="height: 20px; width: 20px;border-radius: 50%;margin-right: 5px;" src="{% static 'img/en.png' %}" alt="">
+              </span>
+              <span>English</span>
+            </div>
+          </a>
+          <a onclick="document.location.replace('/ar/')" href="/ar/">
+            <div class="manu-items" style="display: flex;align-items: center;">
+              <span>
+                <img style="height: 20px; width: 20px;border-radius: 50%;margin-right: 5px;" src="{% static 'img/qatar.png' %}" alt="">
+              </span>
+              <span>Arabic</span>
+            </div>
+        </a>
 
         </div>
       </div>
@@ -98,26 +105,26 @@
       <hr style="width: 65%;"/>
 
       <div class="sotial-media-div">
-        <a href="{{ site_info.get_facebook_url }}" target="_blank">
-          <div class="sotial-media-nav">
+        <a onclick="document.location.replace('{{ site_info.get_facebook_url }}')" href="{{ site_info.get_facebook_url }}" target="_blank">
+          <div class="sotial-media-nav facebook">
             <i class="fab fa-facebook-f"></i>
           </div>
         </a>
 
-        <a href="{{ site_info.get_twitter_url }}">
-          <div class="sotial-media-nav">
+        <a onclick="document.location.replace('{{ site_info.get_twitter_url }}')" href="{{ site_info.get_twitter_url }}">
+          <div class="sotial-media-nav twitter">
             <i class="fab fa-twitter"></i>
           </div>
         </a>
 
-        <a href="{{ site_info.get_whatsapp_url }}">
-          <div class="sotial-media-nav">
+        <a onclick="document.location.replace('{{ site_info.get_whatsapp_url }}')" href="{{ site_info.get_whatsapp_url }}">
+          <div class="sotial-media-nav whatsapp">
             <i class="fab fa-whatsapp"></i>
           </div>
         </a>
 
-        <a href="{{ site_info.get_instagram_url }}">
-          <div class="sotial-media-nav">
+        <a onclick="document.location.replace('{{ site_info.get_instagram_url }}')" href="{{ site_info.get_instagram_url }}">
+          <div class="sotial-media-nav instagram">
             <i class="fab fa-instagram"></i>
           </div>
         </a>

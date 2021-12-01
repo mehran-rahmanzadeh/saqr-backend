@@ -22,9 +22,9 @@
             <div class="postlist-tophead">
 
               <div class="breadcom">
-                <a href="{% url 'index' %}">Home</a>
+                <a onclick='document.location.replace("{% url 'index' %}")' href="{% url 'index' %}">Home</a>
                 <i class="fas fa-chevron-right"></i>
-                <a href="{% url 'blog-list' %}">Post List</a>
+                <a onclick='document.location.replace("{% url 'blog-list' %}")' href="{% url 'blog-list' %}">Post List</a>
                 <i class="fas fa-chevron-right"></i>
                 <a href="">{{ object.title }}</a>
                 
@@ -68,18 +68,18 @@
         </div> 
         <div style="width: 30%;padding: 20px;">
           <div class="material-textbox">
-            <input class="search-box-textbox" placeholder="Enter your id" type="text" required />
+            <input style="height: 50px !important;" class="search-box-textbox" placeholder="Enter your id" type="text" required />
             <label></label>  
-            <i class="fas fa-search"></i>
+            <i style="margin-right: 20px;cursor: pointer;" class="fas fa-search"></i>
           </div>
           <div>
             <h2 style="margin-bottom: 8px;">Tags</h2>
             <hr/>
             <div class="tag-list-tags">
                 {% for tag in tags %}
-                <div>
-                    <a style="color: white;" href="{% url 'blog-list' %}&tags__id={{ tag.id }}">{{ tag.title }}</a>
-                </div>
+                <div onclick='document.location.replace("{{ request.path }}?page={{ page_obj.number }}&tags__id={{ tag.id }}")'>
+                  <a style="color: white;" href="{{ request.path }}?page={{ page_obj.number }}&tags__id={{ tag.id }}">{{ tag.title }}</a>
+         </div>
                 {% endfor %}
             </div>
           </div>
@@ -89,7 +89,7 @@
 
             <div style="margin-top: 13px;">
               {% for visited in more_visited %}
-              <a href="{% url 'blog-detail' slug=visited.slug %}">
+              <a onclick='document.location.replace("{% url 'blog-detail' slug=visited.slug %}")' href="{% url 'blog-detail' slug=visited.slug %}">
                 <div class="more-visited-post">
                   <img src="{% if visited.kind == 'video' %}{{ visited.video_cover.url }}{% else %}{{ visited.image.url }}{% endif %}" alt="">
                   <h4>{{ visited.title }}</h4>

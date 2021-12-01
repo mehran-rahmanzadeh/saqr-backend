@@ -35,7 +35,12 @@
 <script>
 const player = new Plyr('#player');
 </script>
-
+<script>
+  $(".blog-link-item").click(function (e) { 
+    e.preventDefault();
+    document.location.replace($(this).children('a').attr('href'))
+  });
+</script>
 <script>
   window.onscroll = function() {myFunction()};
  function myFunction() {

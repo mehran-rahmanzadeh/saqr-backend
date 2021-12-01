@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'AvenirNextRounded';
-    src: url('/font/AvenirNextRoundedStd-Reg.ttf');
-  }
-  
-  
+
   @font-face {
     font-family: 'doha';
     src: url('/font/A.Spirit.Of.Doha.Black.ttf');
@@ -72,34 +67,40 @@
       background-color: #2a2a2a;
   }
   h3{
-      font-family: 'OleoScript';
+      font-family: 'doha';
       color: #fff;
       text-align: right !important;
   }
   h5{
-      font-family: 'OleoScript';
+      font-family: 'doha';
       color: #fff;
       text-align: right !important;
   }
   h4{
-      font-family: 'OleoScript';
+      font-family: 'doha';
       color: #fff;
       text-align: right !important;
   }	
   
   h2{
-      font-family: 'OleoScript';
+      font-family: 'doha';
       color: #fff;
       text-align: right !important;
   }
   p{
-      font-family: 'AvenirNextRounded';
-      font-size: 18px;
+    font-family: 'Markazi Text', serif;
+    font-size: 18px;
       text-align: right !important;
       color: #FFF !important;
+      line-height: 25px;
       
   }
-  
+
+  .transformanimate >svg{
+    transform: rotate(360deg);
+    transition: 0.5s all;
+    }
+
   
   .topmenu{
       position: fixed;
@@ -177,8 +178,8 @@
       font-size: 18px;
       transition-property: all;
       transition-duration: 400ms;
-      font-family: "AvenirNextRounded";
-  }
+      font-family: 'Markazi Text', serif;
+    }
   .items-footer>svg{
       margin-top: -5px;
       transition-property: all;
@@ -202,7 +203,7 @@
   .auth-dropdown > span{
       color: #FFF;
       margin-left: 3px;
-      font-family: "AvenirNextRounded";
+      font-family: 'Markazi Text', serif;
       margin-right: 3px;
   }
   .auth-dropdown > i{
@@ -247,7 +248,7 @@
   }
   .lang-dropdown > span{
       color: #FFF;
-      font-family: "AvenirNextRounded";
+      font-family: 'Markazi Text', serif;
       margin-left: 3px;
       margin-right: 3px;
   }
@@ -315,7 +316,7 @@
       margin-top: 25px;
   }
   .hawk-id-sec > h3{
-      font-family: 'OleoScript';
+      font-family: 'doha';
       font-size: 20px;
   }
   .inutclass{
@@ -422,7 +423,7 @@
       width: 150px;
       background-size: 200% auto;
       color: white;
-      font-family: 'AvenirNextRounded' !important;
+      font-family: 'Markazi Text' !important;
       border-radius: 6px;
       cursor: pointer;
       display: flex;
@@ -466,9 +467,9 @@
     .hawk-image-description-1-text{
       position: absolute;
       color: #FFF;
-      left: 43px;
+      left: 53px;
       top: 14px;
-      font-family: 'AvenirNextRounded';
+      font-family: 'Markazi Text', serif;
       font-weight: bold;
       font-size: 15px;
       
@@ -477,9 +478,9 @@
     .hawk-image-description-2-text{
       position: absolute;
       color: #FFF;
-      left: 21px;
+      left: 45px;
       top: 26px;
-      font-family: 'AvenirNextRounded';
+      font-family: 'Markazi Text', serif;
       font-weight: bold;
       font-size: 15px;
   
@@ -488,16 +489,16 @@
     .hawk-image-description-3-text{
       position: absolute;
       color: #FFF;
-      left: 43px;
+      left: 54px;
       top: 47px;
-      font-family: 'AvenirNextRounded';
+      font-family: 'Markazi Text', serif;
       font-weight: bold;
       font-size: 15px;
   
       
     }
     span{
-        font-family: "AvenirNextRounded";
+        font-family: 'Markazi Text', serif;
     }
     .hawk-image-description-2-div{
       position: absolute;
@@ -512,7 +513,7 @@
       position: absolute;
       right: 52%;
       bottom: 17%;
-      font-family: 'AvenirNextRounded';
+      font-family: 'Markazi Text', serif;
       font-weight: bold;
       z-index: 100;
     
@@ -587,7 +588,7 @@
       max-width: 150px;
       background-size: 200% auto;
       color: white;
-      font-family: 'AvenirNextRounded';
+      font-family: 'Markazi Text', serif;
       border-radius: 6px;
       cursor: pointer;
       margin-left: 20px;
@@ -694,7 +695,7 @@
           bottom: -150px;
           right: -60px;
           font-size: 130px !important;
-          font-family: "OleoScript";
+          font-family: "doha";
           z-index: -200;
           color: rgba(255, 255, 255, 0.301);
       }
@@ -745,7 +746,7 @@
       .blogposttitle{
           margin: 0;
           text-align: right;
-          font-family: "OleoScript";
+          font-family: "doha";
           font-size: 16px;
           margin-top: 10px;
           color: #FFF;
@@ -754,7 +755,7 @@
       .blogposttitle-main{
           margin: 0;
           text-align: right;
-          font-family: "OleoScript";
+          font-family: "doha";
           font-size: 19px;
           margin-top: 10px;
           color: #FFF;
@@ -764,7 +765,7 @@
       .morepost{
           margin: 0;
           text-align: right;
-          font-family: "OleoScript";
+          font-family: "doha";
           font-size: 25px;
           margin-bottom: 10px;
       }
@@ -840,19 +841,21 @@
       .width40sotial{
           width: 40px !important;
           height: 40px !important;
+          min-width: 45px;
+          min-height: 45px;
           font-size: 20px !important;
       }
   
   input{
-      font-family: "AvenirNextRounded" !important;
-  }
+    font-family: 'Markazi Text' !important;
+}
   
   textarea{
-      font-family: "AvenirNextRounded" !important;
-  }
+    font-family: 'Markazi Text' !important;
+}
   .accordion-head{
       text-align: right;
-      font-family: "AvenirNextRounded";
+      font-family: 'Markazi Text' !important;
       width: 90%;
       height: 58px;
       border: 1px solid #FFF;
@@ -898,12 +901,18 @@
   }
   .footer-text{
       font-family: "doha";
-      font-size: 228px !important;
-      color: rgba(255, 255, 255, 0.349) !important;
+      font-size: 250px !important;
+      color: rgba(255, 255, 255, 0.100) !important;
   }
   .mosalas{
   
   }
+
+  .menu-blog{
+    height: 107px !important;
+      background-color: #2a2a2a !important;
+      padding-bottom: 1px !important;
+    }
   .login-menu-list{
       width: 130px;
       position: absolute;
@@ -980,6 +989,16 @@
       position: relative;
       cursor: pointer;
   }
+
+  .post-div-mainpostlist > h6{
+    transition: 500ms all;
+  }
+  .classchangecolor{
+    transition: 500ms all;
+  
+      color: #930033;
+    }
+
   .post-div-mainpostlist>img{
       width: 100%;
       border-radius: 5px;
@@ -1033,8 +1052,8 @@
       padding-right: 5px;
       padding-left: 5px;
       color: #FFF;
-      font-family: 'AvenirNextRounded';
-  }
+      font-family: 'Markazi Text' !important;
+    }
   
   
   
@@ -1047,7 +1066,7 @@
       float: left;
       padding: 6px 10px;
       text-decoration: none;
-      font-family: 'AvenirNextRounded';
+      font-family: 'Markazi Text' !important;
       border-radius: 3px;
       border: 1px solid #ffffff96;
       margin-left: 3px;
@@ -1102,14 +1121,20 @@
     .tag-list-tags >div{
       padding: 8px 12px;
       cursor: pointer;
-      font-family: 'AvenirNextRounded';
+      font-family: 'Markazi Text' !important;
       font-size: 13px;
       color: #FFF;
       border: 1px solid #FFF;
       border-radius: 3px;
       margin-right: 8px;
       margin-bottom: 8px;
-    }
+      transition: 0.6s all;
+	}
+
+	.tag-list-tags >div:hover{
+		background-color: #930033;
+	  }
+  
   
     .more-visited-post{
         width: 100%;
@@ -1136,7 +1161,7 @@
   }
   
   .post-detail-main >p{
-  font-size: 17px !important;
+  font-size: 16px !important;
   }
   
   

@@ -48,13 +48,13 @@ $(".lang-dropdown").click(function (e) {
 
 $(window).click(function (e) { 
     e.preventDefault();
-    if(e.target.className!="auth-dropdown" && e.target.className!="fas fa-chevron-down" && e.target.id!="login-text-svg" && e.target.id!="login-text-btn" ){
+    if(e.target.className!="auth-dropdown" && e.target.className!="noclick" && e.target.className!="noclick" && e.target.className!="fas fa-chevron-down" && e.target.id!="login-text-svg" && e.target.id!="login-text-btn" ){
         $(".login-menu-list").fadeOut('fast');
         $(".loginmenudownicon").fadeOut('fast');
 
     }
-
-    if(e.target.className!="lang-dropdown" && e.target.className!="fas fa-chevron-down a" && e.target.id!="lang-text-svg" && e.target.id!="lang-text-btn" ){
+    
+    if(e.target.className!="lang-dropdown" && e.target.className!="noclick" && e.target.className!="noclick" && e.target.className!="fas fa-chevron-down a" && e.target.id!="lang-text-svg" && e.target.id!="lang-text-btn" ){
         $(".lang-menu-list").fadeOut('fast');
         $(".langmenudownicon").fadeOut('fast');
 

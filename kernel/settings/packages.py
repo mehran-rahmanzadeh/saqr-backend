@@ -62,10 +62,10 @@ INSTALLED_APPS.append('calls')
 INSTALLED_APPS.append('customer_club')
 
 # God Of Packages
-INSTALLED_APPS.append('sage_painless')
+#INSTALLED_APPS.append('sage_painless')
 
-INSTALLED_APPS.append('django_seed')
-INSTALLED_APPS.append('drf_yasg')
+#INSTALLED_APPS.append('django_seed')
+#INSTALLED_APPS.append('drf_yasg')
 
 # ###################### #
 #     REST FRAMEWORK     #

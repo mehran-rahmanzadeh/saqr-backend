@@ -1,6 +1,5 @@
 $(".items-footer").on("click", function (event) {
     let scrollValue=$(window).scrollTop()
-    console.log(scrollValue)
     event.preventDefault();
     var id = $(this).children('a').attr('href');
     switch (id) {

@@ -1,8 +1,32 @@
+$(document).ready(function () {
+    if(location.pathname.split('/')[2]=="blog"){
+        $(".main-menu").addClass("menu-blog");
+    }else{
+        $(".main-menu").removeClass("menu-blog");
+    }
+});
 
 $(".sotial-media-nav").hover(function () {
-    $(this).css("background-color", "white");
-    $(this).children().css("color","black")
-        
+
+    if($(this).hasClass("facebook")){
+        $(this).css("background-color", "#FFF");
+        $(this).children().css("color","#3b5998")
+    }
+
+    if($(this).hasClass("twitter")){
+        $(this).css("background-color", "#FFF");
+        $(this).children().css("color","#00acee")
+    }
+
+    if($(this).hasClass("whatsapp")){
+        $(this).css("background-color", "#FFF");
+        $(this).children().css("color","#075e54")
+    }
+
+    if($(this).hasClass("instagram")){
+        $(this).css("background-color", "#FFF");
+        $(this).children().css("color","#dd2a7b")
+    }
     }, function () {
         $(this).css("background-color", "transparent");
         $(this).children().css("color", "white");
@@ -133,3 +157,35 @@ $(window).on('hashchange', function (e) {
 });
 
 
+$('.btn-3').hover(function () {
+       $(this).addClass("transformanimate");     
+    }, function () {
+       $(this).removeClass("transformanimate");     
+
+    }
+);
+
+$('.post-div-mainpostlist').hover(function () {
+        $(this).children('h6').addClass("classchangecolor");
+    }, function () {
+        $(this).children('h6').removeClass("classchangecolor");
+
+    }
+);
+
+$('.more-visited-post').hover(function () {
+    $(this).children('h4').addClass("classchangecolor");
+}, function () {
+    $(this).children('h4').removeClass("classchangecolor");
+
+}
+);
+
+
+$('.blog-link-item').hover(function () {
+    $(this).children('a').children('h6').addClass("classchangecolor");
+}, function () {
+    $(this).children('a').children('h6').removeClass("classchangecolor");
+
+}
+);
