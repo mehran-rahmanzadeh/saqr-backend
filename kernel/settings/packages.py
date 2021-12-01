@@ -62,10 +62,10 @@ INSTALLED_APPS.append('calls')
 INSTALLED_APPS.append('customer_club')
 
 # God Of Packages
-#INSTALLED_APPS.append('sage_painless')
+# INSTALLED_APPS.append('sage_painless')
 
-#INSTALLED_APPS.append('django_seed')
-#INSTALLED_APPS.append('drf_yasg')
+# INSTALLED_APPS.append('django_seed')
+# INSTALLED_APPS.append('drf_yasg')
 
 # ###################### #
 #     REST FRAMEWORK     #
@@ -240,3 +240,9 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
     'INSERT_BEFORE': '</body>'
 }
+
+# ######### #
+#   Auth    #
+# ######### #
+RESET_PASSWORD_TOKEN_TIMEOUT = 120  # s
+DEFAULT_FROM_EMAIL = 'mail@saqr.com'
