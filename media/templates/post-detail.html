@@ -77,8 +77,8 @@
             <hr/>
             <div class="tag-list-tags">
                 {% for tag in tags %}
-                <div onclick='document.location.replace("{{ request.path }}?page={{ page_obj.number }}&tags__id={{ tag.id }}")'>
-                  <a style="color: white;" href="{{ request.path }}?page={{ page_obj.number }}&tags__id={{ tag.id }}">{{ tag.title }}</a>
+                <div onclick='document.location.replace("{% url "blog-list" %}?tags__id={{ tag.id }}")'>
+                  <a style="color: white;" href="{% url 'blog-list' %}?tags__id={{ tag.id }}">{{ tag.title }}</a>
          </div>
                 {% endfor %}
             </div>
