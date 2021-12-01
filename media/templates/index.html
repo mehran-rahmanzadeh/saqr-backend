@@ -358,7 +358,7 @@
         
 
     </div>
-    <form style="width: 50%;" action="{% url 'contact' %}" method="post">
+    <form style="width: 50%;" action="{% url 'contact' %}" method="post" id="contact-form">
       <h3 class="contactus-sec-2 animate__animated v-none">
         {{ contact_us.title }}
       </h3>
@@ -395,7 +395,7 @@
         </div>
       </div>
       <div style="margin-top: 10px;width: 489px;display: flex;justify-content: flex-end;">
-        <button style="margin: unset !important;max-width: 181px !important;border: unset;" class="btn btn-3 btnanimate animate__animated v-none " type="submit">
+        <button style="margin: unset !important;max-width: 181px !important;border: unset;" class="btn btn-3 btnanimate animate__animated v-none " type="submit" form="contact-form">
           <svg xmlns="http://www.w3.org/2000/svg" width="21.022" height="20.631" viewBox="0 0 21.022 20.631"><path d="M13.562,3.963A1.6,1.6,0,0,0,14.71,5.479a7.349,7.349,0,0,1,5.159,7.013,7,7,0,0,1-.174,1.554,1.594,1.594,0,0,0,.731,1.748h0a1.574,1.574,0,0,0,2.33-.97,10.275,10.275,0,0,0,.267-2.331A10.522,10.522,0,0,0,15.594,2.441a1.583,1.583,0,0,0-2.032,1.522Zm-1.4,15.879a7.426,7.426,0,0,1-6.993-6.808A7.346,7.346,0,0,1,10.31,5.48a1.6,1.6,0,0,0,1.15-1.517h0A1.586,1.586,0,0,0,9.42,2.442a10.51,10.51,0,1,0,10.171,17.8,1.576,1.576,0,0,0-.269-2.514h0a1.6,1.6,0,0,0-1.891.232A7.274,7.274,0,0,1,12.166,19.843Z" transform="translate(-2 -2.372)" fill="#e7e7e7"></path></svg>
           Send Message
         </button>
