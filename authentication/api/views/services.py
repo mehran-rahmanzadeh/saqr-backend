@@ -1,7 +1,47 @@
+import random
+
+from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.contrib.auth.tokens import default_token_generator
+from django.core.cache import cache
 
 from authentication.tasks import send_mail
+
+
+class TokenGenerator:
+    user_unique_attr = 'username'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    @classmethod
+    def __save_token_to_cache(cls, key, token):
+        """save given token to cache"""
+        cache.set(key, token, timeout=settings.RESET_PASSWORD_TOKEN_TIMEOUT)
+
+    @classmethod
+    def __get_token_from_cache(cls, key):
+        """get token from cache if exists"""
+        return cache.get(key) or None
+
+    @classmethod
+    def __get_user_unique_attribute(cls, user: get_user_model()):
+        """get attr from user obj"""
+        return getattr(user, cls.user_unique_attr)
+
+    @classmethod
+    def make_token(cls, user: get_user_model()):
+        """generate random token for user"""
+        token = f'{random.randint(100000, 999999)}'
+        cls.__save_token_to_cache(cls.__get_user_unique_attribute(user), token)
+        return token
+
+    @classmethod
+    def check_token(cls, user: get_user_model(), token: str):
+        """check token validation"""
+        from_cache = cls.__get_token_from_cache(cls.__get_user_unique_attribute(user))
+        if from_cache:
+            return from_cache == token
+        return False
 
 
 class ResetPasswordTokenHelper:
@@ -9,7 +49,7 @@ class ResetPasswordTokenHelper:
 
     @classmethod
     def get_token_generator(cls):
-        return default_token_generator
+        return TokenGenerator
 
     @classmethod
     def get_random_token(cls, user: get_user_model()):
