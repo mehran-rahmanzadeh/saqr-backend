@@ -13,7 +13,7 @@ from painless.utils.models.mixins import (
 )
 
 
-class SaqrImage(TimeStampModelMixin):
+class SaqrImage(Sku_Mixin, TimeStampModelMixin):
     """SAQR Image model"""
     image = models.ImageField(
         _('Image'),
@@ -22,6 +22,11 @@ class SaqrImage(TimeStampModelMixin):
 
     def __str__(self):
         return self.image.url
+    
+    def save(self, *args, **kwargs):
+        if not self.sku:
+            self.sku = f'img-{secrets.token_urlsafe(8)}'
+        super(SaqrImage, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Saqr Image')
