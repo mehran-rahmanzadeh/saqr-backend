@@ -32,7 +32,7 @@ urlpatterns = i18n_patterns(
 
     # API
     path('i18n/', include('django.conf.urls.i18n')),
-    # path('api/v1/', include('cms.api.urls')),
+    path('api/v1/', include('cms.api.urls')),
     path('api/v1/', include('calls.api.urls')),
     # path('api/v1/', include('blog.api.urls')),
     path('api/v1/', include('analysis.api.urls')),
