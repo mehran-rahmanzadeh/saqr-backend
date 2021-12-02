@@ -10,25 +10,38 @@ class SaqrImageSerializer(ModelSerializer):
     class Meta:
         model = SaqrImage
         fields = (
+            'sku',
             'image',
+        )
+        read_only_fields = (
+            'sku',
         )
 
 
 class SaqrSerializer(ModelSerializer):
     """SAQR Serializer Class"""
-    images = SaqrImageSerializer(many=True)
+    images = SaqrImageSerializer(many=True, required=False)
 
     class Meta:
         model = Saqr
         fields = (
             'sku',
+            'title',
             'weight',
             'age',
             'images',
             'passport_image',
             'profile_image',
             'cover',
+            'owner',
             'is_verified',
+            'created',
+            'modified'
+        )
+        read_only_fields = (
+            'sku',
+            'is_verified',
+            'images',
             'created',
             'modified'
         )
@@ -49,16 +62,13 @@ class SaqrOwnerSerializer(ModelSerializer):
 class MinimizedSaqrSerializer(ModelSerializer):
     """Minimized SAQR Serializer"""
     owner = SaqrOwnerSerializer()
-    image = SerializerMethodField()
 
     class Meta:
         model = Saqr
         fields = (
+            'title',
             'weight',
             'age',
             'owner',
-            'image'
+            'profile_image'
         )
-
-    def get_image(self, obj):
-        return SaqrImageSerializer(obj.images.first()).data
