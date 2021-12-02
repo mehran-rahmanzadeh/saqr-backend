@@ -14,4 +14,4 @@ def update_cache(sender, instance, *args, **kwargs):
 
 @receiver(m2m_changed, sender=AnalyseReview.reports.through)
 def review_selected_reports(sender, instance, **kwargs):
-    _ = [process_nmea_report_file.delay(id_) for id_ in instance.reports.values_list('id', flat=True)]
+    _ = [process_nmea_report_file.apply_async(kwargs={'report_instance': id_}) for id_ in instance.reports.values_list('id', flat=True)]

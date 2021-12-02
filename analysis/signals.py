@@ -7,4 +7,4 @@ from analysis.tasks import process_nmea_report_file
 
 @receiver(post_save, sender=Report)
 def process_ubx_file(sender, instance, *args, **kwargs):
-    process_nmea_report_file.delay(instance.id)
+    process_nmea_report_file.apply_async(countdown=3, kwargs={'report_instance': instance.id})

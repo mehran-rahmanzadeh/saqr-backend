@@ -5,8 +5,9 @@ from analysis.services.nmea_handler import Parser
 
 
 @shared_task
-def process_nmea_report_file(report_instance):
+def process_nmea_report_file(*args, **kwargs):
     """process on NMEA report file and store in DB"""
+    report_instance = kwargs.get('report_instance')
     print(f'report id : {report_instance}')
     instance = Report.objects.get(id=report_instance)
     saqr = instance.saqr
