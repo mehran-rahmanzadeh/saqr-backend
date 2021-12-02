@@ -1874,7 +1874,7 @@
 					"name": "SAQR",
 					"item": [
 						{
-							"name": "get user saqrs",
+							"name": "get user saqr",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -1887,27 +1887,6 @@
 										"api",
 										"v1",
 										"saqrs",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get saqr detail",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{DOMAIN}}/api/v1/saqrs/{{saqr_sku}}/",
-									"host": [
-										"{{DOMAIN}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"saqrs",
-										"{{saqr_sku}}",
 										""
 									]
 								}
@@ -1937,7 +1916,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{DOMAIN}}/en/api/v1/saqrs/{{saqr_sku}}/add_image/",
+									"raw": "{{DOMAIN}}/en/api/v1/saqrs/add_image/",
 									"host": [
 										"{{DOMAIN}}"
 									],
@@ -1946,7 +1925,6 @@
 										"api",
 										"v1",
 										"saqrs",
-										"{{saqr_sku}}",
 										"add_image",
 										""
 									]
@@ -1970,7 +1948,7 @@
 									"raw": "{\n    \"image\": \"img-8igvkeM0d5k\"\n}"
 								},
 								"url": {
-									"raw": "{{DOMAIN}}/en/api/v1/saqrs/{{saqr_sku}}/remove_image/",
+									"raw": "{{DOMAIN}}/en/api/v1/saqrs/remove_image/",
 									"host": [
 										"{{DOMAIN}}"
 									],
@@ -1979,7 +1957,6 @@
 										"api",
 										"v1",
 										"saqrs",
-										"{{saqr_sku}}",
 										"remove_image",
 										""
 									]
@@ -2003,7 +1980,7 @@
 									"raw": "{\n    \"title\": \"Mehran's SAQR\",\n    \"weight\": 900,\n    \"age\": 2,\n    \"passport_image\": null,\n    \"profile_image\": null,\n    \"cover\": null\n}"
 								},
 								"url": {
-									"raw": "{{DOMAIN}}/en/api/v1/saqrs/saqr-gLR4yku99wE/",
+									"raw": "{{DOMAIN}}/en/api/v1/saqrs/saqr-JJHN9HVC9jQ/",
 									"host": [
 										"{{DOMAIN}}"
 									],
@@ -2012,38 +1989,7 @@
 										"api",
 										"v1",
 										"saqrs",
-										"saqr-gLR4yku99wE",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "create new saqr",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"weight\": 800,\n    \"age\": 3\n}"
-								},
-								"url": {
-									"raw": "{{DOMAIN}}/en/api/v1/saqrs/",
-									"host": [
-										"{{DOMAIN}}"
-									],
-									"path": [
-										"en",
-										"api",
-										"v1",
-										"saqrs",
+										"saqr-JJHN9HVC9jQ",
 										""
 									]
 								}
@@ -2061,7 +2007,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{DOMAIN}}/api/v1/saqrs/{{saqr_sku}}/reports/",
+									"raw": "{{DOMAIN}}/api/v1/saqrs/reports/",
 									"host": [
 										"{{DOMAIN}}"
 									],
@@ -2069,7 +2015,6 @@
 										"api",
 										"v1",
 										"saqrs",
-										"{{saqr_sku}}",
 										"reports",
 										""
 									]
