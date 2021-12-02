@@ -1,11 +1,6 @@
 from rest_framework import status
 from rest_framework.decorators import action
-from rest_framework.mixins import (
-    ListModelMixin,
-    RetrieveModelMixin,
-    CreateModelMixin,
-    UpdateModelMixin
-)
+from rest_framework.mixins import ListModelMixin, UpdateModelMixin
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
@@ -14,25 +9,21 @@ from analysis.api.serializers.report_serializer import ReportSerializer
 from analysis.api.serializers.saqr_serializer import SaqrSerializer, SaqrImageSerializer
 
 
-class SaqrViewset(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin):
+class SaqrViewset(GenericViewSet, ListModelMixin, UpdateModelMixin):
     """Saqr Viewset"""
     serializer_class = SaqrSerializer
     permission_classes = (IsAuthenticated,)
     lookup_field = 'sku'
 
-    def get_queryset(self):
-        return self.request.user.saqrs.all()
+    def get_object(self):
+        return self.request.user.saqr
 
-    def create(self, request, *args, **kwargs):
-        payload = request.data
-        payload['owner'] = request.user.pk  # set as current user
-        serializer = self.get_serializer(data=payload)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+    def list(self, request, *args, **kwargs):
+        obj = self.get_object()
+        serializer = self.get_serializer(obj)
+        return Response(serializer.data)
 
-    @action(serializer_class=SaqrImageSerializer, methods=['patch'], detail=True)
+    @action(serializer_class=SaqrImageSerializer, methods=['patch'], detail=False)
     def add_image(self, *args, **kwargs):
         """add image to saqr profile"""
         obj = self.get_object()
@@ -61,7 +52,7 @@ class SaqrViewset(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateMode
             status=code
         )
 
-    @action(methods=['delete'], detail=True)
+    @action(methods=['delete'], detail=False)
     def remove_image(self, *args, **kwargs):
         """remove image from saqr profile"""
         obj = self.get_object()
@@ -85,7 +76,7 @@ class SaqrViewset(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateMode
             status=code
         )
 
-    @action(serializer_class=ReportSerializer, methods=['get'], detail=True)
+    @action(serializer_class=ReportSerializer, methods=['get'], detail=False)
     def reports(self, *args, **kwargs):
         """reports action"""
         saqr = self.get_object()

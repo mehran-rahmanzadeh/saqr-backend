@@ -74,9 +74,9 @@ class Saqr(Sku_Mixin, TimeStampModelMixin, TitleSlugLinkModelMixin):
         blank=True
     )
 
-    owner = models.ForeignKey(
+    owner = models.OneToOneField(
         get_user_model(),
-        related_name='saqrs',
+        related_name='saqr',
         on_delete=models.CASCADE
     )
 
