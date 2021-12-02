@@ -1,14 +1,6 @@
 from modeltranslation.translator import register, TranslationOptions
 
-from customer_club.models import Category, Question
-
-
-@register(Category)
-class CategoryTranslationOptions(TranslationOptions):
-    fields = (
-        'title',
-        'description'
-    )
+from customer_club.models import Question
 
 
 @register(Question)

@@ -12,6 +12,8 @@ class QuestionSerializer(ModelSerializer):
             'sku',
             'question',
             'answer',
+            'cover',
+            'image',
             'created',
             'modified'
         )

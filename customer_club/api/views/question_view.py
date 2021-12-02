@@ -1,4 +1,3 @@
-from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
 from rest_framework.permissions import IsAuthenticated
@@ -14,13 +13,8 @@ class QuestionViewset(GenericViewSet, ListModelMixin, RetrieveModelMixin):
     queryset = Question.objects.all()
     permission_classes = (IsAuthenticated,)
     lookup_field = 'sku'
-    filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = [
-        'category__sku',
-    ]
+    filter_backends = [SearchFilter]
     search_fields = [
         'question',
-        'answer',
-        'category__title',
-        'category__description'
+        'answer'
     ]
