@@ -11,7 +11,10 @@ from painless.utils.models.mixins import Sku_Mixin, TimeStampModelMixin
 
 class Report(Sku_Mixin, TimeStampModelMixin):
     """nmea report model"""
-    nmea_file = models.FileField(_('NMEA File'))
+    nmea_file = models.FileField(
+        _('NMEA File'),
+        upload_to='nmea-reports/'
+    )
 
     saqr = models.ForeignKey(
         Saqr,

@@ -2,14 +2,12 @@ import secrets
 
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 from analysis_settings.services import ParametersHandler
 from painless.utils.models.mixins import (
     Sku_Mixin,
-    TimeStampModelMixin,
-    TitleSlugLinkModelMixin
+    TimeStampModelMixin
 )
 
 
@@ -33,8 +31,15 @@ class SaqrImage(Sku_Mixin, TimeStampModelMixin):
         verbose_name_plural = _('Saqr Images')
 
 
-class Saqr(Sku_Mixin, TimeStampModelMixin, TitleSlugLinkModelMixin):
+class Saqr(Sku_Mixin, TimeStampModelMixin):
     """SAQR model"""
+    title = models.CharField(
+        _('Title'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+
     weight = models.PositiveIntegerField(
         _('Weight'),
         null=True,
@@ -100,8 +105,6 @@ class Saqr(Sku_Mixin, TimeStampModelMixin, TitleSlugLinkModelMixin):
     def save(self, *args, **kwargs):
         if not self.sku:
             self.sku = f'saqr-{secrets.token_urlsafe(8)}'
-        if not self.slug:
-            self.slug = slugify(self.title, allow_unicode=True)
         super(Saqr, self).save(*args, **kwargs)
 
     def calculate_fundamental_score(self):
