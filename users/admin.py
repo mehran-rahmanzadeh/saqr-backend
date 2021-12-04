@@ -16,7 +16,7 @@ class UserAdmin(UserAdmin):
     search_fields = ('username', 'email', 'first_name', 'last_name')
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'phone_number', 'address', 'birth_date')}),
         (_('Permissions'), {
             'fields': (
                 'is_active', 'is_verified', 'is_operator',
