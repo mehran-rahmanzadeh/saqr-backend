@@ -40,4 +40,5 @@ class CertificateRequestSerializer(ModelSerializer):
         fields = [
             'phone_number',
             'description',
+            'date',
         ]

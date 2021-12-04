@@ -32,6 +32,11 @@ class CertificateRequest(models.Model, ModelCacheMixin):
              ]
     )
 
+    date = models.DateField(
+        null=True,
+        blank=True
+    )
+
     description = models.TextField(null=True, blank=True)
     
     seen = models.BooleanField(
