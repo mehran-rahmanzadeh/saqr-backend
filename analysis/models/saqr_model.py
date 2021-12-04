@@ -33,9 +33,15 @@ class SaqrImage(Sku_Mixin, TimeStampModelMixin):
 
 class Saqr(Sku_Mixin, TimeStampModelMixin):
     """SAQR model"""
-    title = models.CharField(
-        _('Title'),
+    name = models.CharField(
+        _('Name'),
         max_length=255,
+        null=True,
+        blank=True
+    )
+
+    birth_date = models.DateField(
+        _('Birth Date'),
         null=True,
         blank=True
     )
@@ -100,7 +106,7 @@ class Saqr(Sku_Mixin, TimeStampModelMixin):
     )
 
     def __str__(self):
-        return f'SAQR {self.title} owned by {self.owner}'
+        return f'SAQR {self.name} owned by {self.owner}'
 
     def save(self, *args, **kwargs):
         if not self.sku:
