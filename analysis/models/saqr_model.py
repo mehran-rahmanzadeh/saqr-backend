@@ -46,6 +46,12 @@ class Saqr(Sku_Mixin, TimeStampModelMixin):
         blank=True
     )
 
+    about = models.TextField(
+        _('About'),
+        null=True,
+        blank=True
+    )
+
     weight = models.PositiveIntegerField(
         _('Weight'),
         null=True,
