@@ -32,6 +32,7 @@ class TotalReportViewset(GenericViewSet, ListModelMixin):
         'report_detail__avg_accel',
         'report_detail__max_alt',
         'report_detail__avg_alt',
+        'report_detail__normalized_alt',
         'report_detail__score'
     )
 
