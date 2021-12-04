@@ -94,6 +94,12 @@ class ReportDetail(TimeStampModelMixin):
         blank=True
     )
 
+    normalized_alt = models.FloatField(
+        _('Normalized Altitude (m)'),
+        null=True,
+        blank=True
+    )
+
     min_alt = models.FloatField(
         _('Min Altitude (m)'),
         null=True,

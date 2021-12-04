@@ -10,7 +10,7 @@ class ReportDetailStackedAdminInline(admin.StackedInline):
     fk_name = 'report'
     readonly_fields = [
         'max_speed', 'avg_speed', 'max_accel',
-        'avg_accel', 'max_alt', 'min_alt',
+        'avg_accel', 'max_alt', 'min_alt', 'normalized_alt',
         'avg_alt', 'signal_status', 'avg_gps_count',
         'score'
     ]
@@ -62,13 +62,13 @@ class ReportAdmin(admin.ModelAdmin):
 class ReportDetailAdmin(admin.ModelAdmin):
     list_display = [
         'report', 'max_speed', 'avg_speed',
-        'max_accel', 'avg_accel', 'max_alt',
+        'max_accel', 'avg_accel', 'max_alt', 'normalized_alt',
         'min_alt', 'avg_alt', 'score'
     ]
 
     readonly_fields = [
         'max_speed', 'avg_speed', 'max_accel',
-        'avg_accel', 'max_alt', 'min_alt',
+        'avg_accel', 'max_alt', 'min_alt', 'normalized_alt',
         'avg_alt', 'signal_status', 'avg_gps_count',
         'score'
     ]
