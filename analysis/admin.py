@@ -95,9 +95,10 @@ class SaqrImageAdmin(admin.ModelAdmin):
 @admin.register(Saqr)
 class SaqrAdmin(admin.ModelAdmin):
     list_display = [
-        'title',
+        'name',
         'age',
         'weight',
+        'birth_date',
         'is_verified',
         'created',
         'modified'
@@ -105,6 +106,7 @@ class SaqrAdmin(admin.ModelAdmin):
 
     list_filter = [
         'is_verified',
+        'birth_date',
         'created',
         'modified'
     ]
@@ -114,7 +116,7 @@ class SaqrAdmin(admin.ModelAdmin):
     raw_id_fields = ['owner']
 
     search_fields = [
-        'title',
+        'name',
     ]
 
     inlines = [

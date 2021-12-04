@@ -26,9 +26,10 @@ class SaqrSerializer(ModelSerializer):
         model = Saqr
         fields = (
             'sku',
-            'title',
+            'name',
             'weight',
             'age',
+            'birth_date',
             'images',
             'passport_image',
             'profile_image',
@@ -66,9 +67,10 @@ class MinimizedSaqrSerializer(ModelSerializer):
     class Meta:
         model = Saqr
         fields = (
-            'title',
+            'name',
             'weight',
             'age',
+            'birth_date',
             'owner',
             'profile_image'
         )
