@@ -1,3 +1,4 @@
+from rest_framework.fields import SerializerMethodField
 from rest_framework.serializers import ModelSerializer
 
 from analysis.api.serializers.saqr_serializer import MinimizedSaqrSerializer
@@ -6,6 +7,8 @@ from analysis.models.report_model import Report, ReportDetail
 
 class ReportDetailSerializer(ModelSerializer):
     """Report Detail Serializer Class"""
+    total_max_score = SerializerMethodField()
+    total_min_score = SerializerMethodField()
 
     class Meta:
         model = ReportDetail
@@ -34,9 +37,17 @@ class ReportDetailSerializer(ModelSerializer):
             'sv_array',
             'status_array',
             'quality_array',
+            'total_max_score',
+            'total_min_score',
             'created',
             'modified'
         )
+
+    def get_total_max_score(self, obj):
+        return ReportDetail.objects.order_by('-score').first().score
+
+    def get_total_min_score(self, obj):
+        return ReportDetail.objects.order_by('score').first().score
 
 
 class MinimizedReportDetailSerializer(ModelSerializer):
