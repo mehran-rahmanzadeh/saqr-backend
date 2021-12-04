@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-from rest_framework.fields import SerializerMethodField
 from rest_framework.serializers import ModelSerializer
 
 from analysis.models.saqr_model import Saqr, SaqrImage
