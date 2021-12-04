@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
-from analysis.api.serializers.report_serializer import ReportSerializer
+from analysis.api.serializers.report_serializer import ReportSerializer, SaqrTotalSerializer
 from analysis.api.serializers.saqr_serializer import SaqrSerializer, SaqrImageSerializer
 
 
@@ -87,12 +87,11 @@ class SaqrViewset(GenericViewSet, ListModelMixin, UpdateModelMixin):
             status=status.HTTP_200_OK
         )
 
-    @action(serializer_class=ReportSerializer, methods=['get'], detail=False)
-    def last_report(self, *args, **kwargs):
+    @action(serializer_class=SaqrTotalSerializer, methods=['get'], detail=False)
+    def total_values(self, *args, **kwargs):
         """last report action"""
         saqr = self.get_object()
-        report = saqr.reports.last()
-        serializer = self.get_serializer(report)
+        serializer = self.get_serializer(saqr)
         return Response(
             serializer.data,
             status=status.HTTP_200_OK

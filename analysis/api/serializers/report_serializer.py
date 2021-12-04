@@ -3,6 +3,7 @@ from rest_framework.serializers import ModelSerializer
 
 from analysis.api.serializers.saqr_serializer import MinimizedSaqrSerializer
 from analysis.models.report_model import Report, ReportDetail
+from analysis.models.saqr_model import Saqr
 
 
 class ReportDetailSerializer(ModelSerializer):
@@ -20,6 +21,7 @@ class ReportDetailSerializer(ModelSerializer):
             'max_alt',
             'avg_alt',
             'min_alt',
+            'normalized_alt',
             'signal_status',
             'avg_gps_count',
             'score',
@@ -60,6 +62,7 @@ class MinimizedReportDetailSerializer(ModelSerializer):
             'avg_accel',
             'max_alt',
             'avg_alt',
+            'normalized_alt',
             'signal_status',
             'avg_gps_count',
             'score',
@@ -78,6 +81,16 @@ class MinimizedReportSerializer(ModelSerializer):
         )
 
 
+class MinimizedWithoutSaqrReportSerializer(ModelSerializer):
+    report_detail = MinimizedReportDetailSerializer()
+
+    class Meta:
+        model = Report
+        fields = (
+            'report_detail',
+        )
+
+
 class ReportSerializer(ModelSerializer):
     """Report Serializer Class"""
     report_detail = ReportDetailSerializer()
@@ -89,3 +102,22 @@ class ReportSerializer(ModelSerializer):
             'nmea_file',
             'report_detail'
         )
+
+
+class SaqrTotalSerializer(ModelSerializer):
+    """Saqr Total Serializer"""
+    last_report = SerializerMethodField()
+    fundamental_score = SerializerMethodField()
+
+    class Meta:
+        model = Saqr
+        fields = (
+            'last_report',
+            'fundamental_score'
+        )
+
+    def get_fundamental_score(self, obj):
+        return obj.calculate_fundamental_score()
+
+    def get_last_report(self, obj):
+        return MinimizedWithoutSaqrReportSerializer(obj.reports.last()).data
