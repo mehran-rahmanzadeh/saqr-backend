@@ -68,6 +68,10 @@ class Parser:
         return min(self.alt_array) if self.alt_array else 0
 
     @property
+    def normalized_alt(self):
+        return self.max_alt - self.min_alt if self.max_alt and self.min_alt else 0
+
+    @property
     def signal_status(self):
         return max(set(self.status_array), key=self.status_array.count) if self.status_array else ''
 
@@ -117,7 +121,7 @@ class Parser:
         parameters = ParametersHandler.get_from_cache()
         speed_score = self.avg_speed * parameters.speed_ratio
         accel_score = self.avg_accel * parameters.accel_ratio
-        alt_score = self.avg_alt * parameters.alt_ratio
+        alt_score = self.normalized_alt * parameters.alt_ratio
         return sum([speed_score, accel_score, alt_score])
 
     def process_nmea(self):

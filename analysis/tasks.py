@@ -26,6 +26,7 @@ def process_nmea_report_file(*args, **kwargs):
     report_detail.max_alt = parser.max_alt
     report_detail.avg_alt = parser.avg_alt
     report_detail.min_alt = parser.min_alt
+    report_detail.normalized_alt = parser.normalized_alt
     report_detail.signal_status = parser.signal_status
     report_detail.avg_gps_count = parser.avg_gps_count
 
