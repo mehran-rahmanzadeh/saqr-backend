@@ -86,3 +86,14 @@ class SaqrViewset(GenericViewSet, ListModelMixin, UpdateModelMixin):
             serializer.data,
             status=status.HTTP_200_OK
         )
+
+    @action(serializer_class=ReportSerializer, methods=['get'], detail=False)
+    def last_report(self, *args, **kwargs):
+        """last report action"""
+        saqr = self.get_object()
+        report = saqr.reports.last()
+        serializer = self.get_serializer(report)
+        return Response(
+            serializer.data,
+            status=status.HTTP_200_OK
+        )
