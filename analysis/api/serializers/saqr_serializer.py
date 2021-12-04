@@ -27,6 +27,7 @@ class SaqrSerializer(ModelSerializer):
         fields = (
             'sku',
             'name',
+            'about',
             'weight',
             'age',
             'birth_date',
