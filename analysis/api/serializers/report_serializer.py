@@ -10,6 +10,7 @@ class ReportDetailSerializer(ModelSerializer):
     """Report Detail Serializer Class"""
     total_max_score = SerializerMethodField()
     total_min_score = SerializerMethodField()
+    fundamental_score = SerializerMethodField()
 
     class Meta:
         model = ReportDetail
@@ -25,6 +26,7 @@ class ReportDetailSerializer(ModelSerializer):
             'signal_status',
             'avg_gps_count',
             'score',
+            'fundamental_score',
             'lon_array',
             'lat_array',
             'alt_array',
@@ -50,6 +52,9 @@ class ReportDetailSerializer(ModelSerializer):
 
     def get_total_min_score(self, obj):
         return ReportDetail.objects.order_by('score').first().score
+
+    def get_fundamental_score(self, obj):
+        return obj.report.saqr.calculate_fundamental_score()
 
 
 class MinimizedReportDetailSerializer(ModelSerializer):
