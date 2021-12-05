@@ -14,7 +14,7 @@ from analysis.models.report_model import Report
 class ReportViewset(GenericViewSet, RetrieveModelMixin):
     """Report Viewset"""
     serializer_class = ReportSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
     queryset = Report.objects.select_related('report_detail')
     lookup_field = 'sku'
 
