@@ -1,7 +1,7 @@
 from django.conf import settings
 from rest_framework.filters import OrderingFilter
 from rest_framework.mixins import RetrieveModelMixin, ListModelMixin
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import AllowAny
 from rest_framework.viewsets import GenericViewSet
 
 from analysis.api.serializers.report_serializer import (

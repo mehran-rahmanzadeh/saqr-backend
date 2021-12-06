@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from rest_framework.fields import SerializerMethodField
 from rest_framework.serializers import ModelSerializer
 
 from analysis.models.saqr_model import Saqr, SaqrImage
@@ -20,6 +21,7 @@ class SaqrImageSerializer(ModelSerializer):
 class SaqrSerializer(ModelSerializer):
     """SAQR Serializer Class"""
     images = SaqrImageSerializer(many=True, required=False)
+    age = SerializerMethodField()
 
     class Meta:
         model = Saqr
@@ -46,6 +48,9 @@ class SaqrSerializer(ModelSerializer):
             'created',
             'modified'
         )
+
+    def get_age(self, obj):
+        return obj.age
 
 
 class SaqrOwnerSerializer(ModelSerializer):
