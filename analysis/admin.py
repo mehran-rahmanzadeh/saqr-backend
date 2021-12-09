@@ -11,8 +11,7 @@ class ReportDetailStackedAdminInline(admin.StackedInline):
     readonly_fields = [
         'max_speed', 'avg_speed', 'max_accel',
         'avg_accel', 'max_alt', 'min_alt', 'normalized_alt',
-        'avg_alt', 'signal_status', 'avg_gps_count',
-        'score'
+        'avg_alt', 'score'
     ]
     can_delete = False
 
@@ -69,8 +68,7 @@ class ReportDetailAdmin(admin.ModelAdmin):
     readonly_fields = [
         'max_speed', 'avg_speed', 'max_accel',
         'avg_accel', 'max_alt', 'min_alt', 'normalized_alt',
-        'avg_alt', 'signal_status', 'avg_gps_count',
-        'score'
+        'avg_alt', 'score'
     ]
 
     def has_add_permission(self, request):
