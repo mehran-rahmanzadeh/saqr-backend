@@ -100,6 +100,29 @@ class Parser:
         """
         return np.array(list(map(self.convert_string_to_timestamp, datetime_array)))
 
+    def calculate_accel(self, time_array, speed_array):
+        """calculate moment acceleration based in speed-time graph
+        :param: time_array: timestamp array
+        :param: speed_array: speed array
+        """
+        for index, (speed, time) in enumerate(zip(speed_array, time_array)):
+            try:
+                current_speed = speed / 3.6  # m/s
+                next_speed = speed_array[index + 1] / 3.6
+                current_time = time  # s
+                next_time = time_array[index + 1]
+                if not next_time == current_time:
+                    accel = (next_speed - current_speed) / (next_time - current_time)  # m/s**2
+                    self.accel_array.append(accel)
+            except:
+                pass
+
+        self.accel_array = np.array(self.accel_array)  # convert to numpy array
+
+    def normalize_data(self):
+        """normalize fetched data"""
+        self.alt_array[self.alt_array == 1000000.0] = 0
+
     def process(self):
         """main process method"""
         df = self.read_file(self.file_path)
@@ -122,26 +145,8 @@ class Parser:
         if debug:
             print('[INFO]: timestamp array calculated')
 
-        self.__calculate_accel(self.timestamp_array, self.speed_array)  # calculate accelerations with speed array
+        self.normalize_data()
+        self.calculate_accel(self.timestamp_array, self.speed_array)  # calculate accelerations with speed array
 
         if debug:
             print('[INFO]: accel array calculated')
-
-    def __calculate_accel(self, time_array, speed_array):
-        """calculate moment acceleration based in speed-time graph
-        :param: time_array: timestamp array
-        :param: speed_array: speed array
-        """
-        for index, (speed, time) in enumerate(zip(speed_array, time_array)):
-            try:
-                current_speed = speed / 3.6  # m/s
-                next_speed = speed_array[index + 1] / 3.6
-                current_time = time  # s
-                next_time = time_array[index + 1]
-                if not next_time == current_time:
-                    accel = (next_speed - current_speed) / (next_time - current_time)  # m/s**2
-                    self.accel_array.append(accel)
-            except:
-                pass
-
-        self.accel_array = np.array(self.accel_array)  # convert to numpy array
