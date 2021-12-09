@@ -12,8 +12,8 @@ from painless.utils.models.mixins import Sku_Mixin, TimeStampModelMixin
 class Report(Sku_Mixin, TimeStampModelMixin):
     """nmea report model"""
     nmea_file = models.FileField(
-        _('NMEA File'),
-        upload_to='nmea-reports/'
+        _('Report File'),
+        upload_to='reports/'
     )
 
     saqr = models.ForeignKey(
@@ -106,19 +106,6 @@ class ReportDetail(TimeStampModelMixin):
         blank=True
     )
 
-    signal_status = models.CharField(
-        _('Signal Status'),
-        max_length=5,
-        null=True,
-        blank=True
-    )
-
-    avg_gps_count = models.IntegerField(
-        _('Average GPS Count'),
-        null=True,
-        blank=True
-    )
-
     score = models.PositiveIntegerField(
         _('Score'),
         default=0
@@ -138,23 +125,9 @@ class ReportDetail(TimeStampModelMixin):
         null=True,
         blank=True
     )
-    sep_array = ArrayField(
-        models.CharField(max_length=255),
-        verbose_name=_('Sep Array'),
-        editable=False,
-        null=True,
-        blank=True
-    )
     lat_array = ArrayField(
         models.FloatField(),
         verbose_name=_('Latitude Array'),
-        editable=False,
-        null=True,
-        blank=True
-    )
-    track_array = ArrayField(
-        models.CharField(max_length=255),
-        verbose_name=_('Track Array'),
         editable=False,
         null=True,
         blank=True
@@ -173,51 +146,16 @@ class ReportDetail(TimeStampModelMixin):
         null=True,
         blank=True
     )
+    datetime_array = ArrayField(
+        models.CharField(max_length=255),
+        verbose_name=_('Datetime Array'),
+        editable=False,
+        null=True,
+        blank=True
+    )
     accel_array = ArrayField(
         models.FloatField(),
         verbose_name=_('Acceleration Array'),
-        editable=False,
-        null=True,
-        blank=True
-    )
-    utc_array = ArrayField(
-        models.FloatField(),
-        verbose_name=_('UTC Array'),
-        editable=False,
-        null=True,
-        blank=True
-    )
-    sip_array = ArrayField(
-        models.FloatField(),
-        verbose_name=_('Sip Array'),
-        editable=False,
-        null=True,
-        blank=True
-    )
-    fix_array = ArrayField(
-        models.FloatField(),
-        verbose_name=_('Fix Array'),
-        editable=False,
-        null=True,
-        blank=True
-    )
-    sv_array = ArrayField(
-        models.FloatField(),
-        verbose_name=_('SV Array'),
-        editable=False,
-        null=True,
-        blank=True
-    )
-    status_array = ArrayField(
-        models.CharField(max_length=255),
-        verbose_name=_('Status Array'),
-        editable=False,
-        null=True,
-        blank=True
-    )
-    quality_array = ArrayField(
-        models.CharField(max_length=255),
-        verbose_name=_('Quality Array'),
         editable=False,
         null=True,
         blank=True
