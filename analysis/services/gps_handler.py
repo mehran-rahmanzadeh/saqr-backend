@@ -138,9 +138,9 @@ class Parser:
                 next_speed = speed_array[index + 1] / 3.6
                 current_time = time  # s
                 next_time = time_array[index + 1]
-
-                accel = (next_speed - current_speed) / (next_time - current_time)  # m/s**2
-                self.accel_array.append(accel)
+                if not next_time == current_time:
+                    accel = (next_speed - current_speed) / (next_time - current_time)  # m/s**2
+                    self.accel_array.append(accel)
             except:
                 pass
 
