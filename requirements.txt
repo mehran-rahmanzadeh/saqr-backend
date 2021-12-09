@@ -49,7 +49,7 @@ future==0.18.2
 Markdown==3.3.3
 MarkupSafe==2.0.1
 moviepy==1.0.3
-numpy
+numpy==1.21.4
 Pillow==8.1.0
 proglog==0.1.9
 prompt-toolkit==3.0.16
@@ -75,3 +75,5 @@ django-mapbox-location-field
 django-modeltranslation==0.17.3
 pynmeagps==1.0.5
 pykalman==0.9.5
+
+pandas==1.3.4
