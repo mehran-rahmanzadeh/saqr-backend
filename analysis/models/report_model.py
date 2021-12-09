@@ -59,13 +59,13 @@ class ReportDetail(TimeStampModelMixin):
     )
 
     max_speed = models.FloatField(
-        _('Max Speed (m/s)'),
+        _('Max Speed (km/h)'),
         null=True,
         blank=True
     )
 
     avg_speed = models.FloatField(
-        _('Average Speed (m/s)'),
+        _('Average Speed (km/h)'),
         null=True,
         blank=True
     )
