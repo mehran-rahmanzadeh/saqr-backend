@@ -8,7 +8,8 @@ from calls.models.getintouch import GetInTouch
 class ContactView(View):
 
     def post(self, *args, **kwargs):
-        data = self.request.POST
+        data = dict(self.request.POST)
+        data.pop('csrfmiddlewaretoken')
         GetInTouch.objects.create(**data)
         return redirect('index')
 
@@ -16,6 +17,7 @@ class ContactView(View):
 class CertificateRequestView(View):
 
     def post(self, *args, **kwargs):
-        data = self.request.POST
+        data = dict(self.request.POST)
+        data.pop('csrfmiddlewaretoken')
         CertificateRequest.objects.create(**data)
         return redirect('index')

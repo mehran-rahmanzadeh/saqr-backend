@@ -44,7 +44,7 @@ class GetInTouch(models.Model, ModelCacheMixin):
     )
     
     phone = models.CharField(
-             max_length=13,
+             max_length=50,
              null=True,
              blank=True,
              
